@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In & Register - ToolHub Equipment & Tool Rental</title>
+    <meta name="description" content="Sign in to your ToolHub account or create a new renter membership to access equipment availability, booking tracking, and invoices.">
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        toolhub: {
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-100/80 dark:bg-toolhub-dark text-slate-700 dark:text-zinc-300 font-sans min-h-screen flex items-center justify-center p-3 sm:p-5 antialiased selection:bg-amber-500 selection:text-slate-950">
+
+    <!-- Main Auth Card Container (Strictly styled after template reference images media_1788860311567.png & media_1788860315937.png) -->
+    <div class="w-full max-w-[420px] bg-white dark:bg-toolhub-card rounded-[28px] border border-slate-200/80 dark:border-toolhub-border shadow-2xl p-5 sm:p-7 relative my-auto transition-all reveal-scale">
+        
+        <!-- Card Header: Brand Logo & Symbol-Only Toggles -->
+        <div class="flex items-center justify-between pb-3.5 border-b border-slate-100 dark:border-toolhub-border">
+            <!-- Brandmark -->
+            <a href="index.html" class="flex items-center gap-2.5 group" title="Return to Home">
+                <div class="w-9 h-9 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-base shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
+                    <i class="fa-solid fa-truck-monster"></i>
+                </div>
+                <span class="text-xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">
+                    TOOL<span class="text-amber-500">HUB</span>
+                </span>
+            </a>
+
+            <!-- Right Controls: Symbol-Only Moon & RTL/LTR Toggles -->
+            <div class="flex items-center gap-1.5">
+                <!-- Dark Mode Toggle (Symbol Only) -->
+                <button data-toggle="theme" class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-toolhub-surface border border-slate-200/80 dark:border-toolhub-border flex items-center justify-center text-slate-700 dark:text-zinc-300 hover:text-amber-500 dark:hover:text-amber-400 transition" title="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon text-xs"></i>
+                </button>
+
+                <!-- RTL Switcher (Symbol Only) -->
+                <button data-toggle="direction" class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-toolhub-surface border border-slate-200/80 dark:border-toolhub-border flex items-center justify-center text-slate-700 dark:text-zinc-300 hover:text-amber-500 dark:hover:text-amber-400 transition" title="Toggle RTL / LTR layout">
+                    <i class="fa-solid fa-right-left text-[10px]"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- SIGN IN VIEW (Template Image media_1788860311567.png) -->
+        <!-- ============================================== -->
+        <div id="auth-login-view" class="pt-4">
+            <!-- Header Title -->
+            <div class="text-center mb-3.5">
+                <h1 class="text-2xl font-black font-heading text-slate-900 dark:text-white tracking-tight">Welcome Back</h1>
+                <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1 leading-normal">
+                    Login to manage your tool & equipment rentals.
+                </p>
+            </div>
+
+            <!-- Segmented Dual-Pill Switcher -->
+            <div class="p-1 bg-slate-100 dark:bg-toolhub-surface rounded-xl flex text-xs font-bold mb-4 border border-slate-200/60 dark:border-toolhub-border">
+                <button type="button" id="tab-login-btn" onclick="showAuthTab('login')" class="w-1/2 py-2 rounded-lg bg-white dark:bg-zinc-800 text-amber-600 dark:text-amber-400 font-extrabold shadow-sm transition">
+                    Sign In
+                </button>
+                <button type="button" id="tab-register-btn" onclick="showAuthTab('register')" class="w-1/2 py-2 rounded-lg text-slate-600 dark:text-zinc-400 font-bold hover:text-slate-900 dark:hover:text-white transition">
+                    Register
+                </button>
+            </div>
+
+            <!-- Transition Feedback Alert Banner (Shown upon account creation) -->
+            <div id="auth-success-banner" class="hidden mb-3 p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-[11px] font-bold text-emerald-700 dark:text-emerald-300 flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                <span id="auth-success-banner-text">Account created! Authorizing Renter Portal...</span>
+            </div>
+
+            <!-- Login Error Alert Banner -->
+            <div id="login-error-alert" class="hidden mb-3 p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-800 text-[11px] font-bold text-rose-700 dark:text-rose-300 flex items-center">
+            </div>
+
+            <!-- Sign In Form -->
+            <form id="auth-login-form" data-no-validate="true" class="space-y-3 text-xs font-semibold" novalidate>
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider text-slate-700 dark:text-zinc-300 mb-1">EMAIL ADDRESS</label>
+                    <input type="email" id="login-email" required placeholder="name@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-toolhub-border bg-slate-50/50 dark:bg-toolhub-surface text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider text-slate-700 dark:text-zinc-300 mb-1">PASSWORD</label>
+                    <input type="password" id="login-password" required placeholder="Enter your password" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-toolhub-border bg-slate-50/50 dark:bg-toolhub-surface text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                </div>
+
+                <!-- Remember Me & Forgot Password Row -->
+                <div class="flex items-center justify-between text-xs py-0.5">
+                    <label class="flex items-center gap-2 cursor-pointer font-semibold text-slate-600 dark:text-zinc-400 select-none">
+                        <input type="checkbox" id="remember-me" checked class="w-3.5 h-3.5 rounded border-slate-300 accent-amber-500">
+                        <span class="text-[11px]">Remember me</span>
+                    </label>
+                    <a href="javascript:void(0)" onclick="ToolHub.showToast('Demo password recovery link sent.', 'info')" class="font-bold text-[11px] text-slate-600 dark:text-zinc-400 hover:text-amber-500 transition">
+                        Forgot Password?
+                    </a>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-1">
+                    <button type="submit" id="btn-login-submit" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-md shadow-amber-500/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 btn-shine">
+                        <span>SIGN IN</span>
+                    </button>
+                </div>
+
+                <!-- Centered OR CONTINUE WITH Divider -->
+                <div class="relative my-3 text-center">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-slate-200 dark:border-toolhub-border"></div>
+                    </div>
+                    <span class="relative px-3 text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-zinc-500 bg-white dark:bg-toolhub-card">
+                        OR CONTINUE WITH
+                    </span>
+                </div>
+
+                <!-- Social Sign In Buttons (Google & Apple - Static non-working demo buttons) -->
+                <div class="grid grid-cols-2 gap-2.5">
+                    <button type="button" class="py-2.5 px-3 rounded-xl border border-slate-200 dark:border-toolhub-border bg-slate-50/50 dark:bg-toolhub-surface hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-bold text-slate-800 dark:text-white flex items-center justify-center gap-2 transition cursor-default">
+                        <i class="fa-brands fa-google text-slate-900 dark:text-white text-sm"></i>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="py-2.5 px-3 rounded-xl border border-slate-200 dark:border-toolhub-border bg-slate-50/50 dark:bg-toolhub-surface hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-bold text-slate-800 dark:text-white flex items-center justify-center gap-2 transition cursor-default">
+                        <i class="fa-brands fa-apple text-slate-900 dark:text-white text-sm"></i>
+                        <span>Apple</span>
+                    </button>
+                </div>
+
+                <!-- Bottom Tab Switch Text -->
+                <div class="text-center text-xs text-slate-500 dark:text-zinc-400 pt-2">
+                    Don't have an account? 
+                    <button type="button" onclick="showAuthTab('register')" class="text-amber-600 dark:text-amber-400 font-black hover:underline ml-1">
+                        Register here
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- CREATE ACCOUNT VIEW (Template Image media_1788860315937.png) -->
+        <!-- ============================================== -->
+        <div id="auth-register-view" class="hidden pt-4">
+            <!-- Header Title -->
+            <div class="text-center mb-3.5">
+                <h1 class="text-2xl font-black font-heading text-slate-900 dark:text-white tracking-tight">Create Account</h1>
+                <p class="text-xs text-slate-500 dark:text-zinc-400 mt-1 leading-normal">
+                    Register a renter portal membership account today.
+                </p>
+            </div>
+
+            <!-- Segmented Dual-Pill Switcher -->
+            <div class="p-1 bg-slate-100 dark:bg-toolhub-surface rounded-xl flex text-xs font-bold mb-4 border border-slate-200/60 dark:border-toolhub-border">
+                <button type="button" id="tab-login-btn-reg" onclick="showAuthTab('login')" class="w-1/2 py-2 rounded-lg text-slate-600 dark:text-zinc-400 font-bold hover:text-slate-900 dark:hover:text-white transition">
+                    Sign In
+                </button>
+                <button type="button" id="tab-register-btn-reg" onclick="showAuthTab('register')" class="w-1/2 py-2 rounded-lg bg-white dark:bg-zinc-800 text-amber-600 dark:text-amber-400 font-extrabold shadow-sm transition">
+                    Register
+                </button>
+            </div>
+
+            <!-- Create Account Form (Strictly 3 inputs: Full Name, Email, Password) -->
+            <form id="auth-register-form" data-no-validate="true" class="space-y-3 text-xs font-semibold" novalidate>
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider text-slate-700 dark:text-zinc-300 mb-1">FULL NAME</label>
+                    <input type="text" id="reg-name" required placeholder="e.g. Marcus Reynolds" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-toolhub-border bg-slate-50/50 dark:bg-toolhub-surface text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider text-slate-700 dark:text-zinc-300 mb-1">EMAIL ADDRESS</label>
+                    <input type="email" id="reg-email" required placeholder="name@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-toolhub-border bg-slate-50/50 dark:bg-toolhub-surface text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider text-slate-700 dark:text-zinc-300 mb-1">PASSWORD</label>
+                    <input type="password" id="reg-password" required placeholder="Minimum 6 characters" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-toolhub-border bg-slate-50/50 dark:bg-toolhub-surface text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-amber-500 transition">
+                </div>
+
+                <!-- Terms & Conditions Checkbox -->
+                <div class="py-0.5">
+                    <label class="flex items-start gap-2 cursor-pointer text-[11px] font-semibold text-slate-600 dark:text-zinc-400 select-none">
+                        <input type="checkbox" id="reg-terms" checked class="mt-0.5 w-3.5 h-3.5 rounded border-slate-300 accent-amber-500">
+                        <span class="leading-tight">I agree to the Terms of Service and Privacy Policy.</span>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-1">
+                    <button type="submit" id="btn-register-submit" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-md shadow-amber-500/20 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 btn-shine">
+                        <span>CREATE ACCOUNT</span>
+                    </button>
+                </div>
+
+                <!-- Centered OR SIGN UP WITH Divider -->
+                <div class="relative my-3 text-center">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-slate-200 dark:border-toolhub-border"></div>
+                    </div>
+                    <span class="relative px-3 text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-zinc-500 bg-white dark:bg-toolhub-card">
+                        OR SIGN UP WITH
+                    </span>
+                </div>
+
+                <!-- Social Sign In Buttons (Google & Apple - Static non-working demo buttons) -->
+                <div class="grid grid-cols-2 gap-2.5">
+                    <button type="button" class="py-2.5 px-3 rounded-xl border border-slate-200 dark:border-toolhub-border bg-slate-50/50 dark:bg-toolhub-surface hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-bold text-slate-800 dark:text-white flex items-center justify-center gap-2 transition cursor-default">
+                        <i class="fa-brands fa-google text-slate-900 dark:text-white text-sm"></i>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="py-2.5 px-3 rounded-xl border border-slate-200 dark:border-toolhub-border bg-slate-50/50 dark:bg-toolhub-surface hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-bold text-slate-800 dark:text-white flex items-center justify-center gap-2 transition cursor-default">
+                        <i class="fa-brands fa-apple text-slate-900 dark:text-white text-sm"></i>
+                        <span>Apple</span>
+                    </button>
+                </div>
+
+                <!-- Bottom Tab Switch Text -->
+                <div class="text-center text-xs text-slate-500 dark:text-zinc-400 pt-2">
+                    Already have an account? 
+                    <button type="button" onclick="showAuthTab('login')" class="text-amber-600 dark:text-amber-400 font-black hover:underline ml-1">
+                        Log in here
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Interactive Script for Tab Switching & Feedback -->
+    <script>
+        function showAuthTab(tab) {
+            const loginView = document.getElementById('auth-login-view');
+            const registerView = document.getElementById('auth-register-view');
+            const errAlert = document.getElementById('login-error-alert');
+            if (errAlert) errAlert.classList.add('hidden');
+
+            if (tab === 'login') {
+                loginView.classList.remove('hidden');
+                registerView.classList.add('hidden');
+                const regEmail = document.getElementById('reg-email');
+                const logEmail = document.getElementById('login-email');
+                if (regEmail && regEmail.value && logEmail && !logEmail.value) {
+                    logEmail.value = regEmail.value;
+                }
+            } else {
+                registerView.classList.remove('hidden');
+                loginView.classList.add('hidden');
+            }
+        }
+
+        // Auto-check URL hash or query params on load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash === '#register' || window.location.search.includes('tab=register')) {
+                showAuthTab('register');
+            }
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Depot Network - ToolHub</title>
+    <meta name="description" content="Contact ToolHub's central equipment coordinators, schedule flatbed jobsite delivery, or find your nearest drive-thru equipment yard.">
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (v3 CDN with custom config) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        toolhub: {
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a',
+                            orange: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-glass-header bg-slate-50 dark:bg-neutral-950 text-slate-700 dark:text-neutral-300 font-sans antialiased">
+
+    <!-- Main Navigation Bar (Glassmorphic Header matching YogaSphere reference) -->
+    <header class="fixed top-0 left-0 right-0 w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Left: Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
+                        <i class="fa-solid fa-truck-monster"></i>
+                    </div>
+                    <span class="text-2xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
+                </a>
+
+                <!-- Center: Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <!-- Home Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold flex items-center gap-1.5 transition text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400">
+                            <span>Home</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-100 dark:border-neutral-800 p-2.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-200 transition text-xs font-bold">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-neutral-800 text-amber-500 flex items-center justify-center text-sm"><i class="fa-solid fa-toolbox"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 1: DIY & Tools</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Renovation & Home Projects</span>
+                                </div>
+                            </a>
+                            <a href="home-contractor.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 transition text-xs font-bold mt-1">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-neutral-800 text-amber-500 flex items-center justify-center text-sm"><i class="fa-solid fa-truck-moving"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 2: Heavy Fleet</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Commercial Contractor Fleet</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Machinery Direct Link (Dropdown Removed) -->
+                    <a href="catalog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Machinery</a>
+
+                    <!-- Direct Links -->
+                    <a href="how-it-works.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">How It Works</a>
+                    <a href="pricing.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Rental Rates</a>
+                    <a href="about.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">About Us</a>
+                    <a href="blog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Guides & Tips</a>
+                    <a href="contact.html" class="nav-link-item active px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Contact</a>
+                </nav>
+
+                <!-- Right: Actions matching YogaSphere Reference exactly -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Dark / Light Theme Toggle (Symbol Only) -->
+                    <button data-toggle="theme" class="nav-icon-btn hidden sm:inline-flex" title="Toggle Light / Dark Mode">
+                        <i class="fa-solid fa-moon text-xs"></i>
+                    </button>
+
+                    <!-- RTL / LTR Direction Toggle (Symbol Only) -->
+                    <button data-toggle="direction" class="nav-icon-btn hidden sm:inline-flex" title="Toggle RTL / LTR layout">
+                        <i class="fa-solid fa-right-left text-[11px]"></i>
+                    </button>
+
+                    <!-- Cart Page Link -->
+                    <a href="cart.html" class="nav-icon-btn relative" title="View Reservation Cart">
+                        <i class="fa-solid fa-toolbox text-xs"></i>
+                        <span class="cart-count-badge absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-slate-950 font-black text-[9px] rounded-full flex items-center justify-center shadow">0</span>
+                    </a>
+
+                    <!-- Renter Login Pill CTA Button -->
+                    <a href="auth.html" class="nav-pill-btn hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-xs font-black uppercase tracking-wider btn-shine">
+                        <i class="fa-solid fa-circle-user text-sm"></i>
+                        <span>Renter Login</span>
+                    </a>
+
+                    <!-- Mobile Menu Hamburger -->
+                    <button data-toggle="mobile-menu" class="lg:hidden nav-icon-btn" title="Open Mobile Navigation">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Banner with High-Quality Logistics Dispatch Imagery -->
+    <section class="py-16 sm:py-20 bg-white dark:bg-neutral-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-neutral-800 relative overflow-hidden transition-colors">
+        <div class="absolute inset-0 bg-hazard-stripes opacity-0 dark:opacity-10 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left: Headline & Fleet Dispatch Hotline -->
+                <div class="lg:col-span-7 reveal-left">
+                    <span class="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1 rounded-full inline-block">
+                        CENTRAL DISPATCH & 14 DEPOT HUBS
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-black font-heading mt-4 leading-tight text-slate-900 dark:text-white">
+                        Connect with Our Fleet Coordinators & <span class="text-amber-500">Logistics Dispatch.</span>
+                    </h1>
+                    <p class="mt-4 text-slate-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed">
+                        Direct hotline to regional yard foremen, 24/7 field mechanics, and fast flatbed jobsite delivery. Visit any of our drive-thru yards or submit an immediate equipment inquiry below.
+                    </p>
+
+                    <!-- Dispatch Status Badges -->
+                    <div class="mt-6 flex flex-wrap gap-2.5 text-xs font-bold text-slate-700 dark:text-neutral-300">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span> Avg Pickup: 12 Seconds
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex items-center gap-2">
+                            <i class="fa-solid fa-truck-moving text-amber-500"></i> Same-Day Delivery
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex items-center gap-2">
+                            <i class="fa-solid fa-wrench text-amber-500"></i> 24/7 Field Swap
+                        </span>
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap items-center gap-4">
+                        <a href="#contact-fleet-form" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-lg shadow-amber-500/20 flex items-center gap-2 btn-shine">
+                            <span>Request Equipment Booking</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a href="tel:+18005558665" class="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 text-slate-900 dark:text-white font-bold text-xs border border-slate-300 dark:border-neutral-800 transition flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-amber-500"></i>
+                            <span>+1 (800) 555-TOOL</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: High-Quality Central Logistics Dispatch Image Card -->
+                <div class="lg:col-span-5 reveal-right delay-150">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200 dark:border-neutral-800 aspect-[4/3] group">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=85" alt="ToolHub Central Logistics Dispatch & Fleet Warehouse Facility" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-neutral-950/85 backdrop-blur-md text-amber-400 text-xs font-black px-3 py-1.5 rounded-xl border border-neutral-800 shadow">
+                            <i class="fa-solid fa-tower-broadcast mr-1.5"></i>Live Depot Telemetry
+                        </span>
+                        <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-neutral-900/90 backdrop-blur-md border border-neutral-800 flex items-center justify-between text-xs">
+                            <div>
+                                <span class="text-[10px] text-neutral-400 block font-bold uppercase">Dispatch Queue</span>
+                                <span class="font-extrabold text-white">Flatbeds En Route: 18 Trucks</span>
+                            </div>
+                            <span class="text-amber-400 font-black text-sm">Yard 4 Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section: 4 Top Cards + 2-Column Reservation & Map Section (Strictly styled after template reference) -->
+    <section class="py-12 sm:py-16 bg-slate-50 dark:bg-slate-950 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 4 Top Contact Cards (Strictly fitted to match template reference media_1788972735785.png) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 mb-12">
+                <!-- Card 1: Broadway Showroom -->
+                <div class="card-hover-lift delay-75 bg-white dark:bg-slate-900 rounded-[28px] p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-sm transition hover:border-slate-300 dark:hover:border-slate-700 duration-300 flex flex-col justify-start">
+                    <div class="w-10 h-10 rounded-[14px] bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-sm mb-4 icon-float">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="text-[15px] sm:text-base font-bold font-heading text-slate-900 dark:text-white mb-2 truncate">Broadway Showroom</h3>
+                    <p class="text-[12.5px] sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                        480 Broadway Ave, Theatrical District,<br>
+                        Suite 120, New York, NY 10013
+                    </p>
+                </div>
+
+                <!-- Card 2: Telephone & Hotline -->
+                <div class="card-hover-lift delay-150 bg-white dark:bg-slate-900 rounded-[28px] p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-sm transition hover:border-slate-300 dark:hover:border-slate-700 duration-300 flex flex-col justify-start">
+                    <div class="w-10 h-10 rounded-[14px] bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-sm mb-4 icon-float">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3 class="text-[15px] sm:text-base font-bold font-heading text-slate-900 dark:text-white mb-2 truncate">Telephone & Hotline</h3>
+                    <p class="text-[12.5px] sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                        Toll-Free: <a href="tel:+18005558665" class="hover:text-amber-500 transition-colors">+1 (800) 555-TOOL</a><br>
+                        Emergency Line: <a href="tel:+12125550199" class="hover:text-amber-500 transition-colors">+1 (212) 555-0199</a>
+                    </p>
+                </div>
+
+                <!-- Card 3: Concierge Inquiries -->
+                <div class="card-hover-lift delay-200 bg-white dark:bg-slate-900 rounded-[28px] p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-sm transition hover:border-slate-300 dark:hover:border-slate-700 duration-300 flex flex-col justify-start">
+                    <div class="w-10 h-10 rounded-[14px] bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-sm mb-4 icon-float">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3 class="text-[15px] sm:text-base font-bold font-heading text-slate-900 dark:text-white mb-2 truncate">Concierge Inquiries</h3>
+                    <p class="text-[12.5px] sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                        General: <a href="mailto:rentals@toolhub.com" class="hover:text-amber-500 transition-colors">rentals@toolhub.com</a><br>
+                        Dispatch: <a href="mailto:dispatch@toolhub.com" class="hover:text-amber-500 transition-colors">dispatch@toolhub.com</a>
+                    </p>
+                </div>
+
+                <!-- Card 4: Showroom Hours -->
+                <div class="card-hover-lift delay-250 bg-white dark:bg-slate-900 rounded-[28px] p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-sm transition hover:border-slate-300 dark:hover:border-slate-700 duration-300 flex flex-col justify-start">
+                    <div class="w-10 h-10 rounded-[14px] bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-sm mb-4 icon-float">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-[15px] sm:text-base font-bold font-heading text-slate-900 dark:text-white mb-2 truncate">Showroom Hours</h3>
+                    <p class="text-[12.5px] sm:text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                        Mon – Fri: 6:30 AM – 7:00 PM<br>
+                        Saturday: 7:00 AM – 4:00 PM (By Appt)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Two Column Main Grid: Reservation Form + Flagship Depot Map Card (matching template reference) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Left Column (7 cols): Direct Reservation Enquiry (matching template) -->
+                <div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-[28px] p-7 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-sm reveal-left">
+                    <span class="text-[11px] font-black uppercase tracking-[0.18em] text-amber-600 dark:text-amber-400 block mb-1">DIRECT RESERVATION ENQUIRY</span>
+                    <h2 class="text-2xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white mt-1 mb-2">
+                        Book Equipment or Submit <span class="text-amber-500">Enquiry</span>
+                    </h2>
+                    <p class="text-xs sm:text-[13px] text-slate-600 dark:text-slate-400 mb-8">
+                        Our master fleet coordinators respond within 15 business minutes.
+                    </p>
+
+                    <form id="contact-fleet-form" class="space-y-5 text-xs font-semibold" novalidate>
+                        <!-- Row 1: Full Name & Email -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold">Your Full Name <span class="text-amber-500">*</span></label>
+                                <input type="text" name="fullname" required placeholder="e.g. Marcus Vance" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition font-semibold placeholder:text-slate-400">
+                            </div>
+                            <div>
+                                <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold">Email Address <span class="text-amber-500">*</span></label>
+                                <input type="email" name="email" required placeholder="e.g. marcus@apexcontracting.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition font-semibold placeholder:text-slate-400">
+                            </div>
+                        </div>
+
+                        <!-- Row 2: Phone & Equipment Category -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold">Telephone / Mobile <span class="text-amber-500">*</span></label>
+                                <input type="tel" name="phone" required placeholder="e.g. +1 (555) 234-5678" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition font-semibold placeholder:text-slate-400">
+                            </div>
+                            <div>
+                                <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold">Equipment Category Needed <span class="text-amber-500">*</span></label>
+                                <select name="category" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition font-semibold">
+                                    <option value="">Select Equipment Category</option>
+                                    <option value="earthmoving">Earthmoving Fleet (Mini Excavators & Skid Steers)</option>
+                                    <option value="aerial">Aerial Lifts & Scaffolding Systems</option>
+                                    <option value="compaction">Compaction & Paving Rollers</option>
+                                    <option value="power">Generators & Commercial Site Power</option>
+                                    <option value="concrete">Demolition Saws & Concrete Tools</option>
+                                    <option value="diy">Pro Contractor Power Tools & Laser Levels</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Row 3: Duration/Date & Fulfillment Method -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold">Estimated Start Date / Duration <span class="text-amber-500">*</span></label>
+                                <input type="text" name="duration" required placeholder="e.g. Oct 12th · 3-Day Rental" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition font-semibold placeholder:text-slate-400">
+                            </div>
+                            <div>
+                                <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold">Fulfillment Preference</label>
+                                <select name="fulfillment" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition font-semibold">
+                                    <option value="delivery">Express Jobsite Delivery (+$35)</option>
+                                    <option value="pickup">Depot Yard Drive-Thru Pickup ($0)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Row 4: Message / Jobsite Details -->
+                        <div>
+                            <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold">Jobsite Location & Project Notes <span class="text-amber-500">*</span></label>
+                            <textarea name="details" required rows="4" placeholder="Specify your exact jobsite delivery address, gate codes, operator certifications needed, or requested tooling attachments..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition font-semibold placeholder:text-slate-400"></textarea>
+                        </div>
+
+                        <!-- Submit CTA -->
+                        <div class="pt-2">
+                            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2.5 cursor-pointer">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Submit Reservation Enquiry</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Column (5 cols): Flagship Depot Map Card (matching template) -->
+                <div class="lg:col-span-5 bg-white dark:bg-slate-900 rounded-[28px] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col reveal-right delay-150">
+                    <!-- Top Bar inside map card (matching template) -->
+                    <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.16em] text-slate-900 dark:text-white">
+                            <i class="fa-solid fa-location-dot text-amber-500"></i>
+                            <span>Flagship Depot Map</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span>Open Today</span>
+                        </span>
+                    </div>
+
+                    <!-- Map Container with Floating Card (matching template) -->
+                    <div class="relative w-full h-[320px] sm:h-[350px] bg-slate-100 dark:bg-slate-950 overflow-hidden">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=480+Broadway,+New+York,+NY+10013&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            class="w-full h-full border-0 grayscale-[15%] contrast-105" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade" 
+                            title="ToolHub Broadway Equipment Depot Location">
+                        </iframe>
+
+                        <!-- Floating Card overlaying the map (matching template) -->
+                        <div class="absolute top-4 left-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl p-3 shadow-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 min-w-[220px]">
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-xs">Broadway Depot</h4>
+                                <p class="text-[11px] text-slate-500 dark:text-slate-400">Broadway, New York, NY</p>
+                            </div>
+                            <a href="https://maps.google.com/?q=480+Broadway+New+York+NY" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-amber-500 text-slate-600 dark:text-slate-300 hover:text-slate-950 flex items-center justify-center transition border border-slate-200 dark:border-slate-700" title="Open in Google Maps">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Depot Amenities & Features below map -->
+                    <div class="p-6 space-y-3.5 text-xs bg-white dark:bg-slate-900">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-truck-ramp-box"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-xs">12-Second Express Drive-Thru Loading</h4>
+                                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Automated barcode inspection and swift trailer release.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-wrench"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-xs">24/7 Field Swap Guarantee</h4>
+                                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Rapid mobile repair truck dispatch across Metro NY & Tri-State.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xs flex-shrink-0">
+                                <i class="fa-solid fa-trailer"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-xs">Trailer Staging & Rigging Assistance</h4>
+                                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Complimentary heavy-duty ratchet straps and safety checks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions Section (4 In-Depth Equipment Rental FAQs) -->
+    <section class="py-16 sm:py-20 bg-slate-100 dark:bg-toolhub-dark/60 border-t border-slate-200 dark:border-neutral-800 transition-colors">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal-up">
+                <span class="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1 rounded-full inline-block">
+                    HELP & COMMON QUESTIONS
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black font-heading text-slate-900 dark:text-white mt-3">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-neutral-400 mt-2 max-w-xl mx-auto">
+                    Quick answers regarding equipment reservations, jobsite flatbed dispatch, security deposits, and contractor accounts.
+                </p>
+            </div>
+
+            <div class="space-y-4 accordion-group">
+                <!-- FAQ 1: Booking & Deposit Refund -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm transition">
+                    <button type="button" class="w-full p-5 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center cursor-pointer hover:bg-slate-50/50 dark:hover:bg-neutral-800/40 transition" data-accordion-target="#contact-faq-1">
+                        <span class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-500 flex items-center justify-center text-xs font-black shrink-0">01</span>
+                            <span>How does equipment booking and the security deposit release work?</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down accordion-icon text-xs text-amber-500 transition-transform"></i>
+                    </button>
+                    <div id="contact-faq-1" class="accordion-content hidden px-5 pb-5 text-xs sm:text-[13px] text-slate-600 dark:text-neutral-300 leading-relaxed border-t border-slate-100 dark:border-neutral-800 pt-3.5">
+                        Reserving equipment can be completed online in under two minutes or over the phone with our dispatch desk. The security deposit is held as an electronic pre-authorization (not a permanent charge). Upon machine return, our yard technician completes a rapid 12-second digital barcode check, and the pre-authorization hold is released immediately.
+                    </div>
+                </div>
+
+                <!-- FAQ 2: Delivery Timelines -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm transition">
+                    <button type="button" class="w-full p-5 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center cursor-pointer hover:bg-slate-50/50 dark:hover:bg-neutral-800/40 transition" data-accordion-target="#contact-faq-2">
+                        <span class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-500 flex items-center justify-center text-xs font-black shrink-0">02</span>
+                            <span>What are your flatbed delivery options and dispatch response times?</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down accordion-icon text-xs text-amber-500 transition-transform"></i>
+                    </button>
+                    <div id="contact-faq-2" class="accordion-content hidden px-5 pb-5 text-xs sm:text-[13px] text-slate-600 dark:text-neutral-300 leading-relaxed border-t border-slate-100 dark:border-neutral-800 pt-3.5">
+                        We maintain dedicated hydraulic tilt-bed trailers and commercial flatbeds across all 14 depot locations. Same-day emergency delivery is available within 2 to 4 hours across metropolitan areas, or you can select free Drive-Thru Yard Pickup where your equipment is fueled, dyno-tested, and ready at our loading dock in 30 minutes.
+                    </div>
+                </div>
+
+                <!-- FAQ 3: On-Site Breakdown & Guarantee -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm transition">
+                    <button type="button" class="w-full p-5 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center cursor-pointer hover:bg-slate-50/50 dark:hover:bg-neutral-800/40 transition" data-accordion-target="#contact-faq-3">
+                        <span class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-500 flex items-center justify-center text-xs font-black shrink-0">03</span>
+                            <span>What happens if a machine encounters an unexpected issue on my jobsite?</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down accordion-icon text-xs text-amber-500 transition-transform"></i>
+                    </button>
+                    <div id="contact-faq-3" class="accordion-content hidden px-5 pb-5 text-xs sm:text-[13px] text-slate-600 dark:text-neutral-300 leading-relaxed border-t border-slate-100 dark:border-neutral-800 pt-3.5">
+                        Every ToolHub machine is backed by our 100% Uptime Guarantee. In the rare event of a hydraulic, electrical, or mechanical malfunction, our 24/7 mobile field service truck arrives within 60 to 90 minutes. If the machine cannot be serviced on-site immediately, we deliver an equivalent replacement unit with zero rental downtime charged.
+                    </div>
+                </div>
+
+                <!-- FAQ 4: Trade Accounts -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm transition">
+                    <button type="button" class="w-full p-5 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center cursor-pointer hover:bg-slate-50/50 dark:hover:bg-neutral-800/40 transition" data-accordion-target="#contact-faq-4">
+                        <span class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-500 flex items-center justify-center text-xs font-black shrink-0">04</span>
+                            <span>Do you provide commercial credit terms (Net-30) for licensed contractors?</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down accordion-icon text-xs text-amber-500 transition-transform"></i>
+                    </button>
+                    <div id="contact-faq-4" class="accordion-content hidden px-5 pb-5 text-xs sm:text-[13px] text-slate-600 dark:text-neutral-300 leading-relaxed border-t border-slate-100 dark:border-neutral-800 pt-3.5">
+                        Yes. Licensed general contractors, specialty subcontractors, and civil engineers can open a ToolHub Commercial Trade Account. Benefits include Net-30 or Net-60 terms, automated billing without individual card authorizations, dedicated account foremen, and guaranteed equipment availability.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-template-bg text-slate-400 text-sm pt-14 sm:pt-20 pb-12 border-t border-slate-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+                <!-- Col 1: Brand & Contact (Desktop 6 cols, Tablet full, Mobile full) -->
+                <div class="sm:col-span-2 lg:col-span-6 space-y-5 sm:space-y-6">
+                    <a href="index.html" class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl sm:text-2xl shadow-lg shadow-amber-500/20 shrink-0">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <span class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                    </a>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
+                        Curating premium heavy equipment, commercial construction machinery, and precision DIY power tools for contractors, craftsmen, and home renovators worldwide.
+                    </p>
+
+                    <!-- Contact Rows with Uniform Gold Icon Badges -->
+                    <div class="space-y-3 text-xs text-slate-300">
+                        <a href="contact.html" class="flex items-start gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs mt-0.5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+                            <span class="leading-relaxed">480 Broadway Ave, Theatrical District, Suite 120, New York, NY 10013</span>
+                        </a>
+                        <a href="tel:+18005558665" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <span class="leading-relaxed">+1 (800) 555-TOOL &bull; +1 (212) 555-0199</span>
+                        </a>
+                        <a href="mailto:rentals@toolhub-equipment.com" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <span class="leading-relaxed break-all">rentals@toolhub-equipment.com</span>
+                        </a>
+                        <div class="flex items-center gap-3 text-slate-400 text-xs">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs">
+                                <i class="fa-solid fa-clock"></i>
+                            </span>
+                            <span class="leading-relaxed">Mon–Fri: 6:30 AM–7:00 PM &bull; Sat: 7:00 AM–4:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Icon Pills -->
+                    <div class="flex items-center gap-2.5 pt-1">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="X / Twitter" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Popular Categories (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">TOOL OCCASIONS & CATEGORIES</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html?category=power-tools" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">⚡</span>
+                                <span>Cordless Power Tools & Saws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=ladders" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🪜</span>
+                                <span>Extension Ladders & Scaffolding</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=painting" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🎨</span>
+                                <span>Airless Paint & Drywall Sprayers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=gardening" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🌿</span>
+                                <span>Garden Rototillers & Chainsaws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=earthmoving" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🚜</span>
+                                <span>Mini Excavators & Track Skid Steers</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="catalog.html" class="inline-flex items-center gap-1.5 mt-5 sm:mt-6 text-xs font-black text-amber-400 hover:text-amber-300 transition group">
+                        <span>View All Equipment & Tools</span>
+                        <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Col 3: Services & Care (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">SERVICES & CARE</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>All Rental Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Pricing & Security Deposit</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-it-works.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Direct Jobsite Delivery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>100% Uptime Guarantee</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home-contractor.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Commercial Net-30 Trade</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Divider & Navigation Links -->
+            <div class="pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
+                <p>© 2026 ToolHub Equipment & Tool Rental Co. All rights reserved.</p>
+                <div class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2">
+                    <a href="how-it-works.html" class="hover:text-amber-400 transition">Rental Terms</a>
+                    <a href="pricing.html" class="hover:text-amber-400 transition">Deposit Policy</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">Yard Locator</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">24/7 Support Desk</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer (Offcanvas Slide-over) -->
+    <div id="cart-drawer-backdrop" class="fixed inset-0 bg-neutral-950/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-96 max-w-[90vw] bg-white dark:bg-neutral-900 z-50 shadow-2xl border-l border-slate-200 dark:border-neutral-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <div class="p-6 border-b border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-sm">
+                    <i class="fa-solid fa-toolbox"></i>
+                </div>
+                <h3 class="font-black font-heading text-slate-900 dark:text-white">Rental Cart (<span id="cart-item-count">2</span>)</h3>
+            </div>
+            <button data-close="cart-drawer" class="text-slate-400 hover:text-white p-1 rounded-lg">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <div id="cart-items-container" class="flex-grow overflow-y-auto p-6 space-y-4">
+            <!-- Items injected by JS -->
+        </div>
+
+        <div class="p-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 space-y-3">
+            <div class="flex justify-between text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span>Total Rental:</span>
+                <span id="cart-rental-total">$485.00</span>
+            </div>
+            <div class="flex justify-between text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span>Hold Deposit (Refundable):</span>
+                <span id="cart-deposit-total">$1,100.00</span>
+            </div>
+            <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between text-sm font-black text-slate-900 dark:text-white">
+                <span>Total Due Now:</span>
+                <span id="cart-grand-total" class="text-amber-500">$1,585.00</span>
+            </div>
+            <a href="auth.html" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider text-center transition flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20">
+                <span>Proceed to Checkout</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <p class="text-center text-[10px] text-slate-400 flex items-center justify-center gap-1">
+                <i class="fa-solid fa-lock text-emerald-500"></i> Encrypted 256-bit Bank-Level Authorization
+            </p>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Drawer (Strictly Matching Lap View Nav Structure) -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
+        <!-- Header: Menu title & Close button -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-2">
+            <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
+            <button data-close="mobile-menu" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" aria-label="Close menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links (Exact Match to Lap View Nav) -->
+        <nav class="flex-grow flex flex-col space-y-1 overflow-y-auto pr-1">
+            <!-- Collapsible Home Accordion -->
+            <div class="py-1">
+                <button type="button" data-mobile-submenu-toggle="mobile-home-submenu" class="w-full flex items-center justify-between text-base font-semibold text-slate-900 dark:text-white hover:text-amber-500 py-2 transition-colors" aria-expanded="true">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-down submenu-arrow text-xs text-slate-400 transition-transform duration-200" style="transform: rotate(180deg);"></i>
+                </button>
+                <div id="mobile-home-submenu" class="border-l-2 border-slate-200 dark:border-slate-700 pl-4 ml-2 my-1 space-y-2">
+                    <a href="index.html" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-amber-500 py-1 transition-colors">Home 1: DIY & Tools</a>
+                    <a href="home-contractor.html" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-amber-500 py-1 transition-colors">Home 2: Heavy Fleet</a>
+                </div>
+            </div>
+
+            <a href="catalog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Machinery</a>
+            <a href="how-it-works.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">How It Works</a>
+            <a href="pricing.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Rental Rates</a>
+            <a href="about.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">About Us</a>
+            <a href="blog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Guides & Tips</a>
+            <a href="contact.html" class="block text-base font-semibold text-amber-500 py-2 transition-colors">Contact</a>
+
+            <!-- Cart Link -->
+            <a href="cart.html" class="flex items-center justify-between text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-toolbox text-amber-500 text-sm"></i>
+                    <span>Reservation Cart</span>
+                </span>
+                <span class="cart-count-badge w-5 h-5 bg-amber-500 text-slate-950 font-black text-xs rounded-full flex items-center justify-center shadow">0</span>
+            </a>
+
+            <!-- Renter Login Button (Identical to Lap View Nav) -->
+            <div class="pt-3">
+                <a href="auth.html" class="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-md btn-shine">
+                    <i class="fa-solid fa-circle-user text-sm"></i>
+                    <span>RENTER LOGIN</span>
+                </a>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="border-t border-slate-200 dark:border-slate-800 my-4"></div>
+
+            <!-- Bottom Toggle Buttons (Below the menu as in Image 2) -->
+            <div class="flex items-center justify-around py-2">
+                <button type="button" data-toggle="theme" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon text-2xl"></i>
+                </button>
+                <button type="button" data-toggle="direction" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
+                    <i class="fa-solid fa-right-left text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-fleet-form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const nameInput = form.querySelector('[name="fullname"]');
+                    const emailInput = form.querySelector('[name="email"]');
+                    if (!nameInput.value.trim() || !emailInput.value.trim()) {
+                        if (window.ToolHub) {
+                            ToolHub.showToast('Please enter your full name and email address.', 'error');
+                        } else {
+                            alert('Please enter your name and email.');
+                        }
+                        return;
+                    }
+                    const btn = form.querySelector('button[type="submit"]');
+                    const origHtml = btn.innerHTML;
+                    btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Submitting Request...</span>';
+                    btn.disabled = true;
+
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Enquiry Dispatched!</span>';
+                        btn.classList.remove('bg-amber-500', 'hover:bg-amber-600', 'text-slate-950');
+                        btn.classList.add('bg-emerald-500', 'text-white');
+                        if (window.ToolHub) {
+                            ToolHub.showToast('Enquiry received! Our fleet coordinator will contact you in under 15 minutes.', 'success');
+                        }
+                        form.reset();
+
+                        setTimeout(() => {
+                            btn.innerHTML = origHtml;
+                            btn.disabled = false;
+                            btn.classList.remove('bg-emerald-500', 'text-white');
+                            btn.classList.add('bg-amber-500', 'hover:bg-amber-600', 'text-slate-950');
+                        }, 4000);
+                    }, 800);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

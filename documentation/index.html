@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - ToolHub Construction & Heavy Equipment Rental HTML5 Template</title>
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 500: '#f59e0b', 600: '#d97706' },
+                        toolhub: {
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a',
+                            orange: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-slate-50 dark:bg-toolhub-dark text-slate-700 dark:text-zinc-300 font-sans antialiased">
+
+    <!-- Top Header -->
+    <header class="bg-slate-900 text-white border-b border-slate-800 py-6 px-6 sm:px-12">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-2xl shadow-lg">
+                    <i class="fa-solid fa-truck-monster"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-2xl font-black font-heading text-white">TOOL<span class="text-amber-500">HUB</span></h1>
+                        <span class="text-[10px] uppercase font-black tracking-widest px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">HTML5 TEMPLATE</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-0.5">Heavy Construction & Equipment Rental Template · ThemeForest Commercial Standard · Version 1.0.0</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button data-toggle="theme" class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-amber-400 transition" title="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon text-xs"></i>
+                </button>
+                <button data-toggle="direction" class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-amber-400 transition" title="Toggle RTL / LTR layout">
+                    <i class="fa-solid fa-right-left text-xs"></i>
+                </button>
+                <a href="../index.html" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs self-start sm:self-auto transition shadow-md btn-shine">
+                    <i class="fa-solid fa-arrow-left mr-1.5"></i> Back to Live Demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Layout -->
+    <div class="max-w-6xl mx-auto px-6 sm:px-12 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Navigation TOC -->
+            <nav class="lg:col-span-3 space-y-1 text-xs font-semibold sticky top-8 self-start">
+                <a href="#intro" class="block px-3 py-2 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 font-bold">1. Introduction</a>
+                <a href="#structure" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800 text-slate-600 dark:text-zinc-400">2. Folder Structure</a>
+                <a href="#dark-mode" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800 text-slate-600 dark:text-zinc-400">3. Dark Mode & RTL</a>
+                <a href="#calculator" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800 text-slate-600 dark:text-zinc-400">4. Rental Calculator</a>
+                <a href="#dashboard" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800 text-slate-600 dark:text-zinc-400">5. Dashboard Features</a>
+                <a href="#customization" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800 text-slate-600 dark:text-zinc-400">6. Colors & Customization</a>
+            </nav>
+
+            <!-- Main Documentation Text -->
+            <main class="lg:col-span-9 space-y-12 text-sm leading-relaxed">
+                <!-- 1. Intro -->
+                <section id="intro" class="bg-white dark:bg-toolhub-card p-8 rounded-3xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-4">
+                    <h2 class="text-2xl font-black font-heading text-slate-900 dark:text-white">1. Introduction & Overview</h2>
+                    <p>
+                        <strong>ToolHub</strong> is a commercial-grade HTML5 template inspired by ThemeForest's leading heavy machinery and equipment rental templates. Designed specifically for <strong>Heavy Equipment Rentals, Construction Machinery Fleets, Earthmoving & Excavation Contractors, and Pro DIY Tools</strong>.
+                    </p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs">
+                        <div class="p-3 bg-slate-50 dark:bg-neutral-900 rounded-xl border border-slate-100 dark:border-neutral-800 text-center">
+                            <i class="fa-solid fa-mobile-screen text-amber-500 text-lg mb-1 block"></i>
+                            <strong class="dark:text-white">Mobile-First</strong>
+                        </div>
+                        <div class="p-3 bg-slate-50 dark:bg-neutral-900 rounded-xl border border-slate-100 dark:border-neutral-800 text-center">
+                            <i class="fa-solid fa-moon text-amber-500 text-lg mb-1 block"></i>
+                            <strong class="dark:text-white">Dark & Light</strong>
+                        </div>
+                        <div class="p-3 bg-slate-50 dark:bg-neutral-900 rounded-xl border border-slate-100 dark:border-neutral-800 text-center">
+                            <i class="fa-solid fa-globe text-amber-500 text-lg mb-1 block"></i>
+                            <strong class="dark:text-white">Full RTL Ready</strong>
+                        </div>
+                        <div class="p-3 bg-slate-50 dark:bg-neutral-900 rounded-xl border border-slate-100 dark:border-neutral-800 text-center">
+                            <i class="fa-solid fa-gauge-high text-amber-500 text-lg mb-1 block"></i>
+                            <strong class="dark:text-white">Renter Dashboard</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Folder Structure -->
+                <section id="structure" class="bg-white dark:bg-toolhub-card p-8 rounded-3xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-4">
+                    <h2 class="text-2xl font-black font-heading text-slate-900 dark:text-white">2. Folder & File Structure</h2>
+                    <pre class="bg-slate-900 dark:bg-neutral-950 text-slate-300 p-4 rounded-2xl text-xs font-mono overflow-x-auto border border-neutral-800">
+ToolHub/
+├── index.html                  (Home Page 1: Heavy Machinery & Pro Tool Rental - ToolHub Signature)
+├── home-contractor.html        (Home Page 2: Commercial Heavy Machinery Fleet Landing)
+├── catalog.html                (Machinery Catalog with live sidebar filter & Grid/List toggle)
+├── equipment-details.html      (CAT 302.7 Mini Excavator specs, gallery & live rental calculator)
+├── how-it-works.html           (4-Step digital rental workflow & collapsible FAQ accordions)
+├── pricing.html                (Rental rates, tiered discounts & security deposit escrow guide)
+├── about.html                  (About ToolHub, fleet uptime metrics, leadership & certifications)
+├── blog.html                   (Project tutorials & equipment selection guides)
+├── blog-details.html           (Single guide with required equipment bundle rental widget)
+├── contact.html                (14-Depot interactive locator & 24/7 field dispatch form)
+├── auth.html                   (Tabbed Sign In & Contractor Net-30 Registration)
+├── 404.html                    (Equipment-themed 404 page)
+├── coming-soon.html            (Live countdown timer & depot expansion launch voucher)
+├── dashboard/
+│   ├── index.html              (KPI overview, active machinery rentals & deposit tracker)
+│   ├── availability.html       (Interactive date matrix inventory calendar)
+│   ├── rentals.html            (Active order tracking, return scheduling & deposit release status)
+│   ├── invoices.html           (Official invoices with 1-click printable modal)
+│   ├── messages.html           (Direct depot manager support chat interface)
+│   └── settings.html           (Profile Settings & Registered Member Preferences)
+├── assets/
+│   ├── css/style.css           (ToolHub industrial styles, hazard stripes, RTL & print styles)
+│   └── js/
+│       ├── main.js             (Theme switcher, RTL switcher, Cart drawer & live catalog filter)
+│       ├── dashboard.js        (Calendar matrix generator & printable invoice modal controller)
+│       └── rental-calculator.js(Multi-day rate calculator with damage waiver & security deposit)
+└── documentation/
+    └── index.html              (This file)
+                    </pre>
+                </section>
+
+                <!-- 3. Dark Mode & RTL -->
+                <section id="dark-mode" class="bg-white dark:bg-toolhub-card p-8 rounded-3xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-4">
+                    <h2 class="text-2xl font-black font-heading text-slate-900 dark:text-white">3. Dark Mode & RTL Implementation</h2>
+                    <p>Both Dark Mode and RTL (Right-to-Left for Arabic/Hebrew/Persian) are integrated cleanly via vanilla JavaScript and persisted in the browser's <code>localStorage</code>:</p>
+                    <ul class="list-disc list-inside space-y-1 text-xs text-slate-600 dark:text-zinc-400">
+                        <li><strong>Dark Mode:</strong> Add <code>data-toggle="theme"</code> to any button. Toggling adds or removes the <code>dark</code> class on the root <code>&lt;html&gt;</code> element.</li>
+                        <li><strong>RTL:</strong> Add <code>data-toggle="direction"</code> to any button. Toggling modifies the <code>dir="rtl"</code> attribute and mirrors alignment automatically.</li>
+                    </ul>
+                </section>
+
+                <!-- 4. Rental Calculator -->
+                <section id="calculator" class="bg-white dark:bg-toolhub-card p-8 rounded-3xl border border-slate-200 dark:border-neutral-800 shadow-sm space-y-4">
+                    <h2 class="text-2xl font-black font-heading text-slate-900 dark:text-white">4. Dynamic Rental Calculator</h2>
+                    <p>The interactive pricing calculator in <code>assets/js/rental-calculator.js</code> computes totals dynamically with damage waivers and security deposits:</p>
+                    <pre class="bg-slate-900 dark:bg-neutral-950 text-slate-300 p-4 rounded-2xl text-xs font-mono overflow-x-auto border border-neutral-800">
+// Initializing the calculator on equipment-details.html:
+RentalCalculator.init({
+    dailyRate: 275,   // Base daily rental rate in USD
+    weeklyRate: 1100, // Discounted 7-day rate
+    deposit: 500      // Mandatory refundable security deposit
+});
+                    </pre>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Simple Footer -->
+    <footer class="p-6 text-center text-xs text-slate-500 dark:text-zinc-500 border-t border-slate-200 dark:border-neutral-800">
+        © 2026 ToolHub Heavy Equipment & Construction Rental HTML5 Template. All rights reserved.
+    </footer>
+
+    <!-- Core Scripts -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

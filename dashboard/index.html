@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Overview - ToolHub Construction & Equipment Portal</title>
+    <meta name="description" content="Manage your active equipment rentals, track security deposit escrow holds, and view rental availability.">
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            DEFAULT: '#f59e0b',
+                        },
+                        toolhub: {
+                            yellow: '#f59e0b',
+                            gold: '#ffb703',
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="dashboard-body bg-slate-100 dark:bg-[#09090b] text-slate-700 dark:text-neutral-300 font-sans antialiased min-h-screen lg:h-screen lg:overflow-hidden flex flex-col">
+
+    <!-- Top Dashboard Header Bar -->
+    <header class="fixed top-0 left-0 right-0 w-full z-40 glass-header dashboard-header shadow-sm shrink-0">
+        <div class="px-3 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <div class="flex items-center gap-2.5 sm:gap-4">
+                <!-- Mobile Sidebar Toggle -->
+                <button id="dashboard-sidebar-toggle" class="lg:hidden nav-icon-btn" aria-label="Toggle Sidebar Menu">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                </button>
+
+                <!-- Brand Logo (ToolHub) -->
+                <a href="../index.html" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-sm sm:text-base shadow group-hover:scale-105 transition transform">
+                        <i class="fa-solid fa-truck-monster"></i>
+                    </div>
+                    <span class="text-lg sm:text-xl font-black font-heading text-slate-900 dark:text-white tracking-tight leading-none">TOOL<span class="text-amber-500">HUB</span></span>
+                </a>
+            </div>
+
+            <!-- Header Quick Actions -->
+            <div class="flex items-center gap-1.5 sm:gap-3">
+                <!-- Dark Mode Toggle (Symbol Only) -->
+                <button data-toggle="theme" class="nav-icon-btn" title="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon text-xs"></i>
+                </button>
+
+                <!-- RTL Switcher (Symbol Only) -->
+                <button data-toggle="direction" class="nav-icon-btn" title="Toggle RTL / LTR layout">
+                    <i class="fa-solid fa-right-left text-[11px]"></i>
+                </button>
+
+                <!-- Notification Bell -->
+                <div class="relative">
+                    <button class="nav-icon-btn" aria-label="Notifications">
+                        <i class="fa-regular fa-bell text-xs"></i>
+                    </button>
+                    <span class="absolute top-1 right-1 w-2 h-2 bg-amber-500 rounded-full animate-ping"></span>
+                </div>
+
+                <!-- User Profile Pill -->
+                <div class="flex items-center gap-2 pl-1.5 sm:pl-2 border-l border-slate-200 dark:border-neutral-800">
+                    <div class="user-initials w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-amber-500 text-slate-950 font-bold text-xs flex items-center justify-center">
+                        KB
+                    </div>
+                    <div class="hidden md:block text-left">
+                        <span class="user-display-name block text-xs font-bold text-slate-900 dark:text-white leading-tight">kannanbala</span>
+                        <span class="block text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold">Verified Contractor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Container with Non-Scrolling Sidebar & Scrollable Content -->
+    <div class="flex-grow flex min-h-0 lg:overflow-hidden relative">
+        <!-- Sidebar Backdrop (Mobile) -->
+        <div id="dashboard-sidebar-backdrop" class="fixed inset-0 bg-neutral-950/60 backdrop-blur-sm z-40 hidden lg:hidden transition-opacity"></div>
+
+        <!-- Sidebar Navigation (Responsive Drawer on Mobile, Pinned on Desktop) -->
+        <aside id="dashboard-sidebar" class="fixed lg:static top-0 lg:top-auto bottom-0 left-0 w-72 lg:w-64 h-full shrink-0 bg-white dark:bg-[#121214] border-r border-slate-200 dark:border-neutral-800 z-50 lg:z-30 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col justify-between p-4 overflow-y-auto shadow-2xl lg:shadow-none">
+            <div>
+                <!-- Mobile Sidebar Close Header -->
+                <div class="flex lg:hidden items-center justify-between pb-3 mb-2 border-b border-slate-100 dark:border-neutral-800">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xs shadow">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <span class="text-base font-black font-heading text-slate-900 dark:text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                    </div>
+                    <button id="dashboard-sidebar-close" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" aria-label="Close sidebar">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-1 text-xs font-bold">
+                    <span class="block px-3 py-2 text-[10px] uppercase tracking-wider text-slate-400">Main Menu</span>
+                    <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-amber-500 text-slate-950 shadow-sm">
+                        <i class="fa-solid fa-gauge-high text-sm w-4"></i>
+                        <span>Overview</span>
+                    </a>
+                    <a href="availability.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                        <i class="fa-regular fa-calendar-check text-sm w-4 text-amber-500"></i>
+                        <span>Equipment Availability</span>
+                    </a>
+                    <a href="rentals.html" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-toolbox text-sm w-4 text-amber-500"></i>
+                            <span>Active & Past Rentals</span>
+                        </div>
+                        <span class="text-[10px] bg-amber-100 dark:bg-amber-950/60 text-amber-600 px-1.5 py-0.2 rounded font-bold">2</span>
+                    </a>
+                    <a href="invoices.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                        <i class="fa-solid fa-file-invoice-dollar text-sm w-4 text-amber-500"></i>
+                        <span>Invoices & Billing</span>
+                    </a>
+
+                    <span class="block px-3 pt-6 pb-2 text-[10px] uppercase tracking-wider text-slate-400">Account</span>
+                    <a href="settings.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                        <i class="fa-regular fa-user text-sm w-4 text-amber-500"></i>
+                        <span>Profile Settings</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="ToolHub.confirmSignOut('../auth.html')" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition">
+                        <i class="fa-solid fa-arrow-right-from-bracket text-sm w-4"></i>
+                        <span>Sign Out</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard View Area -->
+        <main class="flex-grow min-w-0 p-3 sm:p-6 lg:p-8 space-y-6 sm:space-y-8 overflow-y-auto">
+            <!-- Welcome Bar -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                <div>
+                    <h1 class="text-xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white">
+                        Welcome, <span class="user-display-name text-amber-500">kannanbala</span>!
+                    </h1>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-neutral-400 mt-0.5 leading-relaxed">Track rented tools, monitor escrow security deposits, and request rental extensions.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="availability.html" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-white dark:bg-[#121214] border border-slate-200 dark:border-neutral-800 text-xs font-bold text-slate-800 dark:text-neutral-200 hover:bg-slate-50 dark:hover:bg-neutral-800 transition shadow-sm inline-flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-calendar-days text-amber-500"></i>
+                        <span>Check Availability Matrix</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4 Metric KPI Cards (Clean 2x2 Grid on Mobile, 4 Cols on Large) -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+                <!-- KPI 1: Active Rentals -->
+                <div class="bg-white dark:bg-[#121214] p-3.5 sm:p-5 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider block">Active Rentals</span>
+                        <h3 class="text-lg sm:text-2xl font-black font-heading text-slate-900 dark:text-white mt-0.5 sm:mt-1">2 Units</h3>
+                        <span class="text-[10px] sm:text-[11px] text-emerald-600 font-semibold truncate block"><i class="fa-solid fa-circle-check mr-1"></i> Good standing</span>
+                    </div>
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 flex items-center justify-center text-sm sm:text-xl shrink-0 self-start sm:self-center">
+                        <i class="fa-solid fa-toolbox"></i>
+                    </div>
+                </div>
+
+                <!-- KPI 2: Security Deposits in Escrow -->
+                <div class="bg-white dark:bg-[#121214] p-3.5 sm:p-5 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider block">Escrow Holds</span>
+                        <h3 class="text-lg sm:text-2xl font-black font-heading text-amber-500 mt-0.5 sm:mt-1">$250.00</h3>
+                        <span class="text-[10px] sm:text-[11px] text-neutral-400 truncate block">Refunded at drop</span>
+                    </div>
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 flex items-center justify-center text-sm sm:text-xl shrink-0 self-start sm:self-center">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                </div>
+
+                <!-- KPI 3: Due within 24h -->
+                <div class="bg-white dark:bg-[#121214] p-3.5 sm:p-5 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider block">Due Soon</span>
+                        <h3 class="text-lg sm:text-2xl font-black font-heading text-rose-500 mt-0.5 sm:mt-1">1 Item</h3>
+                        <span class="text-[10px] sm:text-[11px] text-rose-500 font-semibold truncate block">Tomorrow 5 PM</span>
+                    </div>
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 flex items-center justify-center text-sm sm:text-xl shrink-0 self-start sm:self-center">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                </div>
+
+                <!-- KPI 4: Total Rented -->
+                <div class="bg-white dark:bg-[#121214] p-3.5 sm:p-5 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider block">Total Billed</span>
+                        <h3 class="text-lg sm:text-2xl font-black font-heading text-slate-900 dark:text-white mt-0.5 sm:mt-1">$1,420.00</h3>
+                        <span class="text-[10px] sm:text-[11px] text-emerald-600 font-semibold truncate block">8 Completed</span>
+                    </div>
+                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-neutral-100 dark:bg-neutral-800/80 text-neutral-600 dark:text-neutral-300 flex items-center justify-center text-sm sm:text-xl shrink-0 self-start sm:self-center">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Equipment Cards Grid -->
+            <div>
+                <div class="flex justify-between items-center mb-3 sm:mb-4">
+                    <h2 class="text-base sm:text-lg font-bold font-heading text-slate-900 dark:text-white">Currently In Your Possession</h2>
+                    <a href="rentals.html" class="text-xs font-bold text-amber-500 hover:underline">View All Orders</a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <!-- Active Item 1 -->
+                    <div class="bg-white dark:bg-[#121214] rounded-2xl border-2 border-amber-500/40 p-4 sm:p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2 mb-3">
+                                <span class="text-[10px] font-black uppercase px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+                                    Active Rental · Day 1 of 2
+                                </span>
+                                <span class="text-[11px] sm:text-xs font-bold text-slate-400 font-mono">#RH-9941</span>
+                            </div>
+                            <div class="flex gap-3 sm:gap-4 items-start">
+                                <img src="https://i.pinimg.com/736x/a6/18/0a/a6180aff19f2a1a27d6c118fb75bcf34.jpg" alt="DeWalt Drill Kit" class="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-xl border border-slate-200 dark:border-neutral-800 flex-shrink-0" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=85';">
+                                <div class="min-w-0">
+                                    <h4 class="font-bold text-sm sm:text-base font-heading text-slate-900 dark:text-white leading-snug">DeWalt 20V Max Cordless Drill Combo Kit</h4>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 mt-1 truncate"><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i> Return Depot: Downtown Hub</p>
+                                    <p class="text-[11px] sm:text-xs text-rose-500 font-semibold mt-0.5"><i class="fa-solid fa-clock mr-1"></i> Due Tomorrow by 5:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 dark:border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div class="text-xs flex items-center justify-between sm:justify-start">
+                                <span class="text-slate-400">Deposit Escrow:</span>
+                                <strong class="text-emerald-600 font-bold ml-1">$100 Held</strong>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 sm:flex sm:items-center">
+                                <button data-action="extend-rental" data-tool-name="DeWalt 20V Drill Combo" class="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 text-slate-700 dark:text-neutral-200 hover:bg-slate-100 dark:hover:bg-neutral-800 active:scale-95 text-xs font-bold transition text-center shadow-xs">
+                                    Extend
+                                </button>
+                                <button data-action="initiate-return" data-tool-name="DeWalt 20V Drill Combo" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 text-xs font-bold transition shadow-sm text-center">
+                                    Ready to Return
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Item 2 -->
+                    <div class="bg-white dark:bg-[#121214] rounded-2xl border border-slate-200 dark:border-neutral-800 p-4 sm:p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2 mb-3">
+                                <span class="text-[10px] font-black uppercase px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                                    Active Rental · Day 2 of 4
+                                </span>
+                                <span class="text-[11px] sm:text-xs font-bold text-slate-400 font-mono">#RH-9938</span>
+                            </div>
+                            <div class="flex gap-3 sm:gap-4 items-start">
+                                <img src="https://i.pinimg.com/1200x/7a/ef/4e/7aef4e2438063a26643ef6fc491d9172.jpg" alt="Stihl Chainsaw" class="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-xl border border-slate-200 dark:border-neutral-800 flex-shrink-0" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1622396636133-ba43f812dd3b?auto=format&fit=crop&w=800&q=85';">
+                                <div class="min-w-0">
+                                    <h4 class="font-bold text-sm sm:text-base font-heading text-slate-900 dark:text-white leading-snug">Stihl MS 250 18" Gas Chainsaw</h4>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 mt-1 truncate"><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i> Return Depot: Downtown Hub</p>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 font-semibold mt-0.5"><i class="fa-solid fa-clock mr-1"></i> Due in 3 Days (Thursday)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 dark:border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div class="text-xs flex items-center justify-between sm:justify-start">
+                                <span class="text-slate-400">Deposit Escrow:</span>
+                                <strong class="text-emerald-600 font-bold ml-1">$150 Held</strong>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 sm:flex sm:items-center">
+                                <button data-action="extend-rental" data-tool-name="Stihl MS 250 Chainsaw" class="px-3.5 py-2 rounded-xl border border-slate-200 dark:border-neutral-800 text-slate-700 dark:text-neutral-200 hover:bg-slate-100 dark:hover:bg-neutral-800 active:scale-95 text-xs font-bold transition text-center shadow-xs">
+                                    Extend
+                                </button>
+                                <button data-action="initiate-return" data-tool-name="Stihl MS 250 Chainsaw" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 text-xs font-bold transition shadow-sm text-center">
+                                    Ready to Return
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scheduled Dispatches & Logistics -->
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 sm:mb-4">
+                    <div>
+                        <h2 class="text-base sm:text-lg font-bold font-heading text-slate-900 dark:text-white">Upcoming Dispatches & Bookings</h2>
+                        <p class="text-xs text-slate-500 dark:text-neutral-400">Pre-authorized equipment scheduled for jobsite delivery and depot staging.</p>
+                    </div>
+                    <span class="text-xs font-bold text-amber-500 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20 self-start sm:self-auto">2 Upcoming</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    <!-- Scheduled Booking 1 -->
+                    <div class="bg-white dark:bg-[#121214] rounded-2xl border border-slate-200 dark:border-neutral-800 p-4 sm:p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2 mb-3">
+                                <span class="text-[10px] font-black uppercase px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-900">
+                                    <i class="fa-solid fa-truck-fast mr-1"></i> Jobsite Delivery
+                                </span>
+                                <span class="text-[11px] sm:text-xs font-bold text-slate-400 font-mono">#RH-9970</span>
+                            </div>
+                            <div class="flex gap-3 sm:gap-4 items-start">
+                                <img src="../assets/images/cat-excavator.jpg" alt="Caterpillar Mini Excavator" class="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-xl border border-slate-200 dark:border-neutral-800 flex-shrink-0">
+                                <div class="min-w-0">
+                                    <h4 class="font-bold text-sm sm:text-base font-heading text-slate-900 dark:text-white leading-snug">Caterpillar 301.7 CR Mini Excavator</h4>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 mt-1"><i class="fa-solid fa-calendar-check text-amber-500 mr-1"></i> Sept 18 – Sept 22, 2026</p>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5 truncate"><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i> 1044 W Fulton Market</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 dark:border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                            <div class="text-xs">
+                                <span class="text-slate-400">Carrier:</span>
+                                <strong class="text-slate-900 dark:text-white font-bold ml-1">Flatbed Hauler #14</strong>
+                            </div>
+                            <span class="text-[10px] sm:text-[11px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-1 rounded-lg border border-emerald-200 dark:border-emerald-800 self-start sm:self-auto">
+                                <i class="fa-solid fa-shield-halved mr-1"></i> Pre-Inspected & Certified
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Scheduled Booking 2 -->
+                    <div class="bg-white dark:bg-[#121214] rounded-2xl border border-slate-200 dark:border-neutral-800 p-4 sm:p-6 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start gap-2 mb-3">
+                                <span class="text-[10px] font-black uppercase px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-900">
+                                    <i class="fa-solid fa-warehouse mr-1"></i> Depot Staging
+                                </span>
+                                <span class="text-[11px] sm:text-xs font-bold text-slate-400 font-mono">#RH-9985</span>
+                            </div>
+                            <div class="flex gap-3 sm:gap-4 items-start">
+                                <img src="../assets/images/honda-generator.jpg" alt="Honda Industrial Generator" class="w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-xl border border-slate-200 dark:border-neutral-800 flex-shrink-0">
+                                <div class="min-w-0">
+                                    <h4 class="font-bold text-sm sm:text-base font-heading text-slate-900 dark:text-white leading-snug">Honda EB10000 10kW Industrial Generator</h4>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 mt-1"><i class="fa-solid fa-calendar-check text-amber-500 mr-1"></i> Sept 25 – Sept 28, 2026</p>
+                                    <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5 truncate"><i class="fa-solid fa-warehouse text-amber-500 mr-1"></i> Downtown Central Hub (Bay 3)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 dark:border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                            <div class="text-xs">
+                                <span class="text-slate-400">Status:</span>
+                                <strong class="text-emerald-600 font-bold ml-1">Confirmed & Staged</strong>
+                            </div>
+                            <span class="text-[10px] sm:text-[11px] font-bold text-amber-600 bg-amber-50 dark:bg-amber-950/40 px-2 py-1 rounded-lg border border-amber-200 dark:border-amber-800 self-start sm:self-auto">
+                                <i class="fa-solid fa-qrcode mr-1"></i> Quick Gate Pass Ready
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

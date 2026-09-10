@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depot Messages & Dispatch Support - ToolHub Dashboard</title>
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="../assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            DEFAULT: '#f59e0b',
+                        },
+                        toolhub: {
+                            yellow: '#f59e0b',
+                            gold: '#ffb703',
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="dashboard-body bg-slate-100 dark:bg-[#09090b] text-slate-700 dark:text-neutral-300 font-sans antialiased min-h-screen lg:h-screen lg:overflow-hidden flex flex-col">
+
+    <!-- Top Bar -->
+    <header class="fixed top-0 left-0 right-0 w-full z-40 glass-header dashboard-header shadow-sm shrink-0">
+        <div class="px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <div class="flex items-center gap-4">
+                <button id="dashboard-sidebar-toggle" class="lg:hidden nav-icon-btn">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                </button>
+                <a href="../index.html" class="flex items-center gap-2.5 group">
+                    <div class="w-9 h-9 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-base shadow group-hover:scale-105 transition transform">
+                        <i class="fa-solid fa-truck-monster"></i>
+                    </div>
+                    <span class="text-xl font-black font-heading text-slate-900 dark:text-white tracking-tight leading-none">TOOL<span class="text-amber-500">HUB</span></span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Dark Mode Toggle (Symbol Only) -->
+                <button data-toggle="theme" class="nav-icon-btn" title="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon text-xs"></i>
+                </button>
+                <!-- RTL Switcher (Symbol Only) -->
+                <button data-toggle="direction" class="nav-icon-btn" title="Toggle RTL / LTR layout">
+                    <i class="fa-solid fa-right-left text-[11px]"></i>
+                </button>
+                <div class="flex items-center gap-2 pl-2 border-l border-slate-200 dark:border-slate-800">
+                    <div class="user-initials w-8 h-8 rounded-full bg-amber-500 text-slate-950 font-bold text-xs flex items-center justify-center">
+                        MR
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex-grow flex min-h-0 lg:overflow-hidden">
+        <!-- Sidebar Navigation (Pinned & Non-Scrolling) -->
+        <aside id="dashboard-sidebar" class="fixed lg:static top-16 bottom-0 left-0 w-64 h-full shrink-0 bg-white dark:bg-[#121214] border-r border-slate-200 dark:border-neutral-800 z-30 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col justify-between p-4 overflow-y-auto">
+            <div class="space-y-1 text-xs font-bold">
+                <span class="block px-3 py-2 text-[10px] uppercase tracking-wider text-slate-400">Main Menu</span>
+                <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                    <i class="fa-solid fa-gauge-high text-sm w-4 text-amber-500"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="availability.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                    <i class="fa-regular fa-calendar-check text-sm w-4 text-amber-500"></i>
+                    <span>Equipment Availability</span>
+                </a>
+                <a href="rentals.html" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-toolbox text-sm w-4 text-amber-500"></i>
+                        <span>Active & Past Rentals</span>
+                    </div>
+                    <span class="text-[10px] bg-amber-100 dark:bg-amber-950 text-amber-600 px-1.5 py-0.2 rounded font-bold">2</span>
+                </a>
+                <a href="invoices.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                    <i class="fa-solid fa-file-invoice-dollar text-sm w-4 text-amber-500"></i>
+                    <span>Invoices & Billing</span>
+                </a>
+
+                <span class="block px-3 pt-6 pb-2 text-[10px] uppercase tracking-wider text-slate-400">Account</span>
+                <a href="settings.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 dark:text-neutral-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                    <i class="fa-regular fa-user text-sm w-4 text-amber-500"></i>
+                    <span>Profile Settings</span>
+                </a>
+                <a href="javascript:void(0)" onclick="ToolHub.confirmSignOut('../auth.html')" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition">
+                    <i class="fa-solid fa-arrow-right-from-bracket text-sm w-4"></i>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Messages Chat View -->
+        <main class="flex-grow p-4 sm:p-6 flex flex-col h-[calc(100vh-4rem)]">
+            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col flex-grow overflow-hidden">
+                <!-- Chat Header -->
+                <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="relative">
+                            <div class="w-10 h-10 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-sm">
+                                DH
+                            </div>
+                            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full ring-2 ring-white dark:ring-slate-900"></span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Downtown Central Depot Desk</h4>
+                            <p class="text-[11px] text-emerald-600 font-semibold">Attendant Online · Ready to assist</p>
+                        </div>
+                    </div>
+                    <a href="tel:8005558665" class="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold hover:bg-slate-50 transition">
+                        <i class="fa-solid fa-phone text-amber-500 mr-1"></i> Call Hub
+                    </a>
+                </div>
+
+                <!-- Chat History Messages Container -->
+                <div id="chat-messages-container" class="flex-grow p-6 space-y-4 overflow-y-auto text-xs">
+                    <!-- Depot Agent Message -->
+                    <div class="flex items-start gap-3 max-w-lg">
+                        <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center font-bold text-[10px] flex-shrink-0">
+                            DH
+                        </div>
+                        <div class="p-4 rounded-2xl rounded-tl-none bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 space-y-1">
+                            <p class="font-semibold text-[10px] text-amber-500">Alex · Depot Coordinator</p>
+                            <p>Hi Marcus! Just confirming that your DeWalt 20V combo kit and Stihl chainsaw are prepped and waiting in Lane 2 at Downtown Hub. We included two fresh 5.0Ah batteries!</p>
+                            <span class="text-[10px] text-slate-400 block pt-1">Yesterday at 3:45 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- User Message -->
+                    <div class="flex items-start gap-3 max-w-lg ml-auto flex-row-reverse">
+                        <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-[10px] flex-shrink-0">
+                            MR
+                        </div>
+                        <div class="p-4 rounded-2xl rounded-tr-none bg-amber-500 text-slate-950 font-medium space-y-1">
+                            <p>Thanks Alex! The drive-thru pickup took literally 45 seconds. Quick question: can I return the chainsaw tomorrow instead of Thursday if I finish early?</p>
+                            <span class="text-[10px] text-slate-800 block pt-1">Yesterday at 5:12 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Depot Agent Message -->
+                    <div class="flex items-start gap-3 max-w-lg">
+                        <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center font-bold text-[10px] flex-shrink-0">
+                            DH
+                        </div>
+                        <div class="p-4 rounded-2xl rounded-tl-none bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 space-y-1">
+                            <p class="font-semibold text-[10px] text-amber-500">Alex · Depot Coordinator</p>
+                            <p>Absolutely! If you drop it off early, our billing engine automatically recalibrates your rental cost and releases your $150 deposit hold on the spot. Just pull into the return lane anytime before 7:00 PM.</p>
+                            <span class="text-[10px] text-slate-400 block pt-1">Today at 8:30 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input Form -->
+                <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+                    <form onsubmit="event.preventDefault(); appendUserChat();" class="flex gap-2">
+                        <input type="text" id="chat-input-text" placeholder="Type a message to the depot manager..." class="flex-grow px-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                        <button type="submit" class="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs transition shadow-sm flex items-center gap-1.5">
+                            <span>Send</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chat Helper Script -->
+    <script>
+        function appendUserChat() {
+            const input = document.getElementById('chat-input-text');
+            const container = document.getElementById('chat-messages-container');
+            if (!input || !input.value.trim()) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'flex items-start gap-3 max-w-lg ml-auto flex-row-reverse';
+            userMsg.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-[10px] flex-shrink-0">MR</div>
+                <div class="p-4 rounded-2xl rounded-tr-none bg-amber-500 text-slate-950 font-medium space-y-1">
+                    <p>${input.value}</p>
+                    <span class="text-[10px] text-slate-800 block pt-1">Just now</span>
+                </div>
+            `;
+            container.appendChild(userMsg);
+            input.value = '';
+            container.scrollTop = container.scrollHeight;
+
+            setTimeout(() => {
+                const reply = document.createElement('div');
+                reply.className = 'flex items-start gap-3 max-w-lg';
+                reply.innerHTML = `
+                    <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center font-bold text-[10px] flex-shrink-0">DH</div>
+                    <div class="p-4 rounded-2xl rounded-tl-none bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 space-y-1">
+                        <p class="font-semibold text-[10px] text-amber-500">Alex · Depot Coordinator</p>
+                        <p>Got it, Marcus! We have updated your ticket notes. Let us know if you need any extra diamond blades or safety straps!</p>
+                        <span class="text-[10px] text-slate-400 block pt-1">Just now</span>
+                    </div>
+                `;
+                container.appendChild(reply);
+                container.scrollTop = container.scrollHeight;
+            }, 1000);
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

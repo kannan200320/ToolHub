@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="toolhub-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+  </defs>
+  <!-- Background Squircle -->
+  <rect width="64" height="64" rx="16" fill="url(#bg-grad)" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="#f59e0b" stroke-width="2" stroke-opacity="0.8" />
+
+  <!-- Iconic Crossed Tool Symbol: Industrial Wrench & Screwdriver -->
+  <!-- 1. Screwdriver (slanted -45 deg) -->
+  <g transform="translate(32,32) rotate(-45) translate(-32,-32)">
+    <!-- Shaft -->
+    <rect x="29" y="10" width="6" height="34" rx="2" fill="#e4e4e7" />
+    <!-- Tip -->
+    <polygon points="28,44 36,44 34,55 30,55" fill="#a1a1aa" />
+    <!-- Screwdriver Handle with grip grooves -->
+    <rect x="26" y="9" width="12" height="18" rx="4" fill="url(#toolhub-grad)" />
+    <line x1="30" y1="12" x2="30" y2="24" stroke="#78350f" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="34" y1="12" x2="34" y2="24" stroke="#78350f" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <!-- 2. Combination Wrench (slanted 45 deg) -->
+  <g transform="translate(32,32) rotate(45) translate(-32,-32)">
+    <!-- Wrench Shaft -->
+    <rect x="28" y="14" width="8" height="36" rx="3" fill="url(#toolhub-grad)" stroke="#b45309" stroke-width="1" />
+    <rect x="30.5" y="20" width="3" height="24" rx="1" fill="#fde68a" opacity="0.6" />
+    <!-- Open Wrench Head (Top) -->
+    <path d="M22,16 C22,9 42,9 42,16 C42,19 39,21 37,19 C35,17 29,17 27,19 C25,21 22,19 22,16 Z" fill="url(#toolhub-grad)" stroke="#b45309" stroke-width="1" />
+    <!-- Ring / Box End (Bottom) -->
+    <circle cx="32" cy="50" r="7" fill="url(#toolhub-grad)" stroke="#b45309" stroke-width="1" />
+    <circle cx="32" cy="50" r="3.5" fill="#09090b" />
+  </g>
+</svg>

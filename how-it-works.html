@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Equipment & Machinery Rental Guide | ToolHub</title>
+    <meta name="description" content="Learn how simple renting heavy machinery and power tools is with ToolHub. 4 easy steps: select machinery, automated escrow hold, depot pickup or site delivery, and 60-second return.">
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            DEFAULT: '#f59e0b',
+                        },
+                        toolhub: {
+                            yellow: '#f59e0b',
+                            gold: '#ffb703',
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-glass-header bg-slate-50 dark:bg-toolhub-dark text-slate-700 dark:text-slate-300 font-sans antialiased">
+
+    <!-- Main Navigation Bar (Glassmorphic Header matching YogaSphere reference) -->
+    <header class="fixed top-0 left-0 right-0 w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Left: Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
+                        <i class="fa-solid fa-truck-monster"></i>
+                    </div>
+                    <span class="text-2xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
+                </a>
+
+                <!-- Center: Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <!-- Home Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold flex items-center gap-1.5 transition text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400">
+                            <span>Home</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-800 p-2.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition text-xs font-bold">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-amber-500 flex items-center justify-center text-sm"><i class="fa-solid fa-toolbox"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 1: DIY & Tools</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Renovation & Home Projects</span>
+                                </div>
+                            </a>
+                            <a href="home-contractor.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition text-xs font-bold mt-1">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-amber-500 flex items-center justify-center text-sm"><i class="fa-solid fa-truck-moving"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 2: Heavy Fleet</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Commercial Contractor Fleet</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Machinery Direct Link (Dropdown Removed) -->
+                    <a href="catalog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Machinery</a>
+
+                    <!-- Direct Links -->
+                    <a href="how-it-works.html" class="nav-link-item active px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">How It Works</a>
+                    <a href="pricing.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Rental Rates</a>
+                    <a href="about.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">About Us</a>
+                    <a href="blog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Guides & Tips</a>
+                    <a href="contact.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Contact</a>
+                </nav>
+
+                <!-- Right: Actions matching YogaSphere Reference exactly -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Dark / Light Theme Toggle (Symbol Only) -->
+                    <button data-toggle="theme" class="nav-icon-btn hidden sm:inline-flex" title="Toggle Light / Dark Mode">
+                        <i class="fa-solid fa-moon text-xs"></i>
+                    </button>
+
+                    <!-- RTL / LTR Direction Toggle (Symbol Only) -->
+                    <button data-toggle="direction" class="nav-icon-btn hidden sm:inline-flex" title="Toggle RTL / LTR layout">
+                        <i class="fa-solid fa-right-left text-[11px]"></i>
+                    </button>
+
+                    <!-- Cart Page Link -->
+                    <a href="cart.html" class="nav-icon-btn relative" title="View Reservation Cart">
+                        <i class="fa-solid fa-toolbox text-xs"></i>
+                        <span class="cart-count-badge absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-slate-950 font-black text-[9px] rounded-full flex items-center justify-center shadow">0</span>
+                    </a>
+
+                    <!-- Renter Login Pill CTA Button -->
+                    <a href="auth.html" class="nav-pill-btn hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-xs font-black uppercase tracking-wider btn-shine">
+                        <i class="fa-solid fa-circle-user text-sm"></i>
+                        <span>Renter Login</span>
+                    </a>
+
+                    <!-- Mobile Menu Hamburger -->
+                    <button data-toggle="mobile-menu" class="lg:hidden nav-icon-btn" title="Open Mobile Navigation">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header Banner with High-Quality Workflow Imagery -->
+    <section class="py-16 sm:py-20 bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 relative overflow-hidden transition-colors">
+        <div class="absolute inset-0 bg-hazard-stripes opacity-0 dark:opacity-10 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Details -->
+                <div class="lg:col-span-7 reveal-left">
+                    <span class="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1 rounded-full inline-block">
+                        STREAMLINED 4-STEP RENTAL WORKFLOW
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-black font-heading mt-4 leading-tight text-slate-900 dark:text-white">
+                        How Renting with ToolHub Works. <span class="text-amber-500">Fast, Digital & Frictionless.</span>
+                    </h1>
+                    <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+                        We've replaced old-school clipboard rental yards with fast online reservation, instant pre-authorization escrow, and 60-second express return check-ins.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-2.5 text-xs font-bold text-slate-700 dark:text-slate-300">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-mobile-screen text-amber-500"></i> Online Booking in 2 Min
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-truck-ramp-box text-amber-500"></i> Jobsite Delivery
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-qrcode text-amber-500"></i> 60-Sec Check-in
+                        </span>
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap items-center gap-4">
+                        <a href="catalog.html" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-lg shadow-amber-500/20 flex items-center gap-2 btn-shine">
+                            <span>Browse 15 Equipment Units</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="instructions.html" class="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-bold text-xs border border-slate-300 dark:border-slate-800 transition flex items-center gap-2">
+                            <i class="fa-solid fa-book text-amber-500"></i>
+                            <span>Equipment Instructions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: High-Quality Workflow Image Card -->
+                <div class="lg:col-span-5 reveal-right delay-150">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200 dark:border-slate-800 aspect-[4/3] group">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=85" alt="Jobsite Equipment Handover and Inspection Process" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-neutral-950/85 backdrop-blur-md text-amber-400 text-xs font-black px-3 py-1.5 rounded-xl border border-neutral-800 shadow">
+                            <i class="fa-solid fa-clipboard-check mr-1.5"></i>12-Point Pre-Trip Check
+                        </span>
+                        <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-neutral-900/90 backdrop-blur-md border border-neutral-800 flex items-center justify-between text-xs">
+                            <div>
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase">Return Protocol</span>
+                                <span class="font-extrabold text-white">Contactless Return & Inspection</span>
+                            </div>
+                            <span class="text-amber-400 font-black text-xs">Escrow Safe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive Step-by-Step Breakdown -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            <!-- Step 1 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-6 order-2 lg:order-1 reveal-left">
+                    <div class="inline-flex items-center gap-2 text-xs font-black text-amber-500 uppercase tracking-widest mb-2">
+                        <span class="w-8 h-8 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black icon-float">1</span>
+                        SELECT MACHINERY & DURATION
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 dark:text-white mt-2">
+                        Live Fleet Availability Synced in Real Time
+                    </h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed font-normal">
+                        Browse our full fleet of excavators, track loaders, boom lifts, and professional tools. See exact live unit counts sitting in each of our 14 equipment yards.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-bold text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> No reservation fees or upfront charges</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Automatic weekly & monthly volume discounts</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Optional bucket and breaker attachments</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-6 order-1 lg:order-2 reveal-right delay-150">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 aspect-[16/10] card-hover-lift">
+                        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1200&q=85" alt="Select Equipment" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85';">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-6 reveal-left">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 aspect-[16/10] card-hover-lift">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85" alt="Escrow Deposit" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1200&q=85';">
+                    </div>
+                </div>
+                <div class="lg:col-span-6 reveal-right delay-150">
+                    <div class="inline-flex items-center gap-2 text-xs font-black text-amber-500 uppercase tracking-widest mb-2">
+                        <span class="w-8 h-8 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center font-black icon-float">2</span>
+                        AUTOMATED ESCROW DEPOSIT
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 dark:text-white mt-2">
+                        Pre-Authorization Hold, Never Debited
+                    </h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed font-normal">
+                        To protect our equipment, a standard refundable security pre-authorization is placed on your card. Track your escrow hold status in real time right inside your customer portal.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-bold text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Bank-grade 256-bit encryption</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Net-30 trade credit for commercial contractors</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Optional $8/day damage waiver</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-6 order-2 lg:order-1 reveal-left">
+                    <div class="inline-flex items-center gap-2 text-xs font-black text-amber-500 uppercase tracking-widest mb-2">
+                        <span class="w-8 h-8 rounded-xl bg-sky-500 text-slate-950 flex items-center justify-center font-black icon-float">3</span>
+                        EXPRESS DRIVE-THRU OR SITE FLATBED
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 dark:text-white mt-2">
+                        Ready in 60 Minutes or Delivered Directly to You
+                    </h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed font-normal">
+                        Pull through our designated equipment yard drive-thru lane. Show your QR barcode on your phone, and our team will load your machine with towing safety tie-downs in under 2 minutes.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-bold text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> 100% full fuel tanks on all diesel/gas engines</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Free 2-minute controls and safety primer</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> 4-hour direct jobsite flatbed dispatch</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-6 order-1 lg:order-2 reveal-right delay-150">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 aspect-[16/10] card-hover-lift">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=85" alt="Jobsite Delivery" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=85';">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-6 reveal-left">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800 aspect-[16/10] card-hover-lift">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85" alt="Depot Drop-Off Barcode Scan & Deposit Release" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85';">
+                    </div>
+                </div>
+                <div class="lg:col-span-6 reveal-right delay-150">
+                    <div class="inline-flex items-center gap-2 text-xs font-black text-amber-500 uppercase tracking-widest mb-2">
+                        <span class="w-8 h-8 rounded-xl bg-orange-500 text-slate-950 flex items-center justify-center font-black icon-float">4</span>
+                        60-SECOND DROP-OFF & INSTANT REFUND
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-slate-900 dark:text-white mt-2">
+                        Drop Off, Scan Barcode, Deposit Released
+                    </h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed font-normal">
+                        Pull back into any of our 14 equipment yards. Our technician scans the serial barcode, runs a 60-second mechanical test, and triggers the automated hold release directly back to your card.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs font-bold text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Return receipt sent instantly via SMS</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Itemized tax invoice ready for download in portal</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> 24-hour after-hours key drop box available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Rental Flow & Escrow Timeline Simulator (Modern Dynamic Landing Feature) -->
+    <section class="py-16 bg-slate-100 dark:bg-neutral-900 text-slate-900 dark:text-white relative overflow-hidden border-y border-slate-200 dark:border-neutral-800 transition-colors">
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-black px-3.5 py-1 rounded-full uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-bolt text-amber-500"></i> Interactive Lifecycle Simulator
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white">Experience the 4-Phase Dispatch Workflow</h2>
+                <p class="text-slate-600 dark:text-neutral-400 text-xs sm:text-sm mt-2">Click each phase below to see how our automated telemetry, pre-authorization escrow, and return release synchronize in real time.</p>
+            </div>
+
+            <!-- Workflow interactive steps bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+                <button onclick="switchWorkflowStep(1)" id="flow-btn-1" class="workflow-step-btn active p-4 rounded-2xl bg-amber-500 text-slate-950 text-left transition transform hover:scale-[1.02] shadow-lg font-bold">
+                    <div class="flex items-center justify-between text-xs mb-1">
+                        <span class="font-black">PHASE 01</span>
+                        <i class="fa-solid fa-computer"></i>
+                    </div>
+                    <div class="text-sm font-extrabold leading-snug">Instant Web Booking</div>
+                    <div class="text-[11px] opacity-80 mt-0.5">Machine lock & slot assignment</div>
+                </button>
+                <button onclick="switchWorkflowStep(2)" id="flow-btn-2" class="workflow-step-btn p-4 rounded-2xl bg-white dark:bg-neutral-800 hover:bg-slate-50 dark:hover:bg-neutral-700 text-slate-700 dark:text-slate-300 text-left transition transform hover:scale-[1.02] border border-slate-200 dark:border-neutral-700 font-bold shadow-sm">
+                    <div class="flex items-center justify-between text-xs mb-1">
+                        <span class="font-black text-amber-500">PHASE 02</span>
+                        <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+                    </div>
+                    <div class="text-sm font-extrabold text-slate-900 dark:text-white leading-snug">Smart Escrow Hold</div>
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Pre-auth hold (never debited)</div>
+                </button>
+                <button onclick="switchWorkflowStep(3)" id="flow-btn-3" class="workflow-step-btn p-4 rounded-2xl bg-white dark:bg-neutral-800 hover:bg-slate-50 dark:hover:bg-neutral-700 text-slate-700 dark:text-slate-300 text-left transition transform hover:scale-[1.02] border border-slate-200 dark:border-neutral-700 font-bold shadow-sm">
+                    <div class="flex items-center justify-between text-xs mb-1">
+                        <span class="font-black text-amber-500">PHASE 03</span>
+                        <i class="fa-solid fa-qrcode text-sky-500"></i>
+                    </div>
+                    <div class="text-sm font-extrabold text-slate-900 dark:text-white leading-snug">60-Sec QR Pickup</div>
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Drive-thru barcode dispatch</div>
+                </button>
+                <button onclick="switchWorkflowStep(4)" id="flow-btn-4" class="workflow-step-btn p-4 rounded-2xl bg-white dark:bg-neutral-800 hover:bg-slate-50 dark:hover:bg-neutral-700 text-slate-700 dark:text-slate-300 text-left transition transform hover:scale-[1.02] border border-slate-200 dark:border-neutral-700 font-bold shadow-sm">
+                    <div class="flex items-center justify-between text-xs mb-1">
+                        <span class="font-black text-amber-500">PHASE 04</span>
+                        <i class="fa-solid fa-arrow-rotate-left text-amber-500"></i>
+                    </div>
+                    <div class="text-sm font-extrabold text-slate-900 dark:text-white leading-snug">Instant Deposit Release</div>
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Diagnostic scan & receipt</div>
+                </button>
+            </div>
+
+            <!-- Workflow Detail Display Card -->
+            <div class="bg-white dark:bg-neutral-950 rounded-3xl border border-slate-200 dark:border-neutral-800 p-6 sm:p-8 shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="inline-flex items-center gap-2 text-xs font-black text-amber-600 dark:text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full uppercase" id="flow-phase-tag">
+                            Phase 01: Instant Web Reservation
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black font-heading text-slate-900 dark:text-white" id="flow-phase-title">
+                            Live Fleet Telemetry & Instant Machine Reservation
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-neutral-300 leading-relaxed font-normal" id="flow-phase-desc">
+                            Select your desired tooling from our 4,500+ unit catalog. The engine checks physical depot serial counters in real time, reserves the exact VIN/Unit number, and locks your requested pickup date without charging any reservation fee.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div class="bg-slate-50 dark:bg-neutral-900 rounded-2xl p-4 border border-slate-200 dark:border-neutral-800">
+                                <span class="text-[11px] text-slate-500 dark:text-slate-400 block font-bold uppercase tracking-wider">Telemetry Metric</span>
+                                <span class="text-lg font-black text-slate-900 dark:text-white mt-1 block" id="flow-metric-1">0.14 sec lock</span>
+                            </div>
+                            <div class="bg-slate-50 dark:bg-neutral-900 rounded-2xl p-4 border border-slate-200 dark:border-neutral-800">
+                                <span class="text-[11px] text-slate-500 dark:text-slate-400 block font-bold uppercase tracking-wider">Contractor Protection</span>
+                                <span class="text-lg font-black text-emerald-600 dark:text-emerald-400 mt-1 block" id="flow-metric-2">Guaranteed Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <div class="bg-slate-950 rounded-2xl p-5 border border-slate-800 font-mono text-xs space-y-3 shadow-lg">
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+                                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> TELEMETRY DISPATCH LOG</span>
+                                <span class="text-amber-400 font-bold">NODE-TX #4489</span>
+                            </div>
+                            <div class="text-slate-300 space-y-1.5 text-[11px]" id="flow-log-terminal">
+                                <p class="text-emerald-400">✓ Unit selected: Simpson MegaShot 3200 PSI Washer</p>
+                                <p class="text-slate-400">> Location: Central Yard Bay #04</p>
+                                <p class="text-slate-400">> Telemetry serial: #SMP-3200-TX-99</p>
+                                <p class="text-amber-400">⚡ Unit reserved for Pickup: Today, 08:30 AM</p>
+                            </div>
+                            <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-[11px]">
+                                <span class="text-slate-400">Status Verification:</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold" id="flow-status-badge">READY TO DISPATCH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    function switchWorkflowStep(step) {
+        // Reset all buttons
+        for (let i = 1; i <= 4; i++) {
+            const btn = document.getElementById('flow-btn-' + i);
+            if (btn) {
+                btn.className = 'workflow-step-btn p-4 rounded-2xl bg-white dark:bg-neutral-800 hover:bg-slate-50 dark:hover:bg-neutral-700 text-slate-700 dark:text-slate-300 text-left transition transform hover:scale-[1.02] border border-slate-200 dark:border-neutral-700 font-bold shadow-sm';
+            }
+        }
+        const activeBtn = document.getElementById('flow-btn-' + step);
+        if (activeBtn) {
+            activeBtn.className = 'workflow-step-btn active p-4 rounded-2xl bg-amber-500 text-slate-950 text-left transition transform hover:scale-[1.02] shadow-lg font-bold';
+        }
+
+        const tag = document.getElementById('flow-phase-tag');
+        const title = document.getElementById('flow-phase-title');
+        const desc = document.getElementById('flow-phase-desc');
+        const m1 = document.getElementById('flow-metric-1');
+        const m2 = document.getElementById('flow-metric-2');
+        const logs = document.getElementById('flow-log-terminal');
+        const badge = document.getElementById('flow-status-badge');
+
+        if (step === 1) {
+            tag.innerText = 'Phase 01: Instant Web Reservation';
+            title.innerText = 'Live Fleet Telemetry & Instant Machine Reservation';
+            desc.innerText = 'Select your desired tooling from our 4,500+ unit catalog. The engine checks physical depot serial counters in real time, reserves the exact VIN/Unit number, and locks your requested pickup date without charging any reservation fee.';
+            m1.innerText = '0.14 sec lock';
+            m2.innerText = 'Guaranteed Ready';
+            badge.innerText = 'READY TO DISPATCH';
+            badge.className = 'px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold';
+            logs.innerHTML = '<p class="text-emerald-400">✓ Unit selected: Simpson MegaShot 3200 PSI Washer</p><p class="text-slate-400">> Location: Central Yard Bay #04</p><p class="text-slate-400">> Telemetry serial: #SMP-3200-TX-99</p><p class="text-amber-400">⚡ Unit reserved for Pickup: Today, 08:30 AM</p>';
+        } else if (step === 2) {
+            tag.innerText = 'Phase 02: Automated Escrow Hold';
+            title.innerText = '256-Bit Encrypted Security Pre-Authorization';
+            desc.innerText = 'A temporary escrow pre-authorization is placed with your card provider to protect the fleet during your rental. Funds are NEVER debited from your checking or credit line, remaining untouched while you work.';
+            m1.innerText = '$500.00 Hold';
+            m2.innerText = '0% Cash Debited';
+            badge.innerText = 'ESCROW ACTIVE';
+            badge.className = 'px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-400 font-bold';
+            logs.innerHTML = '<p class="text-sky-400">✓ Stripe Escrow pre-authorization initialized</p><p class="text-slate-400">> Hold Reference: #TX-HOLD-88219</p><p class="text-slate-400">> Status: Authorized (Pending Return)</p><p class="text-emerald-400">✓ Card balance untouched (Pre-Auth only)</p>';
+        } else if (step === 3) {
+            tag.innerText = 'Phase 03: 60-Second Drive-Thru Pickup';
+            title.innerText = 'Express QR Scan & Direct Yard Loading';
+            desc.innerText = 'Arrive at any of our 14 equipment depots. Drive straight through the express trailer lane, present your digital QR pass, and our team will load and secure your machine with heavy tie-downs in under 2 minutes.';
+            m1.innerText = '60 Sec Average';
+            m2.innerText = 'Tied-Down & Fueled';
+            badge.innerText = 'ON JOBSITE';
+            badge.className = 'px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 font-bold';
+            logs.innerHTML = '<p class="text-amber-400">✓ Yard Gate Reader: Mobile QR Scanned</p><p class="text-slate-400">> Bay Attendant: Yard Bay #04 loaded</p><p class="text-slate-400">> Full Fuel Tank confirmed (100% Diesel)</p><p class="text-emerald-400">✓ Renter drove out at 08:32 AM (2 min total)</p>';
+        } else if (step === 4) {
+            tag.innerText = 'Phase 04: Instant Deposit Release';
+            title.innerText = 'Automated Diagnostic Check & Hold Cancellation';
+            desc.innerText = 'When you pull back into the depot, our technician scans the machine hour meter and fluid levels. Our cloud system automatically triggers the bank release of your escrow deposit and emails your final itemized tax receipt.';
+            m1.innerText = 'Instant Trigger';
+            m2.innerText = '100% Refunded';
+            badge.innerText = 'DEPOSIT RELEASED';
+            badge.className = 'px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold';
+            logs.innerHTML = '<p class="text-emerald-400">✓ Equipment checked in: 0 Damage / Clean</p><p class="text-slate-400">> Hour meter logged: +12.4 hrs operational</p><p class="text-emerald-400">⚡ Bank Pre-Authorization cancelled ($500.00)</p><p class="text-sky-400">✓ PDF Tax Invoice dispatched to email</p>';
+        }
+    }
+    </script>
+
+    <!-- FAQ Accordions -->
+    <section class="py-20 bg-slate-100 dark:bg-toolhub-dark/70 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-black uppercase tracking-widest text-amber-500">FREQUENTLY ASKED QUESTIONS</span>
+                <h2 class="text-3xl font-extrabold font-heading text-slate-900 dark:text-white mt-1">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4 accordion-group">
+                <div class="bg-white dark:bg-toolhub-card rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center" data-accordion-target="#faq-1">
+                        <span>How soon is my security deposit escrow released after drop-off?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon text-xs text-amber-500 transition-transform"></i>
+                    </button>
+                    <div id="faq-1" class="accordion-content hidden px-5 pb-5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3">
+                        Immediately! As soon as our depot attendant conducts the 60-second mechanical test and scans the barcode, our automated billing engine cancels the pre-authorization hold. Depending on your bank, funds reflect in 1 to 24 hours.
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-toolhub-card rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center" data-accordion-target="#faq-2">
+                        <span>What happens if an excavator or machine breaks down on site?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon text-xs text-amber-500 transition-transform"></i>
+                    </button>
+                    <div id="faq-2" class="accordion-content hidden px-5 pb-5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3">
+                        Our 24/7 Rapid Response mobile maintenance fleet will send a certified field technician to your jobsite within 2 hours to repair the machine or swap it out with a fresh replacement unit with zero rental downtime charge.
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-toolhub-card rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+                    <button class="w-full p-5 text-left font-bold text-sm text-slate-900 dark:text-white flex justify-between items-center" data-accordion-target="#faq-3">
+                        <span>Can I open a commercial trade credit account?</span>
+                        <i class="fa-solid fa-chevron-down accordion-icon text-xs text-amber-500 transition-transform"></i>
+                    </button>
+                    <div id="faq-3" class="accordion-content hidden px-5 pb-5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3">
+                        Yes! General contractors and builders can register for Net-30 or Net-60 trade terms via our portal, which eliminates individual pre-authorizations and offers monthly consolidated billing.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-template-bg text-slate-400 text-sm pt-14 sm:pt-20 pb-12 border-t border-slate-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+                <!-- Col 1: Brand & Contact (Desktop 6 cols, Tablet full, Mobile full) -->
+                <div class="sm:col-span-2 lg:col-span-6 space-y-5 sm:space-y-6">
+                    <a href="index.html" class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl sm:text-2xl shadow-lg shadow-amber-500/20 shrink-0">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <span class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                    </a>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
+                        Curating premium heavy equipment, commercial construction machinery, and precision DIY power tools for contractors, craftsmen, and home renovators worldwide.
+                    </p>
+
+                    <!-- Contact Rows with Uniform Gold Icon Badges -->
+                    <div class="space-y-3 text-xs text-slate-300">
+                        <a href="contact.html" class="flex items-start gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs mt-0.5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+                            <span class="leading-relaxed">480 Broadway Ave, Theatrical District, Suite 120, New York, NY 10013</span>
+                        </a>
+                        <a href="tel:+18005558665" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <span class="leading-relaxed">+1 (800) 555-TOOL &bull; +1 (212) 555-0199</span>
+                        </a>
+                        <a href="mailto:rentals@toolhub-equipment.com" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <span class="leading-relaxed break-all">rentals@toolhub-equipment.com</span>
+                        </a>
+                        <div class="flex items-center gap-3 text-slate-400 text-xs">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs">
+                                <i class="fa-solid fa-clock"></i>
+                            </span>
+                            <span class="leading-relaxed">Mon–Fri: 6:30 AM–7:00 PM &bull; Sat: 7:00 AM–4:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Icon Pills -->
+                    <div class="flex items-center gap-2.5 pt-1">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="X / Twitter" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Popular Categories (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">TOOL OCCASIONS & CATEGORIES</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html?category=power-tools" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">⚡</span>
+                                <span>Cordless Power Tools & Saws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=ladders" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🪜</span>
+                                <span>Extension Ladders & Scaffolding</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=painting" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🎨</span>
+                                <span>Airless Paint & Drywall Sprayers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=gardening" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🌿</span>
+                                <span>Garden Rototillers & Chainsaws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=earthmoving" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🚜</span>
+                                <span>Mini Excavators & Track Skid Steers</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="catalog.html" class="inline-flex items-center gap-1.5 mt-5 sm:mt-6 text-xs font-black text-amber-400 hover:text-amber-300 transition group">
+                        <span>View All Equipment & Tools</span>
+                        <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Col 3: Services & Care (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">SERVICES & CARE</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>All Rental Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Pricing & Security Deposit</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-it-works.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Direct Jobsite Delivery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>100% Uptime Guarantee</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home-contractor.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Commercial Net-30 Trade</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Divider & Navigation Links -->
+            <div class="pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
+                <p>© 2026 ToolHub Equipment & Tool Rental Co. All rights reserved.</p>
+                <div class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2">
+                    <a href="how-it-works.html" class="hover:text-amber-400 transition">Rental Terms</a>
+                    <a href="pricing.html" class="hover:text-amber-400 transition">Deposit Policy</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">Yard Locator</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">24/7 Support Desk</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Drawer (Strictly Matching Lap View Nav Structure) -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
+        <!-- Header: Menu title & Close button -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-2">
+            <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
+            <button data-close="mobile-menu" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" aria-label="Close menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links (Exact Match to Lap View Nav) -->
+        <nav class="flex-grow flex flex-col space-y-1 overflow-y-auto pr-1">
+            <!-- Collapsible Home Accordion -->
+            <div class="py-1">
+                <button type="button" data-mobile-submenu-toggle="mobile-home-submenu" class="w-full flex items-center justify-between text-base font-semibold text-slate-900 dark:text-white hover:text-amber-500 py-2 transition-colors" aria-expanded="true">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-down submenu-arrow text-xs text-slate-400 transition-transform duration-200" style="transform: rotate(180deg);"></i>
+                </button>
+                <div id="mobile-home-submenu" class="border-l-2 border-slate-200 dark:border-slate-700 pl-4 ml-2 my-1 space-y-2">
+                    <a href="index.html" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-amber-500 py-1 transition-colors">Home 1: DIY & Tools</a>
+                    <a href="home-contractor.html" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-amber-500 py-1 transition-colors">Home 2: Heavy Fleet</a>
+                </div>
+            </div>
+
+            <a href="catalog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Machinery</a>
+            <a href="how-it-works.html" class="block text-base font-semibold text-amber-500 py-2 transition-colors">How It Works</a>
+            <a href="pricing.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Rental Rates</a>
+            <a href="about.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">About Us</a>
+            <a href="blog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Guides & Tips</a>
+            <a href="contact.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Contact</a>
+
+            <!-- Cart Link -->
+            <a href="cart.html" class="flex items-center justify-between text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-toolbox text-amber-500 text-sm"></i>
+                    <span>Reservation Cart</span>
+                </span>
+                <span class="cart-count-badge w-5 h-5 bg-amber-500 text-slate-950 font-black text-xs rounded-full flex items-center justify-center shadow">0</span>
+            </a>
+
+            <!-- Renter Login Button (Identical to Lap View Nav) -->
+            <div class="pt-3">
+                <a href="auth.html" class="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-md btn-shine">
+                    <i class="fa-solid fa-circle-user text-sm"></i>
+                    <span>RENTER LOGIN</span>
+                </a>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="border-t border-slate-200 dark:border-slate-800 my-4"></div>
+
+            <!-- Bottom Toggle Buttons (Below the menu as in Image 2) -->
+            <div class="flex items-center justify-around py-2">
+                <button type="button" data-toggle="theme" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon text-2xl"></i>
+                </button>
+                <button type="button" data-toggle="direction" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
+                    <i class="fa-solid fa-right-left text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

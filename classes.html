@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Masterclasses & Training - ToolHub Heavy Rentals</title>
+    <meta name="description" content="Master heavy machinery, precision saws, paint sprayers, and scaffolding with hands-on certified masterclasses taught by veteran tradesmen at ToolHub Depots.">
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            DEFAULT: '#f59e0b',
+                        },
+                        toolhub: {
+                            yellow: '#f59e0b',
+                            gold: '#ffb703',
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-glass-header bg-slate-50 dark:bg-toolhub-dark text-slate-700 dark:text-slate-300 font-sans antialiased">
+
+    <!-- Main Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Left: Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
+                        <i class="fa-solid fa-truck-monster"></i>
+                    </div>
+                    <span class="text-2xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
+                </a>
+
+                <!-- Center: Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <!-- Home Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold flex items-center gap-1.5 transition text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400">
+                            <span>Home</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-800 p-2.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition text-xs font-bold">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-amber-500 flex items-center justify-center text-sm"><i class="fa-solid fa-toolbox"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 1: DIY & Tools</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Renovation & Home Projects</span>
+                                </div>
+                            </a>
+                            <a href="home-contractor.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition text-xs font-bold mt-1">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-amber-500 flex items-center justify-center text-sm"><i class="fa-solid fa-truck-moving"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 2: Heavy Fleet</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Commercial Contractor Fleet</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="catalog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Machinery</a>
+                    <a href="how-it-works.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">How It Works</a>
+                    <a href="pricing.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Rental Rates</a>
+                    <a href="about.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">About Us</a>
+                    <a href="blog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Guides & Tips</a>
+                    <a href="contact.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Contact</a>
+                </nav>
+
+                <!-- Right: Actions -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button data-toggle="theme" class="nav-icon-btn hidden sm:inline-flex" title="Toggle Light / Dark Mode">
+                        <i class="fa-solid fa-moon text-xs"></i>
+                    </button>
+                    <button data-toggle="direction" class="nav-icon-btn hidden sm:inline-flex" title="Toggle RTL / LTR layout">
+                        <i class="fa-solid fa-right-left text-[11px]"></i>
+                    </button>
+                    <a href="cart.html" class="nav-icon-btn relative" title="View Reservation Cart">
+                        <i class="fa-solid fa-toolbox text-xs"></i>
+                        <span class="cart-count-badge absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-slate-950 font-black text-[9px] rounded-full flex items-center justify-center shadow">0</span>
+                    </a>
+                    <a href="auth.html" class="nav-pill-btn hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-xs font-black uppercase tracking-wider btn-shine">
+                        <i class="fa-solid fa-circle-user text-sm"></i>
+                        <span>Renter Login</span>
+                    </a>
+                    <button data-toggle="mobile-menu" class="lg:hidden nav-icon-btn" title="Open Mobile Navigation">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with High-Resolution Relevant Imagery -->
+    <section class="py-20 bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 relative overflow-hidden transition-colors">
+        <div class="absolute inset-0 bg-hazard-stripes opacity-0 dark:opacity-10 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 reveal-left">
+                    <span class="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-graduation-cap"></i> TOOLHUB ACADEMY & CERTIFICATION
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-black font-heading mt-4 leading-tight text-slate-900 dark:text-white">
+                        Hands-On Equipment Masterclasses & Operator Certifications
+                    </h1>
+                    <p class="mt-6 text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+                        Learn directly from certified master tradesmen, OSHA-10/30 trainers, and heavy equipment field operators. Build confidence on real machines in our dedicated depot proving yards before renting.
+                    </p>
+                    <div class="mt-8 flex flex-wrap items-center gap-4">
+                        <a href="#classes-grid" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-lg shadow-amber-500/20 flex items-center gap-2 btn-shine">
+                            <span>Explore 2026 Masterclasses</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a href="#schedule-table" class="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-800 font-bold text-xs uppercase tracking-wider transition flex items-center gap-2">
+                            <span>View Depot Schedule</span>
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </a>
+                    </div>
+                    <div class="mt-10 grid grid-cols-3 gap-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+                        <div>
+                            <span class="text-3xl sm:text-4xl font-black font-heading text-amber-500">4,850+</span>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase font-bold">Graduates Certified</p>
+                        </div>
+                        <div>
+                            <span class="text-3xl sm:text-4xl font-black font-heading text-slate-900 dark:text-white">12 Labs</span>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase font-bold">Hands-On Programs</p>
+                        </div>
+                        <div>
+                            <span class="text-3xl sm:text-4xl font-black font-heading text-emerald-500">100%</span>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase font-bold">Practical Field Time</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 reveal-right delay-150">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200 dark:border-slate-800 aspect-[4/3] group">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=85" alt="ToolHub Equipment Training Academy and Certified Masterclasses" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=85';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-neutral-950/85 backdrop-blur-md text-amber-400 text-xs font-black px-3 py-1.5 rounded-xl border border-neutral-800 shadow">
+                            <i class="fa-solid fa-award mr-1.5"></i>OSHA 1926 Aligned Courseware
+                        </span>
+                        <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-neutral-900/90 backdrop-blur-md border border-neutral-800 flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                                <span class="font-bold text-white">Weekend & Evening Sessions</span>
+                            </div>
+                            <span class="text-amber-400 font-black">Open Registration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masterclass Features Bar -->
+    <section class="py-10 bg-white dark:bg-toolhub-card border-b border-slate-200 dark:border-toolhub-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="card-hover-lift delay-75 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center text-lg shrink-0 icon-float">
+                        <i class="fa-solid fa-id-card-clip"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs text-slate-900 dark:text-white uppercase tracking-wider">Official Certification</h4>
+                        <p class="text-[11px] text-slate-500 dark:text-zinc-400">Digital credential & printable wallet card</p>
+                    </div>
+                </div>
+                <div class="card-hover-lift delay-150 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-500 flex items-center justify-center text-lg shrink-0 icon-float">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs text-slate-900 dark:text-white uppercase tracking-wider">15% Renter Rebate</h4>
+                        <p class="text-[11px] text-slate-500 dark:text-zinc-400">Tuition refunded on your next machine rental</p>
+                    </div>
+                </div>
+                <div class="card-hover-lift delay-200 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/15 text-blue-500 flex items-center justify-center text-lg shrink-0 icon-float">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs text-slate-900 dark:text-white uppercase tracking-wider">All PPE Provided</h4>
+                        <p class="text-[11px] text-slate-500 dark:text-zinc-400">Eye, ear, respirator & harness equipment</p>
+                    </div>
+                </div>
+                <div class="card-hover-lift delay-250 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/15 text-purple-500 flex items-center justify-center text-lg shrink-0 icon-float">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xs text-slate-900 dark:text-white uppercase tracking-wider">Small Class Sizes</h4>
+                        <p class="text-[11px] text-slate-500 dark:text-zinc-400">Max 6 students per instructor for safety</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Course Catalog Grid -->
+    <section id="classes-grid" class="py-16 bg-slate-50 dark:bg-toolhub-dark border-b border-slate-200 dark:border-toolhub-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 reveal-up">
+                <span class="text-xs font-black uppercase tracking-widest text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                    CERTIFIED MASTERCLASS CURRICULUM
+                </span>
+                <h2 class="text-3xl font-black font-heading text-slate-900 dark:text-white mt-3">
+                    Choose Your Specialization & Machine Track
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-zinc-400 mt-2">
+                    Every workshop combines rigorous classroom theory with direct cockpit or trigger time in our enclosed safety bays.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1000&q=85" alt="Compact Excavator Operator Certification" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                HEAVY FLEET
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md text-white text-xs font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                $295 <span class="text-[10px] text-slate-400 font-normal">/ Seat</span>
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+                                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i>8 Hours (1 Day)</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-users text-amber-500 mr-1"></i>Max 6 Students</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Compact Excavator & Skid Steer Precision Maneuvering</h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2 leading-relaxed">
+                                Master joystick controls, grading depth sensors, zero-tail swing clearances, and high-efficiency trenching techniques on Cat 302.7 & Kubota rigs.
+                            </p>
+                            <ul class="mt-4 space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Pre-trip telematics & fluid diagnostics</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Trench wall stabilization & utility locates</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Heavy trailer tie-down & towing safety</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openRSVP('Compact Excavator & Skid Steer Precision Maneuvering', '$295')" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow btn-shine">
+                            <span>Reserve Class Seat</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1000&q=85" alt="Commercial Airless Paint Sprayer Masterclass" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-sky-400 text-[10px] font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                PAINTING & FINISHING
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md text-white text-xs font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                $145 <span class="text-[10px] text-slate-400 font-normal">/ Seat</span>
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+                                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i>4 Hours (Half Day)</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-users text-amber-500 mr-1"></i>Max 8 Students</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Commercial Airless Paint Spraying & Drywall Texture</h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2 leading-relaxed">
+                                Avoid overspray, tip clogs, and uneven coats. Hands-on application using Graco Ultra Max II airless rigs with latex, elastomeric, and lacquer coatings.
+                            </p>
+                            <ul class="mt-4 space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Tip sizing & pressure dial calibration</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> 50% overlap gun technique & feathering</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> 10-minute fast pump flush & storage cycle</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openRSVP('Commercial Airless Paint Spraying Workshop', '$145')" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow btn-shine">
+                            <span>Reserve Class Seat</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/0e/fc/27/0efc273b5b97375b89a51712b13a1b01.jpg" alt="Concrete Sawing and Core Drilling Certification" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85';">
+                            <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                CUTTING & DEMOLITION
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md text-white text-xs font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                $220 <span class="text-[10px] text-slate-400 font-normal">/ Seat</span>
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+                                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i>6 Hours (1 Day)</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-users text-amber-500 mr-1"></i>Max 6 Students</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Diamond Masonry Sawing & Silica Dust OSHA Table 1</h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2 leading-relaxed">
+                                Learn proper wet vs dry cutting protocols on 14" gas handheld cutoff saws and core rigs while remaining strictly compliant with OSHA silica dust rules.
+                            </p>
+                            <ul class="mt-4 space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Wet suppression systems & diamond matrix selection</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Kickback zone avoidance & blade binding prevention</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> HEPA vacuum air filtration attachment setups</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openRSVP('Diamond Masonry Sawing & Silica Dust Certification', '$220')" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow btn-shine">
+                            <span>Reserve Class Seat</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/e7/68/0e/e7680e5a31a6e68621e1fbb1d7e63040.jpg" alt="Scaffold Erection & Fall Protection Workshop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85';">
+                            <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                ACCESS & SAFETY
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md text-white text-xs font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                $165 <span class="text-[10px] text-slate-400 font-normal">/ Seat</span>
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+                                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i>4 Hours (Half Day)</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-users text-amber-500 mr-1"></i>Max 10 Students</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Scaffolding Erection & Fall Arrest Protection (ANSI A10.8)</h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2 leading-relaxed">
+                                Learn how to properly assemble modular staging, tie-off points, guardrails, outrigger stabilizers, and calculate load bearing factors for multi-tier towers.
+                            </p>
+                            <ul class="mt-4 space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Base jack leveling & caster lock safety</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Full body harness inspection & D-ring tie-off</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Live erection drill in depot safety bay</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openRSVP('Scaffolding Erection & Fall Protection Workshop', '$165')" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow btn-shine">
+                            <span>Reserve Class Seat</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=85" alt="Precision Tile and Stone Wet Saw Masterclass" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                POWER TOOLS
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md text-white text-xs font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                $125 <span class="text-[10px] text-slate-400 font-normal">/ Seat</span>
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+                                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i>4 Hours (Half Day)</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-users text-amber-500 mr-1"></i>Max 8 Students</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Precision Tile & Masonry Wet Saw Cutting (10" Sliding)</h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2 leading-relaxed">
+                                Cut large format porcelain, travertine, and granite with zero chip edges. Learn plunge cuts, 45° bullnose miters, and submersible pump care.
+                            </p>
+                            <ul class="mt-4 space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Laser guide calibration & square rail alignment</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Diamond dressing stick blade refreshing</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Outlet and L-shaped cut execution</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openRSVP('Precision Tile & Masonry Wet Saw Workshop', '$125')" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow btn-shine">
+                            <span>Reserve Class Seat</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative aspect-video overflow-hidden bg-slate-900">
+                            <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=1000&q=85" alt="Arborist Chainsaw Safety & Maintenance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                GARDENING & ARBORIST
+                            </span>
+                            <span class="absolute bottom-3 right-3 bg-slate-900/90 backdrop-blur-md text-white text-xs font-black px-2.5 py-1 rounded-lg border border-slate-800">
+                                $185 <span class="text-[10px] text-slate-400 font-normal">/ Seat</span>
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-2">
+                                <span><i class="fa-regular fa-clock text-amber-500 mr-1"></i>6 Hours (1 Day)</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-users text-amber-500 mr-1"></i>Max 6 Students</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white">Commercial Chainsaw Safety, Directional Felling & Care</h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2 leading-relaxed">
+                                Master safe bucking, limbing, tension/compression wood identification, chain sharpening raker depths, and inertial chain brake testing.
+                            </p>
+                            <ul class="mt-4 space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Open-face directional notch calculation</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Kickback sector awareness & chain stopping dyno</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-[10px]"></i> Field bar dressing & 2-stroke fuel ratio mix</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="openRSVP('Chainsaw Safety & Directional Felling Masterclass', '$185')" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow btn-shine">
+                            <span>Reserve Class Seat</span>
+                            <i class="fa-solid fa-arrow-right text-[11px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule & Upcoming Dates Table -->
+    <section id="schedule-table" class="py-16 bg-white dark:bg-toolhub-card border-b border-slate-200 dark:border-toolhub-border reveal-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-xs font-black uppercase tracking-widest text-amber-500">2026 TRAINING CALENDAR</span>
+                    <h2 class="text-2xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white mt-1">
+                        Upcoming Depot Lab Sessions
+                    </h2>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-zinc-400 max-w-md">
+                    Classes run at ToolHub Central Depots with indoor climate-controlled simulators and outdoor heavy test trenches.
+                </p>
+            </div>
+
+            <div class="table-responsive-wrapper overflow-x-auto rounded-2xl border border-slate-200 dark:border-toolhub-border shadow-sm">
+                <table class="w-full text-left text-xs">
+                    <thead class="bg-slate-50 dark:bg-slate-900 text-slate-400 uppercase font-black tracking-wider text-[10px] border-b border-slate-200 dark:border-toolhub-border">
+                        <tr>
+                            <th class="p-4">Date & Time</th>
+                            <th class="p-4">Masterclass Program</th>
+                            <th class="p-4">Depot Location</th>
+                            <th class="p-4">Seats Left</th>
+                            <th class="p-4 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 dark:divide-toolhub-border text-slate-700 dark:text-slate-300 font-semibold">
+                        <tr class="hover:bg-slate-50 dark:hover:bg-toolhub-surface transition">
+                            <td class="p-4 font-bold text-slate-900 dark:text-white">
+                                <i class="fa-regular fa-calendar text-amber-500 mr-1.5"></i> Saturday, Oct 11 • 8:00 AM
+                            </td>
+                            <td class="p-4">Compact Excavator & Skid Steer Precision Maneuvering</td>
+                            <td class="p-4"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> Depot #1 (Broadway NY Yard)</td>
+                            <td class="p-4"><span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-500 font-bold">2 Seats Remaining</span></td>
+                            <td class="p-4 text-right">
+                                <button onclick="openRSVP('Compact Excavator & Skid Steer (Oct 11)', '$295')" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition">
+                                    Enroll Seat
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 dark:hover:bg-toolhub-surface transition">
+                            <td class="p-4 font-bold text-slate-900 dark:text-white">
+                                <i class="fa-regular fa-calendar text-amber-500 mr-1.5"></i> Tuesday, Oct 14 • 5:00 PM
+                            </td>
+                            <td class="p-4">Commercial Airless Paint Spraying Workshop</td>
+                            <td class="p-4"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> Depot #3 (Newark NJ Logistics Yard)</td>
+                            <td class="p-4"><span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 font-bold">5 Seats Remaining</span></td>
+                            <td class="p-4 text-right">
+                                <button onclick="openRSVP('Airless Paint Spraying (Oct 14)', '$145')" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition">
+                                    Enroll Seat
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 dark:hover:bg-toolhub-surface transition">
+                            <td class="p-4 font-bold text-slate-900 dark:text-white">
+                                <i class="fa-regular fa-calendar text-amber-500 mr-1.5"></i> Saturday, Oct 18 • 8:30 AM
+                            </td>
+                            <td class="p-4">Diamond Masonry Sawing & Silica OSHA Table 1</td>
+                            <td class="p-4"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> Depot #1 (Broadway NY Yard)</td>
+                            <td class="p-4"><span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-500 font-bold">3 Seats Remaining</span></td>
+                            <td class="p-4 text-right">
+                                <button onclick="openRSVP('Masonry Sawing & Silica (Oct 18)', '$220')" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition">
+                                    Enroll Seat
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 dark:hover:bg-toolhub-surface transition">
+                            <td class="p-4 font-bold text-slate-900 dark:text-white">
+                                <i class="fa-regular fa-calendar text-amber-500 mr-1.5"></i> Thursday, Oct 23 • 4:30 PM
+                            </td>
+                            <td class="p-4">Scaffolding Erection & Fall Protection (ANSI A10.8)</td>
+                            <td class="p-4"><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i> Depot #5 (Philadelphia PA Yard)</td>
+                            <td class="p-4"><span class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-500 font-bold">6 Seats Remaining</span></td>
+                            <td class="p-4 text-right">
+                                <button onclick="openRSVP('Scaffolding Erection (Oct 23)', '$165')" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition">
+                                    Enroll Seat
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Modal -->
+    <div id="rsvp-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="w-full max-w-lg bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+            <button onclick="closeRSVP()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 dark:bg-toolhub-surface text-slate-400 hover:text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-2 mb-2 text-amber-500 text-xs font-black uppercase tracking-widest">
+                <i class="fa-solid fa-graduation-cap"></i> TOOLHUB ACADEMY ENROLLMENT
+            </div>
+            <h3 class="text-xl font-black font-heading text-slate-900 dark:text-white" id="modal-class-title">Course Registration</h3>
+            <p class="text-xs text-slate-400 mt-1">Class Tuition: <span class="text-amber-500 font-bold" id="modal-class-price">$0</span> • Includes all tools, PPE, fuel, and credential card.</p>
+
+            <form onsubmit="handleRSVPSubmit(event)" class="mt-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Full Operator Name</label>
+                    <input type="text" required placeholder="John Carpenter" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-toolhub-surface border border-slate-200 dark:border-toolhub-border text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+                        <input type="email" required placeholder="john@contractor.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-toolhub-surface border border-slate-200 dark:border-toolhub-border text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Mobile Phone</label>
+                        <input type="tel" required placeholder="+1 (555) 019-2834" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-toolhub-surface border border-slate-200 dark:border-toolhub-border text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Preferred Training Depot</label>
+                    <select class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-toolhub-surface border border-slate-200 dark:border-toolhub-border text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                        <option>Depot #1 (480 Broadway Ave, NY Yard)</option>
+                        <option>Depot #3 (Newark Logistics Yard, NJ)</option>
+                        <option>Depot #5 (Philadelphia Industrial Port, PA)</option>
+                    </select>
+                </div>
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition shadow-lg shadow-amber-500/20">
+                        Confirm Seat & Receive Syllabus
+                    </button>
+                    <p class="text-[10px] text-slate-400 text-center mt-2">
+                        <i class="fa-solid fa-lock text-emerald-500 mr-1"></i> No instant payment required now. Pay at depot check-in.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-template-bg text-slate-400 text-sm pt-14 sm:pt-20 pb-12 border-t border-slate-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+                <!-- Col 1: Brand & Contact (Desktop 6 cols, Tablet full, Mobile full) -->
+                <div class="sm:col-span-2 lg:col-span-6 space-y-5 sm:space-y-6">
+                    <a href="index.html" class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl sm:text-2xl shadow-lg shadow-amber-500/20 shrink-0">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <span class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                    </a>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
+                        Curating premium heavy equipment, commercial construction machinery, and precision DIY power tools for contractors, craftsmen, and home renovators worldwide.
+                    </p>
+
+                    <!-- Contact Rows with Uniform Gold Icon Badges -->
+                    <div class="space-y-3 text-xs text-slate-300">
+                        <a href="contact.html" class="flex items-start gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs mt-0.5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+                            <span class="leading-relaxed">480 Broadway Ave, Theatrical District, Suite 120, New York, NY 10013</span>
+                        </a>
+                        <a href="tel:+18005558665" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <span class="leading-relaxed">+1 (800) 555-TOOL &bull; +1 (212) 555-0199</span>
+                        </a>
+                        <a href="mailto:rentals@toolhub-equipment.com" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <span class="leading-relaxed break-all">rentals@toolhub-equipment.com</span>
+                        </a>
+                        <div class="flex items-center gap-3 text-slate-400 text-xs">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs">
+                                <i class="fa-solid fa-clock"></i>
+                            </span>
+                            <span class="leading-relaxed">Mon–Fri: 6:30 AM–7:00 PM &bull; Sat: 7:00 AM–4:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Icon Pills -->
+                    <div class="flex items-center gap-2.5 pt-1">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="X / Twitter" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Popular Categories (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">TOOL OCCASIONS & CATEGORIES</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html?category=power-tools" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">⚡</span>
+                                <span>Cordless Power Tools & Saws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=ladders" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🪜</span>
+                                <span>Extension Ladders & Scaffolding</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=painting" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🎨</span>
+                                <span>Airless Paint & Drywall Sprayers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=gardening" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🌿</span>
+                                <span>Garden Rototillers & Chainsaws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=earthmoving" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🚜</span>
+                                <span>Mini Excavators & Track Skid Steers</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="catalog.html" class="inline-flex items-center gap-1.5 mt-5 sm:mt-6 text-xs font-black text-amber-400 hover:text-amber-300 transition group">
+                        <span>View All Equipment & Tools</span>
+                        <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Col 3: Services & Care (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">SERVICES & CARE</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>All Rental Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Pricing & Security Deposit</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-it-works.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Direct Jobsite Delivery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>100% Uptime Guarantee</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home-contractor.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Commercial Net-30 Trade</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Divider & Navigation Links -->
+            <div class="pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
+                <p>© 2026 ToolHub Equipment & Tool Rental Co. All rights reserved.</p>
+                <div class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2">
+                    <a href="how-it-works.html" class="hover:text-amber-400 transition">Rental Terms</a>
+                    <a href="pricing.html" class="hover:text-amber-400 transition">Deposit Policy</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">Yard Locator</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">24/7 Support Desk</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer (Offcanvas Slide-over) -->
+    <div id="cart-drawer-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-96 max-w-[90vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-sm">
+                    <i class="fa-solid fa-toolbox"></i>
+                </div>
+                <h3 class="font-black font-heading text-slate-900 dark:text-white">Rental Cart (<span id="cart-item-count">2</span>)</h3>
+            </div>
+            <button data-close="cart-drawer" class="text-slate-400 hover:text-white p-1 rounded-lg">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <div id="cart-items-container" class="flex-grow overflow-y-auto p-6 space-y-4"></div>
+
+        <div class="p-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 space-y-3">
+            <div class="flex justify-between text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span>Total Rental:</span>
+                <span id="cart-rental-total">$485.00</span>
+            </div>
+            <div class="flex justify-between text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span>Hold Deposit (Refundable):</span>
+                <span id="cart-deposit-total">$1,100.00</span>
+            </div>
+            <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between text-sm font-black text-slate-900 dark:text-white">
+                <span>Total Due Now:</span>
+                <span id="cart-grand-total" class="text-amber-500">$1,585.00</span>
+            </div>
+            <a href="auth.html" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider text-center transition flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20">
+                <span>Proceed to Checkout</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <p class="text-center text-[10px] text-slate-400 flex items-center justify-center gap-1">
+                <i class="fa-solid fa-lock text-emerald-500"></i> Encrypted 256-bit Bank-Level Authorization
+            </p>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Drawer (Template Matching Reference Image 2) -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
+        <!-- Header: Menu title & Close button -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-2">
+            <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
+            <button data-close="mobile-menu" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" aria-label="Close menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links (Exact Match to Lap View Nav) -->
+        <nav class="flex-grow flex flex-col space-y-1 overflow-y-auto pr-1">
+            <!-- Collapsible Home Accordion -->
+            <div class="py-1">
+                <button type="button" data-mobile-submenu-toggle="mobile-home-submenu" class="w-full flex items-center justify-between text-base font-semibold text-slate-900 dark:text-white hover:text-amber-500 py-2 transition-colors" aria-expanded="true">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-down submenu-arrow text-xs text-slate-400 transition-transform duration-200" style="transform: rotate(180deg);"></i>
+                </button>
+                <div id="mobile-home-submenu" class="border-l-2 border-slate-200 dark:border-slate-700 pl-4 ml-2 my-1 space-y-2">
+                    <a href="index.html" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-amber-500 py-1 transition-colors">Home 1: DIY & Tools</a>
+                    <a href="home-contractor.html" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-amber-500 py-1 transition-colors">Home 2: Heavy Fleet</a>
+                </div>
+            </div>
+
+            <a href="catalog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Machinery</a>
+            <a href="how-it-works.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">How It Works</a>
+            <a href="pricing.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Rental Rates</a>
+            <a href="about.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">About Us</a>
+            <a href="blog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Guides & Tips</a>
+            <a href="contact.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Contact</a>
+
+            <!-- Cart Link -->
+            <a href="cart.html" class="flex items-center justify-between text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-toolbox text-amber-500 text-sm"></i>
+                    <span>Reservation Cart</span>
+                </span>
+                <span class="cart-count-badge w-5 h-5 bg-amber-500 text-slate-950 font-black text-xs rounded-full flex items-center justify-center shadow">0</span>
+            </a>
+
+            <!-- Renter Login Button (Identical to Lap View Nav) -->
+            <div class="pt-3">
+                <a href="auth.html" class="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-md btn-shine">
+                    <i class="fa-solid fa-circle-user text-sm"></i>
+                    <span>RENTER LOGIN</span>
+                </a>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="border-t border-slate-200 dark:border-slate-800 my-4"></div>
+
+            <!-- Bottom Toggle Buttons (Below the menu as in Image 2) -->
+            <div class="flex items-center justify-around py-2">
+                <button type="button" data-toggle="theme" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon text-2xl"></i>
+                </button>
+                <button type="button" data-toggle="direction" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
+                    <i class="fa-solid fa-right-left text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- RSVP Modal JavaScript -->
+    <script>
+        function openRSVP(className, price) {
+            document.getElementById('modal-class-title').innerText = className;
+            document.getElementById('modal-class-price').innerText = price;
+            document.getElementById('rsvp-modal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeRSVP() {
+            document.getElementById('rsvp-modal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function handleRSVPSubmit(e) {
+            e.preventDefault();
+            const className = document.getElementById('modal-class-title').innerText;
+            closeRSVP();
+            if (window.ToolHub && window.ToolHub.showToast) {
+                window.ToolHub.showToast(`Seat reserved for "${className}"! Confirmation sent to email.`, 'success');
+            } else {
+                alert(`Seat reserved for "${className}"!`);
+            }
+        }
+    </script>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

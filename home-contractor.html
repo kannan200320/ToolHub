@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolHub Pro - Commercial Construction & Heavy Equipment Rental Fleet</title>
+    <meta name="description" content="ToolHub Contractor Fleet is built for construction pros, civil engineers, and heavy infrastructure builders. Rent excavators, wheel loaders, scissor lifts, and cranes with guaranteed 99.8% uptime SLA.">
+    <meta name="keywords" content="commercial equipment rental, civil construction machinery, fleet rental, excavator hire, telehandler, boom lift, contractor net-30">
+    <meta name="author" content="ToolHub Fleet Solutions">
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (v3 CDN with custom config) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        toolhub: {
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a',
+                            orange: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-glass-header bg-slate-50 dark:bg-neutral-950 text-slate-700 dark:text-neutral-300 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+
+    <!-- Main Navigation Bar (Glassmorphic Header matching YogaSphere reference) -->
+    <header class="fixed top-0 left-0 right-0 w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Left: Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
+                        <i class="fa-solid fa-truck-monster"></i>
+                    </div>
+                    <span class="text-2xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
+                </a>
+
+                <!-- Center: Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <!-- Home Dropdown (Active) -->
+                    <div class="relative group">
+                        <button class="nav-link-item active px-3 py-2 rounded-lg text-sm font-bold flex items-center gap-1.5 transition text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400">
+                            <span>Home</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-100 dark:border-neutral-800 p-2.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 transition text-xs font-bold">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-neutral-800 text-amber-500 flex items-center justify-center text-sm"><i class="fa-solid fa-toolbox"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 1: DIY & Tools</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Renovation & Home Projects</span>
+                                </div>
+                            </a>
+                            <a href="home-contractor.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 transition text-xs font-bold mt-1">
+                                <div class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-sm"><i class="fa-solid fa-truck-moving"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 2: Heavy Fleet</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Commercial Contractor Fleet</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Machinery Direct Link (No Dropdown) -->
+                    <a href="catalog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Machinery</a>
+
+                    <!-- Direct Links -->
+                    <a href="how-it-works.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">How It Works</a>
+                    <a href="pricing.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Rental Rates</a>
+                    <a href="about.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">About Us</a>
+                    <a href="blog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Guides & Tips</a>
+                    <a href="contact.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Contact</a>
+                </nav>
+
+                <!-- Right: Actions with Renter Login -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Dark / Light Theme Toggle (Symbol Only) -->
+                    <button data-toggle="theme" class="nav-icon-btn hidden sm:inline-flex" title="Toggle Light / Dark Mode">
+                        <i class="fa-solid fa-moon text-xs"></i>
+                    </button>
+
+                    <!-- RTL / LTR Direction Toggle (Symbol Only) -->
+                    <button data-toggle="direction" class="nav-icon-btn hidden sm:inline-flex" title="Toggle RTL / LTR layout">
+                        <i class="fa-solid fa-right-left text-[11px]"></i>
+                    </button>
+
+                    <!-- Cart Page Link -->
+                    <a href="cart.html" class="nav-icon-btn relative" title="View Reservation Cart">
+                        <i class="fa-solid fa-toolbox text-xs"></i>
+                        <span class="cart-count-badge absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-slate-950 font-black text-[9px] rounded-full flex items-center justify-center shadow">0</span>
+                    </a>
+
+                    <!-- Renter Login Pill CTA Button -->
+                    <a href="auth.html" class="nav-pill-btn hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-xs font-black uppercase tracking-wider btn-shine">
+                        <i class="fa-solid fa-circle-user text-sm"></i>
+                        <span>Renter Login</span>
+                    </a>
+
+                    <!-- Mobile Menu Hamburger Trigger -->
+                    <button data-toggle="mobile-menu" class="lg:hidden nav-icon-btn" aria-label="Open Navigation Menu">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: Commercial Contractor Heavy Fleet -->
+    <section class="relative bg-white dark:bg-neutral-950 text-slate-900 dark:text-white py-24 overflow-hidden border-b border-slate-200 dark:border-neutral-800 transition-colors">
+        <!-- Hero Background Image Overlay (dark mode only) -->
+        <div class="hidden dark:block absolute inset-0 z-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=85');"></div>
+        <div class="hidden dark:block absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/95 to-neutral-950/70 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Details -->
+                <div class="lg:col-span-7 reveal-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold mb-6">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-dot"></span>
+                        SAME-DAY FLATBED JOBSITE DELIVERY AVAILABLE
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight leading-tight text-slate-900 dark:text-white">
+                        Commercial Heavy Equipment Rental <span class="text-amber-500">Zero Jobsite Downtime.</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-slate-600 dark:text-neutral-300 leading-relaxed max-w-2xl">
+                        Power your jobsite with modern Caterpillar, Bobcat, Kubota, and Genie machinery. Rent excavators, telehandlers, scissor lifts, and industrial generators with flexible Net-30 trade credit.
+                    </p>
+
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="catalog.html" class="btn-shine px-7 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-sm shadow-xl shadow-amber-500/20 transition flex items-center gap-2">
+                            <span>Explore Heavy Fleet</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="pricing.html" class="px-7 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-slate-900 dark:text-white font-bold text-sm border border-slate-300 dark:border-neutral-700 transition flex items-center gap-2">
+                            <i class="fa-solid fa-handshake text-amber-500 dark:text-amber-400"></i>
+                            <span>Contractor Trade Credit</span>
+                        </a>
+                    </div>
+
+                    <!-- Fleet Metrics -->
+                    <div class="mt-12 pt-8 border-t border-slate-200 dark:border-neutral-800 grid grid-cols-3 gap-6">
+                        <div>
+                            <span class="text-3xl sm:text-4xl font-black font-heading text-amber-500">1,200+</span>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1 uppercase tracking-wider font-semibold">Heavy Units in Fleet</p>
+                        </div>
+                        <div>
+                            <span class="text-3xl sm:text-4xl font-black font-heading text-slate-900 dark:text-white">4 Hrs</span>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1 uppercase tracking-wider font-semibold">Average Jobsite Dispatch</p>
+                        </div>
+                        <div>
+                            <span class="text-3xl sm:text-4xl font-black font-heading text-emerald-600 dark:text-emerald-400">99.8%</span>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1 uppercase tracking-wider font-semibold">Fleet Uptime Guarantee</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image with Floating Heavy Machine Card -->
+                <div class="lg:col-span-5 relative reveal-right delay-150">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Main Hero Machine Card -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-200 dark:border-neutral-800 bg-slate-100 dark:bg-neutral-900 aspect-[4/3]">
+                            <img src="assets/images/cat-excavator.jpg" alt="Caterpillar 302.7 CR Mini Excavator" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&q=85';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+                            
+                            <div class="absolute top-4 left-4">
+                                <span class="text-xs font-black uppercase tracking-wider bg-amber-500 text-slate-950 px-3 py-1 rounded-full shadow">
+                                    FLAGSHIP HEAVY FLEET
+                                </span>
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <span class="text-xs font-bold text-amber-400">Earthmoving Division</span>
+                                <h3 class="text-xl font-bold font-heading mt-0.5">Caterpillar 302.7 CR Mini Excavator</h3>
+                                <div class="flex items-center justify-between mt-2 pt-2 border-t border-slate-700/80">
+                                    <span class="text-lg font-black text-white">$275 <span class="text-xs font-normal text-slate-400">/ day</span></span>
+                                    <a href="catalog.html" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-black transition flex items-center gap-1.5 shadow">
+                                        <span>Reserve Unit</span>
+                                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 1 -->
+                        <div class="absolute -top-6 -left-6 bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-200 dark:border-neutral-800 hidden sm:flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 dark:text-white text-sm">OSHA Certified</h5>
+                                <p class="text-[10px] text-slate-500 dark:text-neutral-400">50-point hydraulic check</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge 2 -->
+                        <div class="absolute -bottom-6 -right-6 bg-white/95 dark:bg-neutral-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-200 dark:border-neutral-800 hidden sm:flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-slate-900 dark:text-white text-sm">Jobsite Dispatch</h5>
+                                <p class="text-[10px] text-slate-500 dark:text-neutral-400">Guaranteed 4-hr delivery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heavy Fleet Category Grid -->
+    <section class="py-20 bg-white dark:bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-amber-500">HEAVY EQUIPMENT DIVISIONS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white mt-2">Engineered for Maximum Jobsite Production</h2>
+                <p class="mt-3 text-slate-600 dark:text-neutral-400 text-sm">Every heavy machine is serviced by factory-certified technicians with 100% fluid, hydraulic, and safety checks prior to delivery.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Fleet 1 -->
+                <div class="tool-card card-hover-lift delay-100 bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950">
+                            <img src="assets/images/cat-excavator.jpg" alt="Mini Excavator" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-amber-500">Earthmoving Division</span>
+                        <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mt-1">
+                            <a href="equipment-details.html?id=cat-excavator" class="hover:text-amber-500 transition">Caterpillar 302.7 CR Mini Excavator</a>
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-neutral-400 mt-2">Zero tail swing, 24.7 HP diesel, enclosed cab with AC, hydraulic thumb included.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900 dark:text-white">$275</span>
+                            <span class="text-xs text-slate-500">/day</span>
+                        </div>
+                        <a href="equipment-details.html?id=cat-excavator" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                    </div>
+                </div>
+
+                <!-- Fleet 2 -->
+                <div class="tool-card card-hover-lift delay-200 bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950">
+                            <img src="https://i.pinimg.com/1200x/9e/3c/d3/9e3cd3e492785789c5fe1c628bb13e59.jpg" alt="Bobcat Skid Steer" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-amber-500">Loading & Clearing</span>
+                        <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mt-1">
+                            <a href="equipment-details.html?id=bobcat-t76" class="hover:text-amber-500 transition">Bobcat T76 Compact Track Loader</a>
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-neutral-400 mt-2">74 HP inline engine, 2,900 lb operating capacity, high-flow auxiliary hydraulics.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900 dark:text-white">$310</span>
+                            <span class="text-xs text-slate-500">/day</span>
+                        </div>
+                        <a href="equipment-details.html?id=bobcat-t76" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                    </div>
+                </div>
+
+                <!-- Fleet 3 -->
+                <div class="tool-card card-hover-lift delay-300 bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950">
+                            <img src="https://i.pinimg.com/1200x/e4/b4/12/e4b412ad893abe62e353bf6dcfd4f53c.jpg" alt="Genie Boom Lift" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-amber-500">Aerial Access</span>
+                        <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mt-1">
+                            <a href="equipment-details.html?id=genie-s65" class="hover:text-amber-500 transition">Genie S-65 TraX Rough Terrain Boom</a>
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-neutral-400 mt-2">71 ft working height, 500 lb platform load, 4-point track drive for mud & gravel.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900 dark:text-white">$385</span>
+                            <span class="text-xs text-slate-500">/day</span>
+                        </div>
+                        <a href="equipment-details.html?id=genie-s65" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                    </div>
+                </div>
+
+                <!-- Fleet 4 -->
+                <div class="tool-card card-hover-lift delay-400 bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950">
+                            <img src="assets/images/honda-generator.jpg" alt="Commercial Generator" class="w-full h-full object-cover">
+                        </div>
+                        <span class="text-xs font-bold text-amber-500">Power Generation</span>
+                        <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mt-1">
+                            <a href="equipment-details.html?id=doosan-g70" class="hover:text-amber-500 transition">Doosan G70 Towable Diesel Generator</a>
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-neutral-400 mt-2">70 kVA prime power, ultra-quiet sound enclosure (65 dBA), 24-hour run fuel tank.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-black text-slate-900 dark:text-white">$215</span>
+                            <span class="text-xs text-slate-500">/day</span>
+                        </div>
+                        <a href="equipment-details.html?id=doosan-g70" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contractor Advantages Banner -->
+    <section class="py-20 bg-slate-100 dark:bg-neutral-950 text-slate-900 dark:text-white border-t border-slate-200 dark:border-neutral-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal-left">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-500">TOOLHUB COMMERCIAL TRADE ACCOUNT</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-heading mt-2 text-slate-900 dark:text-white">Build Faster with Commercial Trade Credit</h2>
+                    <p class="mt-4 text-slate-600 dark:text-neutral-300 text-sm sm:text-base leading-relaxed">
+                        Don't tie up capital in expensive heavy equipment that sits idle between contracts. Open a commercial trade account with ToolHub for preferred monthly billing, fleet reservations, and guaranteed swap-outs.
+                    </p>
+
+                    <div class="mt-8 space-y-4 text-sm font-semibold">
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5 icon-float">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Net-30 / Net-60 Payment Terms</h4>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-0.5">Pay after your project milestones without upfront cash deposits on large machinery.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5 icon-float">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">2-Hour Rapid On-Site Maintenance Swap</h4>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-0.5">If a machine suffers hydraulic or mechanical failure, our mobile tech repairs or replaces it in 2 hours.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5 icon-float">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Dedicated Fleet Logistics Manager</h4>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-0.5">One direct phone number to schedule site drop-offs, pickups, and permit clearances.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="auth.html" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm btn-shine">
+                            <span>Open Commercial Trade Account</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative reveal-right delay-150">
+                    <div class="rounded-3xl overflow-hidden border-2 border-slate-200 dark:border-neutral-700 shadow-2xl aspect-[4/3] card-hover-lift">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85" alt="Jobsite Equipment Fleet" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Heavy Fleet Telematics Terminal & 2-Hour Jobsite SLA -->
+    <section class="py-20 bg-slate-50 dark:bg-neutral-900 border-b border-slate-200 dark:border-neutral-800 text-slate-900 dark:text-white relative overflow-hidden transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Telematics Info -->
+                <div class="lg:col-span-6 space-y-6 reveal-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-wider">
+                        <i class="fa-solid fa-satellite-dish animate-pulse"></i>
+                        <span>FLEET TELEMATICS & GPS FLEET DISPATCH</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black font-heading tracking-tight leading-tight text-slate-900 dark:text-white">
+                        Real-Time Jobsite Telemetry & 2-Hour Replacement SLA
+                    </h2>
+                    <p class="text-sm text-slate-600 dark:text-neutral-400 leading-relaxed">
+                        Every machine dispatched to your jobsite includes factory cellular telematics. Our central dispatch monitors engine oil pressure, hydraulic flow, fuel levels, and geofence status in real-time.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="card-hover-lift delay-100 p-4 rounded-2xl bg-white dark:bg-neutral-950 border border-slate-200 dark:border-neutral-800 shadow-sm">
+                            <span class="text-2xl font-black text-amber-500 font-heading">2 Hours</span>
+                            <p class="text-xs font-bold text-slate-900 dark:text-white mt-1">Breakdown Swap SLA</p>
+                            <p class="text-[11px] text-slate-500 dark:text-neutral-400 mt-0.5">Free flatbed machine swap if unresolved within 120 mins.</p>
+                        </div>
+                        <div class="card-hover-lift delay-200 p-4 rounded-2xl bg-white dark:bg-neutral-950 border border-slate-200 dark:border-neutral-800 shadow-sm">
+                            <span class="text-2xl font-black text-emerald-600 dark:text-emerald-400 font-heading">100% DEF</span>
+                            <p class="text-xs font-bold text-slate-900 dark:text-white mt-1">Full Fuel Tank Delivery</p>
+                            <p class="text-[11px] text-slate-500 dark:text-neutral-400 mt-0.5">Arrives jobsite-ready with topped fluids & certified logbook.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <a href="auth.html" class="nav-pill-btn px-6 py-3.5 text-xs font-black uppercase tracking-wider inline-flex items-center gap-2 btn-shine">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span>Renter Login & Telematics</span>
+                        </a>
+                        <a href="contact.html" class="px-6 py-3.5 rounded-full bg-white dark:bg-neutral-800 hover:bg-slate-100 dark:hover:bg-neutral-700 text-slate-800 dark:text-white text-xs font-black uppercase tracking-wider transition inline-flex items-center gap-2 border border-slate-300 dark:border-neutral-700 shadow-sm">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>24/7 Dispatch Hotline</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Simulated Telematics Monitor Terminal -->
+                <div class="lg:col-span-6 bg-white dark:bg-neutral-950 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-neutral-800 shadow-xl relative">
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-neutral-800 mb-5">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
+                            <span class="font-mono text-xs font-black text-emerald-600 dark:text-emerald-400">TELEMATICS GATEWAY: ONLINE</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-slate-400 dark:text-neutral-500">DISPATCH V4.2</span>
+                    </div>
+
+                    <!-- Live Telemetry Feeds -->
+                    <div class="space-y-3 font-mono text-xs">
+                        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-slate-900 dark:text-white font-bold block">CAT 302.7 CR #TX-8802</span>
+                                <span class="text-[10px] text-slate-500 dark:text-neutral-400">Jobsite: South Loop Commercial</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-emerald-600 dark:text-emerald-400 font-bold">OPTIMAL</span>
+                                <span class="text-[10px] text-slate-500 dark:text-neutral-500 block">Fuel: 94% · 148.2 hrs</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-slate-900 dark:text-white font-bold block">Bobcat T66 Compact #TX-4491</span>
+                                <span class="text-[10px] text-slate-500 dark:text-neutral-400">Jobsite: West Ridge Metro</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-emerald-600 dark:text-emerald-400 font-bold">ACTIVE</span>
+                                <span class="text-[10px] text-slate-500 dark:text-neutral-500 block">Hydraulics: 100% · 210 hrs</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-slate-900 dark:text-white font-bold block">Genie Z-45/25 Boom #TX-1130</span>
+                                <span class="text-[10px] text-slate-500 dark:text-neutral-400">Jobsite: North Harbor Logistics</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-amber-600 dark:text-amber-400 font-bold">STANDBY</span>
+                                <span class="text-[10px] text-slate-500 dark:text-neutral-500 block">Battery: 98% · Certified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-neutral-800 text-[11px] text-slate-500 dark:text-neutral-400 flex items-center justify-between">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-lock text-amber-500"></i> Encrypted Cellular Feed</span>
+                        <span class="text-amber-600 dark:text-amber-400 font-bold">Auto-Sync 10s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Strictly styled after template reference image media_1788794453473.png) -->
+    <footer class="footer-template-bg text-slate-400 text-sm pt-14 sm:pt-20 pb-12 border-t border-slate-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+                <!-- Col 1: Brand & Contact (Desktop 6 cols, Tablet full, Mobile full) -->
+                <div class="sm:col-span-2 lg:col-span-6 space-y-5 sm:space-y-6">
+                    <a href="index.html" class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl sm:text-2xl shadow-lg shadow-amber-500/20 shrink-0">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <span class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                    </a>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
+                        Curating premium heavy equipment, commercial construction machinery, and precision DIY power tools for contractors, craftsmen, and home renovators worldwide.
+                    </p>
+
+                    <!-- Contact Rows with Uniform Gold Icon Badges -->
+                    <div class="space-y-3 text-xs text-slate-300">
+                        <a href="contact.html" class="flex items-start gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs mt-0.5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+                            <span class="leading-relaxed">480 Broadway Ave, Theatrical District, Suite 120, New York, NY 10013</span>
+                        </a>
+                        <a href="tel:+18005558665" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <span class="leading-relaxed">+1 (800) 555-TOOL &bull; +1 (212) 555-0199</span>
+                        </a>
+                        <a href="mailto:rentals@toolhub-equipment.com" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <span class="leading-relaxed break-all">rentals@toolhub-equipment.com</span>
+                        </a>
+                        <div class="flex items-center gap-3 text-slate-400 text-xs">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs">
+                                <i class="fa-solid fa-clock"></i>
+                            </span>
+                            <span class="leading-relaxed">Mon–Fri: 6:30 AM–7:00 PM &bull; Sat: 7:00 AM–4:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Icon Pills -->
+                    <div class="flex items-center gap-2.5 pt-1">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="X / Twitter" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Popular Categories (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">TOOL OCCASIONS & CATEGORIES</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html?category=power-tools" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">⚡</span>
+                                <span>Cordless Power Tools & Saws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=ladders" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🪜</span>
+                                <span>Extension Ladders & Scaffolding</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=painting" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🎨</span>
+                                <span>Airless Paint & Drywall Sprayers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=gardening" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🌿</span>
+                                <span>Garden Rototillers & Chainsaws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=earthmoving" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🚜</span>
+                                <span>Mini Excavators & Track Skid Steers</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="catalog.html" class="inline-flex items-center gap-1.5 mt-5 sm:mt-6 text-xs font-black text-amber-400 hover:text-amber-300 transition group">
+                        <span>View All Equipment & Tools</span>
+                        <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Col 3: Services & Care (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">SERVICES & CARE</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>All Rental Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Pricing & Security Deposit</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-it-works.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Direct Jobsite Delivery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>100% Uptime Guarantee</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home-contractor.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Commercial Net-30 Trade</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Divider & Navigation Links -->
+            <div class="pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
+                <p>© 2026 ToolHub Equipment & Tool Rental Co. All rights reserved.</p>
+                <div class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2">
+                    <a href="how-it-works.html" class="hover:text-amber-400 transition">Rental Terms</a>
+                    <a href="pricing.html" class="hover:text-amber-400 transition">Deposit Policy</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">Yard Locator</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">24/7 Support Desk</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Mobile Menu Drawer (Strictly Matching Lap View Nav Structure) -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
+        <!-- Header: Menu title & Close button -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-2">
+            <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
+            <button data-close="mobile-menu" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" aria-label="Close menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links (Exact Match to Lap View Nav) -->
+        <nav class="flex-grow flex flex-col space-y-1 overflow-y-auto pr-1">
+            <!-- Collapsible Home Accordion -->
+            <div class="py-1">
+                <button type="button" data-mobile-submenu-toggle="mobile-home-submenu" class="w-full flex items-center justify-between text-base font-semibold text-slate-900 dark:text-white hover:text-amber-500 py-2 transition-colors" aria-expanded="true">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-down submenu-arrow text-xs text-slate-400 transition-transform duration-200" style="transform: rotate(180deg);"></i>
+                </button>
+                <div id="mobile-home-submenu" class="border-l-2 border-slate-200 dark:border-slate-700 pl-4 ml-2 my-1 space-y-2">
+                    <a href="index.html" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-amber-500 py-1 transition-colors">Home 1: DIY & Tools</a>
+                    <a href="home-contractor.html" class="block text-sm font-semibold text-amber-500 py-1 transition-colors">Home 2: Heavy Fleet</a>
+                </div>
+            </div>
+
+            <a href="catalog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Machinery</a>
+            <a href="how-it-works.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">How It Works</a>
+            <a href="pricing.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Rental Rates</a>
+            <a href="about.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">About Us</a>
+            <a href="blog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Guides & Tips</a>
+            <a href="contact.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Contact</a>
+
+            <!-- Cart Link -->
+            <a href="cart.html" class="flex items-center justify-between text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-toolbox text-amber-500 text-sm"></i>
+                    <span>Reservation Cart</span>
+                </span>
+                <span class="cart-count-badge w-5 h-5 bg-amber-500 text-slate-950 font-black text-xs rounded-full flex items-center justify-center shadow">0</span>
+            </a>
+
+            <!-- Renter Login Button (Identical to Lap View Nav) -->
+            <div class="pt-3">
+                <a href="auth.html" class="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-md btn-shine">
+                    <i class="fa-solid fa-circle-user text-sm"></i>
+                    <span>RENTER LOGIN</span>
+                </a>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="border-t border-slate-200 dark:border-slate-800 my-4"></div>
+
+            <!-- Bottom Toggle Buttons (Below the menu as in Image 2) -->
+            <div class="flex items-center justify-around py-2">
+                <button type="button" data-toggle="theme" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon text-2xl"></i>
+                </button>
+                <button type="button" data-toggle="direction" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
+            </div>
+        </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

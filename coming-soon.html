@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - ToolHub Mega Depot Expansion</title>
+    <meta name="description" content="We are expanding our commercial heavy equipment and tool rental fleet to new cities. Subscribe for launch discounts and early rental reservations.">
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            DEFAULT: '#f59e0b',
+                        },
+                        toolhub: {
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#09090b] text-white font-sans min-h-screen flex flex-col justify-between relative overflow-hidden">
+
+    <!-- Background Ambient Glow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <!-- Top Simple Bar -->
+    <header class="p-6 max-w-7xl mx-auto w-full flex justify-between items-center relative z-10">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
+                <i class="fa-solid fa-truck-monster"></i>
+            </div>
+            <span class="text-2xl font-black font-heading tracking-tight text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
+        </a>
+        <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Dark Mode Toggle (Symbol Only) -->
+            <button data-toggle="theme" class="nav-icon-btn" title="Toggle Light / Dark Mode">
+                <i class="fa-solid fa-moon text-xs"></i>
+            </button>
+            <!-- RTL Switcher (Symbol Only) -->
+            <button data-toggle="direction" class="nav-icon-btn" title="Toggle RTL / LTR layout">
+                <i class="fa-solid fa-right-left text-[11px]"></i>
+            </button>
+            <a href="index.html" class="nav-pill-btn px-4 py-2 text-xs font-black inline-flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left text-[10px]"></i>
+                <span>Return to Site</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Countdown Center -->
+    <main class="max-w-3xl mx-auto px-4 py-12 text-center relative z-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+            <i class="fa-solid fa-hammer mr-1"></i> METRO EXPANSION UNDERWAY
+        </span>
+
+        <h1 class="text-4xl sm:text-6xl font-black font-heading mt-6 leading-tight">
+            New Mega Depot & Fleet Launching Soon
+        </h1>
+        <p class="text-sm sm:text-base text-slate-400 mt-4 max-w-xl mx-auto leading-relaxed">
+            We are bringing 2,000+ new commercial tools, mini-excavators, and high-efficiency concrete saws to our upcoming Austin & Dallas logistics hubs.
+        </p>
+
+        <!-- Live Countdown Timer -->
+        <div class="grid grid-cols-4 gap-3 sm:gap-6 max-w-lg mx-auto my-10 reveal-up">
+            <div class="p-4 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl">
+                <span id="timer-days" class="text-3xl sm:text-5xl font-black font-heading text-amber-500">24</span>
+                <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-bold mt-1">Days</span>
+            </div>
+            <div class="p-4 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl">
+                <span id="timer-hours" class="text-3xl sm:text-5xl font-black font-heading text-white">08</span>
+                <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-bold mt-1">Hours</span>
+            </div>
+            <div class="p-4 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl">
+                <span id="timer-minutes" class="text-3xl sm:text-5xl font-black font-heading text-white">45</span>
+                <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-bold mt-1">Mins</span>
+            </div>
+            <div class="p-4 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 shadow-xl">
+                <span id="timer-seconds" class="text-3xl sm:text-5xl font-black font-heading text-amber-500">12</span>
+                <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-bold mt-1">Secs</span>
+            </div>
+        </div>
+
+        <!-- Notify Subscription Form -->
+        <div class="max-w-md mx-auto">
+            <form onsubmit="event.preventDefault(); ToolHub.showToast('Thank you! You will receive a $25 voucher on launch day.', 'success');" class="flex flex-col sm:flex-row gap-2">
+                <input type="email" required placeholder="Enter your email for a $25 launch voucher..." class="flex-grow px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                <button type="submit" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs transition shadow-lg shadow-amber-500/20 whitespace-nowrap btn-shine">
+                    Notify Me
+                </button>
+            </form>
+            <p class="text-[11px] text-slate-500 mt-2">Zero spam. Only launch date notifications and priority rental codes.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-6 text-center text-xs text-slate-500 relative z-10">
+        © 2026 ToolHub Heavy Equipment Rental Systems LLC. All rights reserved.
+    </footer>
+
+    <!-- Countdown Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let seconds = 12;
+            let minutes = 45;
+            setInterval(() => {
+                seconds--;
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    const mEl = document.getElementById('timer-minutes');
+                    if (mEl) mEl.textContent = minutes < 10 ? '0' + minutes : minutes;
+                }
+                const sEl = document.getElementById('timer-seconds');
+                if (sEl) sEl.textContent = seconds < 10 ? '0' + seconds : seconds;
+            }, 1000);
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

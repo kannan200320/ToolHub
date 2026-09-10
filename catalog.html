@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment & Machinery Catalog - ToolHub</title>
+    <meta name="description" content="Browse and rent heavy excavators, skid steers, boom lifts, generators, and pro power tools. Filter by category, power source, and daily price.">
+
+    <!-- Favicon (Industrial Tool Symbol) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+    <!-- Zero-Glitch Theme & Direction Initializer -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('toolhub_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+            document.documentElement.classList.toggle('light', theme !== 'dark');
+            const dir = localStorage.getItem('toolhub_direction') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
+    <style>
+        html.dark, html.dark body { background-color: #09090b !important; color: #f8fafc; color-scheme: dark; }
+        html.light, html.light body { background-color: #ffffff !important; color: #0f172a; color-scheme: light; }
+    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        toolhub: {
+                            dark: '#09090b',
+                            card: '#121214',
+                            surface: '#18181b',
+                            border: '#27272a',
+                            gray: '#27272a',
+                            orange: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-glass-header bg-slate-50 dark:bg-neutral-950 text-slate-700 dark:text-neutral-300 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+
+    <!-- Main Navigation Bar (Glassmorphic Header matching YogaSphere reference) -->
+    <header class="fixed top-0 left-0 right-0 w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Left: Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
+                        <i class="fa-solid fa-truck-monster"></i>
+                    </div>
+                    <span class="text-2xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
+                </a>
+
+                <!-- Center: Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <!-- Home Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold flex items-center gap-1.5 transition text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400">
+                            <span>Home</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-100 dark:border-neutral-800 p-2.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-200 transition text-xs font-bold">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-neutral-800 text-amber-500 flex items-center justify-center text-sm"><i class="fa-solid fa-toolbox"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 1: DIY & Tools</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Renovation & Home Projects</span>
+                                </div>
+                            </a>
+                            <a href="home-contractor.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-neutral-800 text-slate-700 dark:text-neutral-300 transition text-xs font-bold mt-1">
+                                <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-neutral-800 text-amber-500 flex items-center justify-center text-sm"><i class="fa-solid fa-truck-moving"></i></div>
+                                <div>
+                                    <span class="block font-bold">Home 2: Heavy Fleet</span>
+                                    <span class="block text-[10px] text-slate-400 font-normal">Commercial Contractor Fleet</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Machinery Direct Link (Active, No Dropdown) -->
+                    <a href="catalog.html" class="nav-link-item active px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Machinery</a>
+
+                    <!-- Direct Links -->
+                    <a href="how-it-works.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">How It Works</a>
+                    <a href="pricing.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Rental Rates</a>
+                    <a href="about.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">About Us</a>
+                    <a href="blog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Guides & Tips</a>
+                    <a href="contact.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Contact</a>
+                </nav>
+
+                <!-- Right: Actions with Renter Login -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Dark / Light Theme Toggle (Symbol Only) -->
+                    <button data-toggle="theme" class="nav-icon-btn hidden sm:inline-flex" title="Toggle Light / Dark Mode">
+                        <i class="fa-solid fa-moon text-xs"></i>
+                    </button>
+
+                    <!-- RTL / LTR Direction Toggle (Symbol Only) -->
+                    <button data-toggle="direction" class="nav-icon-btn hidden sm:inline-flex" title="Toggle RTL / LTR layout">
+                        <i class="fa-solid fa-right-left text-[11px]"></i>
+                    </button>
+
+                    <!-- Cart Page Link -->
+                    <a href="cart.html" class="nav-icon-btn relative" title="View Reservation Cart">
+                        <i class="fa-solid fa-toolbox text-xs"></i>
+                        <span class="cart-count-badge absolute -top-1 -right-1 w-4 h-4 bg-amber-500 text-slate-950 font-black text-[9px] rounded-full flex items-center justify-center shadow">0</span>
+                    </a>
+
+                    <!-- Renter Login Pill CTA Button -->
+                    <a href="auth.html" class="nav-pill-btn hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 text-xs font-black uppercase tracking-wider btn-shine">
+                        <i class="fa-solid fa-circle-user text-sm"></i>
+                        <span>Renter Login</span>
+                    </a>
+
+                    <!-- Mobile Menu Hamburger Trigger -->
+                    <button data-toggle="mobile-menu" class="lg:hidden nav-icon-btn" aria-label="Open Navigation Menu">
+                        <i class="fa-solid fa-bars text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header Banner with High-Quality Commercial Machinery Hero Imagery -->
+    <section class="py-14 sm:py-18 bg-white dark:bg-neutral-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-neutral-800 relative overflow-hidden transition-colors">
+        <div class="absolute inset-0 bg-hazard-stripes opacity-0 dark:opacity-10 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Details & Layout Controls -->
+                <div class="lg:col-span-7 reveal-left">
+                    <span class="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1 rounded-full inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                        <span>COMMERCIAL FLEET &amp; HEAVY MACHINERY</span>
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-black font-heading mt-4 leading-tight text-slate-900 dark:text-white">
+                        Heavy Machinery &amp; <span class="text-amber-500">Commercial Tool Catalog.</span>
+                    </h1>
+                    <p class="mt-4 text-slate-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed">
+                        Explore over 4,500 commercial-grade hydraulic excavators, compaction gear, power saws, and pro renovation packages. Dyno-tested with guaranteed same-day jobsite delivery or 60-second depot drive-thru pickup.
+                    </p>
+
+                    <!-- Trust & Inspection Badges -->
+                    <div class="mt-6 flex flex-wrap gap-2.5 text-xs font-bold text-slate-700 dark:text-neutral-300">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex items-center gap-2">
+                            <i class="fa-solid fa-clipboard-check text-amber-500"></i> OSHA 50-Point Certified
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex items-center gap-2">
+                            <i class="fa-solid fa-truck-moving text-amber-500"></i> Same-Day Jobsite Dispatch
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-emerald-500"></i> Zero Escrow Holds
+                        </span>
+                    </div>
+
+                    <!-- Layout Switcher and Jump Controls -->
+                    <div class="mt-8 flex flex-wrap items-center justify-between gap-4 pt-5 border-t border-slate-200 dark:border-neutral-800">
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs text-slate-500 dark:text-neutral-400 font-bold uppercase tracking-wider">Catalog View:</span>
+                            <div class="inline-flex rounded-xl bg-slate-100 dark:bg-neutral-900 p-1 border border-slate-200 dark:border-neutral-800">
+                                <button id="view-grid-btn" class="px-3 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-black shadow flex items-center gap-1.5 transition" title="Grid View">
+                                    <i class="fa-solid fa-grip"></i>
+                                    <span>Grid</span>
+                                </button>
+                                <button id="view-list-btn" class="px-3 py-2 rounded-lg text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white text-xs font-bold transition flex items-center gap-1.5" title="List View">
+                                    <i class="fa-solid fa-list"></i>
+                                    <span>List</span>
+                                </button>
+                            </div>
+                        </div>
+                        <a href="#catalog-search-input" class="inline-flex items-center gap-2 text-xs font-black text-amber-500 hover:text-amber-600 dark:text-amber-400 transition">
+                            <span>Filter &amp; Search Equipment</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: High-Quality Commercial Machinery Hero Card -->
+                <div class="lg:col-span-5 reveal-right delay-150">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200 dark:border-neutral-800 aspect-[4/3] group bg-slate-900">
+                        <img src="https://i.pinimg.com/1200x/e4/98/5b/e4985b20b4029271697e399ba5f1aa14.jpg" alt="ToolHub Commercial Machinery Fleet" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.onerror=null;this.src='assets/images/cat-excavator.jpg';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/85 via-neutral-950/20 to-transparent"></div>
+                        
+                        <!-- Top Floating Status Badges -->
+                        <span class="absolute top-4 left-4 bg-neutral-950/85 backdrop-blur-md text-amber-400 text-xs font-black px-3 py-1.5 rounded-xl border border-neutral-800 shadow flex items-center gap-1.5">
+                            <i class="fa-solid fa-tower-broadcast animate-pulse text-amber-500"></i>
+                            <span>Live Fleet Yard Inventory</span>
+                        </span>
+                        <span class="absolute top-4 right-4 bg-emerald-500/90 text-slate-950 text-[11px] font-black px-2.5 py-1 rounded-full shadow flex items-center gap-1">
+                            <i class="fa-solid fa-circle-check"></i> 100% In Stock
+                        </span>
+
+                        <!-- Bottom Telemetry Floating Card -->
+                        <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-neutral-900/90 backdrop-blur-md border border-neutral-800 flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-base flex-shrink-0">
+                                    <i class="fa-solid fa-truck-monster"></i>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-slate-400 block font-bold uppercase tracking-wider">Commercial Heavy Fleet</span>
+                                    <span class="font-extrabold text-white text-sm">4,500+ Machines Ready</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] text-emerald-400 block font-bold uppercase">Dispatch Hubs</span>
+                                <span class="text-white font-extrabold text-xs">14 Regional Depots</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Catalog Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Sidebar Filters -->
+            <aside class="lg:col-span-3 space-y-6 reveal-left">
+                <!-- Search Box -->
+                <div class="bg-white dark:bg-toolhub-card p-5 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-neutral-400 mb-2">Search Machinery</label>
+                    <div class="relative">
+                        <input type="text" id="catalog-search-input" placeholder="Search excavator, drill, saw..." class="w-full pl-9 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 text-slate-900 dark:text-white text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-4 text-xs text-slate-400"></i>
+                    </div>
+                </div>
+
+                    <!-- Category Filters -->
+                <div class="bg-white dark:bg-toolhub-card p-5 rounded-3xl border border-slate-200 dark:border-neutral-800 shadow-sm">
+                    <h3 class="font-black text-xs font-heading text-slate-900 dark:text-white uppercase tracking-wider mb-3">Categories</h3>
+                    <div class="flex flex-col space-y-2 text-xs font-bold">
+                        <button type="button" class="filter-category-btn active" data-category="all">
+                            <span class="cat-label">⚡ All Equipment & Tools</span>
+                            <span class="cat-count">15</span>
+                        </button>
+                        <button type="button" class="filter-category-btn" data-category="heavy-equipment">
+                            <span class="cat-label">🚜 Heavy Machinery & Fleet</span>
+                            <span class="cat-count">4</span>
+                        </button>
+                        <button type="button" class="filter-category-btn" data-category="power-tools">
+                            <span class="cat-label">🔧 Power Tools & Saws</span>
+                            <span class="cat-count">3</span>
+                        </button>
+                        <button type="button" class="filter-category-btn" data-category="ladders">
+                            <span class="cat-label">🪜 Ladders & Scaffolding</span>
+                            <span class="cat-count">1</span>
+                        </button>
+                        <button type="button" class="filter-category-btn" data-category="painting">
+                            <span class="cat-label">🎨 Painting Equipment</span>
+                            <span class="cat-count">3</span>
+                        </button>
+                        <button type="button" class="filter-category-btn" data-category="gardening">
+                            <span class="cat-label">🌿 Gardening & Forestry</span>
+                            <span class="cat-count">3</span>
+                        </button>
+                        <button type="button" class="filter-category-btn" data-category="pressure-washers">
+                            <span class="cat-label">🚿 Pressure Washers</span>
+                            <span class="cat-count">1</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Power Source -->
+                <div class="bg-white dark:bg-toolhub-card p-5 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm">
+                    <h3 class="font-black text-xs font-heading text-slate-900 dark:text-white uppercase tracking-wider mb-3">Power Source</h3>
+                    <div class="space-y-2.5 text-xs font-semibold">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" value="diesel" class="filter-power-checkbox w-4 h-4 rounded text-amber-500 bg-slate-100 dark:bg-neutral-900 border-slate-300 dark:border-neutral-800 focus:ring-amber-500">
+                            <span>Diesel Heavy Engine (Tier 4)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" value="gas" class="filter-power-checkbox w-4 h-4 rounded text-amber-500 bg-slate-100 dark:bg-neutral-900 border-slate-300 dark:border-neutral-800 focus:ring-amber-500">
+                            <span>Commercial Gas Engine (Honda)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" value="battery" class="filter-power-checkbox w-4 h-4 rounded text-amber-500 bg-slate-100 dark:bg-neutral-900 border-slate-300 dark:border-neutral-800 focus:ring-amber-500">
+                            <span>Cordless Battery (20V / 60V)</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" value="electric" class="filter-power-checkbox w-4 h-4 rounded text-amber-500 bg-slate-100 dark:bg-neutral-900 border-slate-300 dark:border-neutral-800 focus:ring-amber-500">
+                            <span>Electric Corded (120V / 240V)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Range Slider -->
+                <div class="bg-white dark:bg-toolhub-card p-5 rounded-2xl border border-slate-200 dark:border-neutral-800 shadow-sm">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-black text-xs font-heading text-slate-900 dark:text-white uppercase tracking-wider">Max Daily Rate</h3>
+                        <span id="price-range-value" class="text-xs font-black text-amber-500">$450/day</span>
+                    </div>
+                    <input type="range" id="price-range-slider" min="20" max="450" value="450" step="5" class="w-full cursor-pointer">
+                    <div class="flex justify-between text-[10px] text-slate-400 mt-1 font-bold">
+                        <span>$20</span>
+                        <span>$235</span>
+                        <span>$450</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Catalog Items Grid -->
+            <main class="lg:col-span-9">
+                <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-200 dark:border-neutral-800 text-xs">
+                    <span class="text-slate-500 dark:text-neutral-400 font-semibold">
+                        Showing <strong id="catalog-result-count" class="text-slate-900 dark:text-white font-bold">15</strong> equipment units in stock
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <span class="text-slate-500 font-semibold">Sort by:</span>
+                        <select id="catalog-sort-select" class="px-3 py-1.5 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 text-slate-900 dark:text-white text-xs font-bold focus:outline-none">
+                            <option value="popular">Most Popular</option>
+                            <option value="low-high">Daily Rate: Low to High</option>
+                            <option value="high-low">Daily Rate: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Cards Container -->
+                <div id="catalog-items-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Heavy Equipment 1: Caterpillar 302.7 CR Mini Excavator -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Caterpillar 302.7 CR Compact Hydraulic Mini Excavator"
+                         data-category="heavy-equipment earthmoving"
+                         data-power="diesel"
+                         data-price="275">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="assets/images/cat-excavator.jpg" alt="Caterpillar 302.7 CR Mini Excavator" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">24.7 HP Diesel</span>
+                            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">Heavy Fleet</span>
+                            <button type="button" onclick="ToolHub.openQuickView('cat-excavator')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Earthmoving Fleet</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (48)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=cat-excavator">Caterpillar 302.7 CR Mini Excavator</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Zero tail swing, stick steer travel, pressurized cab with AC, hydraulic thumb &amp; 18" trenching bucket.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">8.4 ft Dig Depth</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">6,050 lbs Wt</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(48)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$275</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'cat-excavator', name:'Caterpillar 302.7 CR Compact Hydraulic Mini Excavator', image:'assets/images/cat-excavator.jpg', dailyRate:275, deposit:500, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Heavy Equipment 2: Bobcat T76 Compact Track Loader -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Bobcat T76 R-Series Compact Track Loader"
+                         data-category="heavy-equipment earthmoving"
+                         data-power="diesel"
+                         data-price="310">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/9e/3c/d3/9e3cd3e492785789c5fe1c628bb13e59.jpg" alt="Bobcat T76 Compact Track Loader" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">74 HP Turbo</span>
+                            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">Heavy Fleet</span>
+                            <button type="button" onclick="ToolHub.openQuickView('bobcat-t76')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Loading &amp; Earthmoving</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>5.0 (39)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=bobcat-t76">Bobcat T76 Compact Track Loader</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Cast-steel lift arms, 2,900 lb operating capacity, high-flow auxiliary hydraulics &amp; 5-link torsion suspension.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">2,900 lbs ROC</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">30.3 GPM Flow</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>5.0</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(39)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$310</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'bobcat-t76', name:'Bobcat T76 R-Series Compact Track Loader', image:'https://i.pinimg.com/1200x/9e/3c/d3/9e3cd3e492785789c5fe1c628bb13e59.jpg', dailyRate:310, deposit:500, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Heavy Equipment 3: Genie S-65 TraX Telescopic Boom Lift -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Genie S-65 TraX Rough Terrain Boom Lift"
+                         data-category="heavy-equipment aerial-access"
+                         data-power="diesel"
+                         data-price="385">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/e4/b4/12/e4b412ad893abe62e353bf6dcfd4f53c.jpg" alt="Genie S-65 TraX Rough Terrain Boom Lift" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">71 ft Reach • 4WD</span>
+                            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">Heavy Fleet</span>
+                            <button type="button" onclick="ToolHub.openQuickView('genie-s65')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Aerial Access Fleet</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (27)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=genie-s65">Genie S-65 TraX Boom Lift</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">4-point independent rubber track drive for extreme mud &amp; rough terrain. 71 ft working height &amp; 56 ft outreach.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">71 ft Height</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">500 lbs Dual Cap</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(27)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$385</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'genie-s65', name:'Genie S-65 TraX Rough Terrain Boom Lift', image:'https://i.pinimg.com/1200x/e4/b4/12/e4b412ad893abe62e353bf6dcfd4f53c.jpg', dailyRate:385, deposit:600, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Heavy Equipment 4: Doosan G70 Towable Diesel Generator -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Doosan G70 Towable Prime Diesel Generator"
+                         data-category="heavy-equipment power-generation"
+                         data-power="diesel"
+                         data-price="215">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="assets/images/honda-generator.jpg" alt="Doosan G70 Towable Diesel Generator" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">70 kVA Prime</span>
+                            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">Heavy Fleet</span>
+                            <button type="button" onclick="ToolHub.openQuickView('doosan-g70')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Power Generation</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.8 (34)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=doosan-g70">Doosan G70 Diesel Generator</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Ultra-quiet (65 dBA) prime 3-phase power station with multi-voltage selector switch &amp; 108-gal 24h fuel tank.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">70 kVA Output</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">24-Hr Continuous</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.8</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(34)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$215</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'doosan-g70', name:'Doosan G70 Towable Prime Diesel Generator', image:'assets/images/honda-generator.jpg', dailyRate:215, deposit:350, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine 1: DeWalt Cordless Drill Kit (Power Tools) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="DeWalt 20V Max XR Brushless Cordless Drill Kit"
+                         data-category="power-tools"
+                         data-power="battery"
+                         data-price="35">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/33/ee/f6/33eef62367df6b7598d428f9759e7070.jpg" alt="DeWalt 20V Max Cordless Drill Kit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581244277943-84b7608ea834?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">20V Max XR</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('dewalt-drill')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Power Tools & Saws</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (62)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=dewalt-drill">DeWalt 20V Max Cordless Drill Kit</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">High-performance brushless motor, 3-speed transmission, 2x 5.0Ah batteries & fast charger.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">1/2" Metal Chuck</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">2,000 RPM Max</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(62)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$35</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-101', name:'DeWalt 20V Max Cordless Drill Kit', image:'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1200&q=85', dailyRate:35, deposit:100, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine 3: Bosch SDS-Max Demolition Hammer (Power Tools) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Bosch SDS-Max Rotary Demolition Hammer GBH 8-45 D"
+                         data-category="power-tools"
+                         data-power="electric"
+                         data-price="65">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/18/e4/ca/18e4ca90f593a5267a1862505c6cb42b.jpg" alt="Bosch SDS-Max Rotary Demolition Hammer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">14 Amp Electric</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('bosch-hammer')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Power Tools & Saws</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (41)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=bosch-hammer">Bosch SDS-Max Rotary Demolition Hammer</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Heavy-duty concrete drilling & chiseling, active Vibration Control, and 9.3 ft-lbs impact punch.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">9.3 ft-lbs Energy</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">SDS-Max Chuck</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(41)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$65</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-102', name:'Bosch SDS-Max Rotary Demolition Hammer', image:'https://i.pinimg.com/1200x/18/e4/ca/18e4ca90f593a5267a1862505c6cb42b.jpg', dailyRate:65, deposit:200, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Machine 5: DeWalt 10" Wet Tile Saw (Power Tools) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="DeWalt D24000S 10-Inch Wet Tile and Masonry Saw with Stand"
+                         data-category="power-tools"
+                         data-power="electric"
+                         data-price="75">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/e1/8a/d6/e18ad632c8e0e45a943ee5f063cf4510.jpg" alt="DeWalt 10-Inch Wet Tile Saw" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581244277943-84b7608ea834?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">15 Amp Electric</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('dewalt-tile-saw')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Power Tools & Saws</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (39)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=dewalt-tile-saw">DeWalt 10" Wet Tile & Masonry Saw</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Cantilevering rail system with dual water nozzles, folding rolling stand, and 24-inch rip capacity.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">3-1/8" Cut Depth</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">24" Rip Capacity</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(39)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$75</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-106', name:'DeWalt 10-Inch Wet Tile Saw', image:'https://i.pinimg.com/1200x/e1/8a/d6/e18ad632c8e0e45a943ee5f063cf4510.jpg', dailyRate:75, deposit:250, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine 6: Werner 24ft Extension Ladder (Ladders & Scaffolding) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Werner D6224-2 24ft Type IA Fiberglass Extension Ladder"
+                         data-category="ladders"
+                         data-power="battery"
+                         data-price="32">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/18/63/23/186323f26e8fc3d68101db25ac6c6d19.jpg" alt="Werner 24ft Fiberglass Extension Ladder" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">300 lb Duty IA</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('werner-ladder')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Ladders & Scaffolding</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (51)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=werner-ladder">Werner 24ft Fiberglass Extension Ladder</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Non-conductive fiberglass rails, TRACTION-TRED D-rungs, and spring-loaded gravity locks.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">Non-Conductive</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">23-ft Max Reach</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(51)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$32</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-109', name:'Werner 24ft Extension Ladder', image:'https://i.pinimg.com/1200x/18/63/23/186323f26e8fc3d68101db25ac6c6d19.jpg', dailyRate:32, deposit:80, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Machine 10: Graco Magnum X7 Airless Paint Sprayer (Painting) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Graco Magnum X7 Cart Airless Paint Sprayer"
+                         data-category="painting"
+                         data-power="electric"
+                         data-price="58">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/bc/96/f8/bc96f8d8cf437803cbb9cebfaa6fdd7d.jpg" alt="Graco Magnum X7 Airless Paint Sprayer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">5/8 HP Electric</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('graco-sprayer')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Painting Equipment</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (58)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=graco-sprayer">Graco Magnum X7 Cart Airless Sprayer</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Sprays unthinned paint directly from 1 or 5-gal containers, supporting up to 100 feet of hose.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">3,000 PSI Max</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">Direct 5-Gal Hook</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(58)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$58</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-110', name:'Graco Magnum X7 Cart Sprayer', image:'https://i.pinimg.com/1200x/bc/96/f8/bc96f8d8cf437803cbb9cebfaa6fdd7d.jpg', dailyRate:58, deposit:150, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine 11: Wagner Control Pro 170 HEA Sprayer (Painting) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Wagner Control Pro 170 High Efficiency Airless Paint Sprayer"
+                         data-category="painting"
+                         data-power="electric"
+                         data-price="48">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://media.bunnings.com.au/api/public/content/5245b7db1753445d8efe308eaab3101f?v=26029255&t=w700dpr2" alt="Wagner Control Pro 170 HEA Sprayer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">0.60 HP Electric</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('wagner-sprayer')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Painting Equipment</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.8 (35)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=wagner-sprayer">Wagner Control Pro 170 HEA Sprayer</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">High Efficiency Airless cuts overspray up to 55%, delivering softer fan pattern for indoor ceilings & walls.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">55% Less Overspray</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">1,500 PSI HEA</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.8</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(35)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$48</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-113', name:'Wagner Control Pro 170 HEA Sprayer', image:'https://media.bunnings.com.au/api/public/content/5245b7db1753445d8efe308eaab3101f?v=26029255&t=w700dpr2', dailyRate:48, deposit:120, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine 12: Titan Continuous Pressure Roller Station (Painting) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Titan Continuous Pressure Roller System"
+                         data-category="painting"
+                         data-power="electric"
+                         data-price="36">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/d8/b7/78/d8b7789e31471c9cf6958e7def26c845.jpg" alt="Titan Continuous Pressure Roller System" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">Electric 120V</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('paint-roller-station')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Painting Equipment</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.8 (29)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=paint-roller-station">Titan Continuous Pressure Roller Station</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Continuous paint delivery directly to the roller core with trigger-activated flow control. No trays.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">9" Internal Feed</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">Zero Drip Mess</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.8</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(29)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$36</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-114', name:'Titan Continuous Pressure Roller', image:'https://i.pinimg.com/1200x/d8/b7/78/d8b7789e31471c9cf6958e7def26c845.jpg', dailyRate:36, deposit:90, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine 13: Stihl MS 250 Gas Chainsaw (Gardening & Forestry) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Stihl MS 250 18-inch Gas Powered Chainsaw"
+                         data-category="gardening"
+                         data-power="gas"
+                         data-price="55">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/7a/ef/4e/7aef4e2438063a26643ef6fc491d9172.jpg" alt="Stihl MS 250 18-inch Gas Chainsaw" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510662179966-f3e62f0fb4fe?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">Gas 45.4cc</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('stihl-chainsaw')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Gardening & Forestry</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (53)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=stihl-chainsaw">Stihl MS 250 18" Gas Chainsaw</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">High power-to-weight ratio for tree felling and firewood. QuickStop inertia brake and carry case.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">3.0 bhp Engine</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">18" Bar Scabbard</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(53)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$55</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-104', name:'Stihl MS 250 18-inch Chainsaw', image:'https://i.pinimg.com/1200x/7a/ef/4e/7aef4e2438063a26643ef6fc491d9172.jpg', dailyRate:55, deposit:150, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine 14: Honda FC600 Mid-Tine Rototiller (Gardening & Forestry) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Honda FC600 Mid-Tine Gas Garden Rototiller"
+                         data-category="gardening"
+                         data-power="gas"
+                         data-price="65">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/0e/aa/80/0eaa80aef6e0bfbd5e5b3654fc799290.jpg" alt="Honda FC600 Gas Rototiller" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510662179966-f3e62f0fb4fe?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">Gas Honda GX160</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('honda-tiller')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Gardening & Forestry</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (42)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=honda-tiller">Honda FC600 Gas Garden Rototiller</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Commercial 163cc overhead valve engine with 26-inch wide slasher tines for dense clay breaking.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">26" Tilling Width</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">GX160 Commercial</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(42)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$65</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-115', name:'Honda FC600 Mid-Tine Rototiller', image:'https://i.pinimg.com/1200x/0e/aa/80/0eaa80aef6e0bfbd5e5b3654fc799290.jpg', dailyRate:65, deposit:180, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine 15: Stihl BR 600 Backpack Leaf Blower (Gardening & Forestry) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Stihl BR 600 Magnum Backpack Leaf Blower"
+                         data-category="gardening"
+                         data-power="gas"
+                         data-price="45">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/1200x/92/74/97/92749747c10cc8a52e0e6d07fcdeb688.jpg" alt="Stihl BR 600 Backpack Leaf Blower" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510662179966-f3e62f0fb4fe?auto=format&fit=crop&w=1200&q=85';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">Gas 64.8cc 4-MIX</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('stihl-blower')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Gardening & Forestry</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (47)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=stihl-blower">Stihl BR 600 Backpack Blower</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Professional backpack blower with anti-vibration harness and 677 CFM volume for wet leaf clearing.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">677 CFM Volume</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">238 MPH Velocity</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(47)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$45</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-116', name:'Stihl BR 600 Backpack Blower', image:'https://i.pinimg.com/1200x/92/74/97/92749747c10cc8a52e0e6d07fcdeb688.jpg', dailyRate:45, deposit:120, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine 16: Simpson 3200 PSI Pressure Washer (Pressure Washers) -->
+                    <div class="catalog-card-item toolhub-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-500/50 transition duration-300 group"
+                         data-title="Simpson MegaShot 3200 PSI Gas Pressure Washer"
+                         data-category="pressure-washers"
+                         data-power="gas"
+                         data-price="65">
+                        <div class="relative img-zoom-box aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-neutral-900">
+                            <img src="https://i.pinimg.com/736x/82/bb/30/82bb30f022deab8d59e8ddfe61d0a4d2.jpg" alt="Simpson MegaShot 3200 PSI Pressure Washer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.onerror=null;this.src='https://i.pinimg.com/1200x/f0/22/9a/f0229aa9f20967de8527a18b38f631b5.jpg';">
+                            <span class="absolute top-3 left-3 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[10px] font-black px-2.5 py-1 rounded-full border border-neutral-800 shadow">Gas 3200 PSI</span>
+                            <span class="absolute top-3 right-3 bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full shadow">In Stock</span>
+                            <button type="button" onclick="ToolHub.openQuickView('simpson-washer')" class="quick-view-btn">
+                                <i class="fa-regular fa-eye"></i>
+                                <span>Quick View</span>
+                            </button>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between gap-2">
+                                    <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Pressure Washers</span>
+                                    <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (43)</span>
+                                </div>
+                                <h3 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1 group-hover:text-amber-500 transition line-clamp-1">
+                                    <a href="equipment-details.html?id=simpson-washer">Simpson MegaShot 3200 PSI Washer</a>
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Commercial Honda GC190 engine, OEM axial brass pump, 25-ft MorFlex hose, and 5 spray tips.</p>
+                                <div class="mt-3 flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">2.5 GPM Flow</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-900 text-slate-600 dark:text-neutral-400 text-[10px] font-semibold">Honda GC190</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800 flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-neutral-200">
+                                        <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                        <span>4.9</span>
+                                        <span class="text-slate-400 font-medium text-[11px]">(43)</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="text-lg font-black font-heading text-[#b43e11] dark:text-[#f97316]">$65</span>
+                                        <span class="text-xs text-slate-400 font-medium">/day</span>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="ToolHub.addToCart({id:'TL-105', name:'Simpson MegaShot 3200 PSI Washer', image:'https://i.pinimg.com/736x/82/bb/30/82bb30f022deab8d59e8ddfe61d0a4d2.jpg', dailyRate:65, deposit:100, days:1})" class="btn-rent-now">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M6 8h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2Z" />
+                                        <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                                        <path d="M12 12v6" />
+                                        <path d="M9 15h6" />
+                                    </svg>
+                                    <span>Rent Now</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="catalog-empty-state" class="hidden py-16 text-center bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-neutral-800 mt-6">
+                    <div class="w-16 h-16 rounded-full bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white font-heading">No matching equipment found</h3>
+                    <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1 max-w-sm mx-auto">Try broadening your search query or reset category and price range filters.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-template-bg text-slate-400 text-sm pt-14 sm:pt-20 pb-12 border-t border-slate-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+                <!-- Col 1: Brand & Contact (Desktop 6 cols, Tablet full, Mobile full) -->
+                <div class="sm:col-span-2 lg:col-span-6 space-y-5 sm:space-y-6">
+                    <a href="index.html" class="flex items-center gap-3.5">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl sm:text-2xl shadow-lg shadow-amber-500/20 shrink-0">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <span class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                    </a>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
+                        Curating premium heavy equipment, commercial construction machinery, and precision DIY power tools for contractors, craftsmen, and home renovators worldwide.
+                    </p>
+
+                    <!-- Contact Rows with Uniform Gold Icon Badges -->
+                    <div class="space-y-3 text-xs text-slate-300">
+                        <a href="contact.html" class="flex items-start gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs mt-0.5 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+                            <span class="leading-relaxed">480 Broadway Ave, Theatrical District, Suite 120, New York, NY 10013</span>
+                        </a>
+                        <a href="tel:+18005558665" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-phone"></i>
+                            </span>
+                            <span class="leading-relaxed">+1 (800) 555-TOOL &bull; +1 (212) 555-0199</span>
+                        </a>
+                        <a href="mailto:rentals@toolhub-equipment.com" class="flex items-center gap-3 hover:text-amber-400 transition group">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <span class="leading-relaxed break-all">rentals@toolhub-equipment.com</span>
+                        </a>
+                        <div class="flex items-center gap-3 text-slate-400 text-xs">
+                            <span class="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500 flex items-center justify-center shrink-0 text-xs">
+                                <i class="fa-solid fa-clock"></i>
+                            </span>
+                            <span class="leading-relaxed">Mon–Fri: 6:30 AM–7:00 PM &bull; Sat: 7:00 AM–4:00 PM</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Icon Pills -->
+                    <div class="flex items-center gap-2.5 pt-1">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="X / Twitter" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Popular Categories (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">TOOL OCCASIONS & CATEGORIES</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html?category=power-tools" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">⚡</span>
+                                <span>Cordless Power Tools & Saws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=ladders" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🪜</span>
+                                <span>Extension Ladders & Scaffolding</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=painting" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🎨</span>
+                                <span>Airless Paint & Drywall Sprayers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=gardening" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🌿</span>
+                                <span>Garden Rototillers & Chainsaws</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=earthmoving" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <span class="w-5 text-center shrink-0 text-sm group-hover:scale-110 transition-transform">🚜</span>
+                                <span>Mini Excavators & Track Skid Steers</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="catalog.html" class="inline-flex items-center gap-1.5 mt-5 sm:mt-6 text-xs font-black text-amber-400 hover:text-amber-300 transition group">
+                        <span>View All Equipment & Tools</span>
+                        <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Col 3: Services & Care (Desktop 3 cols, Tablet 1 col, Mobile full) -->
+                <div class="sm:col-span-1 lg:col-span-3 pt-6 sm:pt-0 border-t border-slate-800/60 sm:border-t-0">
+                    <div class="flex items-center gap-2 mb-4 sm:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+                        <h4 class="font-black text-white text-xs uppercase tracking-widest">SERVICES & CARE</h4>
+                    </div>
+                    <ul class="space-y-3 text-xs">
+                        <li>
+                            <a href="catalog.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>All Rental Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Pricing & Security Deposit</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="how-it-works.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Direct Jobsite Delivery</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pricing.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>100% Uptime Guarantee</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home-contractor.html" class="hover:text-amber-400 transition flex items-center gap-2.5 py-0.5 group">
+                                <i class="fa-solid fa-angle-right text-[10px] text-amber-500/70 w-3 text-center shrink-0 group-hover:translate-x-0.5 transition-transform"></i>
+                                <span>Commercial Net-30 Trade</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Divider & Navigation Links -->
+            <div class="pt-8 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
+                <p>© 2026 ToolHub Equipment & Tool Rental Co. All rights reserved.</p>
+                <div class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2">
+                    <a href="how-it-works.html" class="hover:text-amber-400 transition">Rental Terms</a>
+                    <a href="pricing.html" class="hover:text-amber-400 transition">Deposit Policy</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">Yard Locator</a>
+                    <a href="contact.html" class="hover:text-amber-400 transition">24/7 Support Desk</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer (Offcanvas Slide-over) -->
+    <div id="cart-drawer-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-96 max-w-[90vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center text-sm">
+                    <i class="fa-solid fa-toolbox"></i>
+                </div>
+                <h3 class="font-black font-heading text-slate-900 dark:text-white">Rental Cart (<span id="cart-item-count">2</span>)</h3>
+            </div>
+            <button data-close="cart-drawer" class="text-slate-400 hover:text-white p-1 rounded-lg">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <div id="cart-items-container" class="flex-grow overflow-y-auto p-6 space-y-4">
+            <!-- Items injected by JS -->
+        </div>
+
+        <div class="p-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 space-y-3">
+            <div class="flex justify-between text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span>Total Rental:</span>
+                <span id="cart-rental-total">$485.00</span>
+            </div>
+            <div class="flex justify-between text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span>Hold Deposit (Refundable):</span>
+                <span id="cart-deposit-total">$1,100.00</span>
+            </div>
+            <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between text-sm font-black text-slate-900 dark:text-white">
+                <span>Total Due Now:</span>
+                <span id="cart-grand-total" class="text-amber-500">$1,585.00</span>
+            </div>
+            <a href="auth.html" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider text-center transition flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20">
+                <span>Proceed to Checkout</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <p class="text-center text-[10px] text-slate-400 flex items-center justify-center gap-1">
+                <i class="fa-solid fa-lock text-emerald-500"></i> Encrypted 256-bit Bank-Level Authorization
+            </p>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Drawer (Strictly Matching Lap View Nav Structure) -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
+        <!-- Header: Menu title & Close button -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-2">
+            <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
+            <button data-close="mobile-menu" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" aria-label="Close menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Links (Exact Match to Lap View Nav) -->
+        <nav class="flex-grow flex flex-col space-y-1 overflow-y-auto pr-1">
+            <!-- Collapsible Home Accordion -->
+            <div class="py-1">
+                <button type="button" data-mobile-submenu-toggle="mobile-home-submenu" class="w-full flex items-center justify-between text-base font-semibold text-slate-900 dark:text-white hover:text-amber-500 py-2 transition-colors" aria-expanded="true">
+                    <span>Home</span>
+                    <i class="fa-solid fa-chevron-down submenu-arrow text-xs text-slate-400 transition-transform duration-200" style="transform: rotate(180deg);"></i>
+                </button>
+                <div id="mobile-home-submenu" class="border-l-2 border-slate-200 dark:border-slate-700 pl-4 ml-2 my-1 space-y-2">
+                    <a href="index.html" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-amber-500 py-1 transition-colors">Home 1: DIY & Tools</a>
+                    <a href="home-contractor.html" class="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-amber-500 py-1 transition-colors">Home 2: Heavy Fleet</a>
+                </div>
+            </div>
+
+            <a href="catalog.html" class="block text-base font-semibold text-amber-500 py-2 transition-colors">Machinery</a>
+            <a href="how-it-works.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">How It Works</a>
+            <a href="pricing.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Rental Rates</a>
+            <a href="about.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">About Us</a>
+            <a href="blog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Guides & Tips</a>
+            <a href="contact.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Contact</a>
+
+            <!-- Cart Link -->
+            <a href="cart.html" class="flex items-center justify-between text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">
+                <span class="flex items-center gap-2">
+                    <i class="fa-solid fa-toolbox text-amber-500 text-sm"></i>
+                    <span>Reservation Cart</span>
+                </span>
+                <span class="cart-count-badge w-5 h-5 bg-amber-500 text-slate-950 font-black text-xs rounded-full flex items-center justify-center shadow">0</span>
+            </a>
+
+            <!-- Renter Login Button (Identical to Lap View Nav) -->
+            <div class="pt-3">
+                <a href="auth.html" class="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider text-center transition-all duration-200 flex items-center justify-center gap-2 shadow-md btn-shine">
+                    <i class="fa-solid fa-circle-user text-sm"></i>
+                    <span>RENTER LOGIN</span>
+                </a>
+            </div>
+
+            <!-- Divider Line -->
+            <div class="border-t border-slate-200 dark:border-slate-800 my-4"></div>
+
+            <!-- Bottom Toggle Buttons (Below the menu as in Image 2) -->
+            <div class="flex items-center justify-around py-2">
+                <button type="button" data-toggle="theme" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon text-2xl"></i>
+                </button>
+                <button type="button" data-toggle="direction" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
+                    <i class="fa-solid fa-right-left text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Quick View Modal (Strictly matching template Image 2) -->
+    <div id="quickview-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="qv-title">
+        <!-- Dark blurred backdrop -->
+        <div class="fixed inset-0 bg-slate-950/75 backdrop-blur-md transition-opacity" onclick="ToolHub.closeQuickView()"></div>
+
+        <!-- Modal Dialog Card -->
+        <div class="relative w-full max-w-3xl bg-white dark:bg-[#141416] rounded-[32px] overflow-hidden shadow-2xl border border-slate-200/80 dark:border-neutral-800 z-10 my-auto animate-modal-pop">
+            <!-- Close Button (Top-Right Circular) -->
+            <button type="button" onclick="ToolHub.closeQuickView()" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-slate-200/80 dark:bg-neutral-800 text-slate-600 dark:text-neutral-300 hover:bg-slate-300 dark:hover:bg-neutral-700 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition shadow-sm" aria-label="Close Quick View">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Left Column: Full-Bleed Equipment Image -->
+                <div class="relative w-full h-72 sm:h-80 md:h-full min-h-[300px] md:min-h-[460px] bg-slate-100 dark:bg-neutral-900 overflow-hidden">
+                    <img id="qv-image" src="" alt="Equipment preview" class="w-full h-full object-cover">
+                    <!-- Top-Left Pill Badge -->
+                    <span id="qv-badge" class="absolute top-4 left-4 bg-[#fef3c7] text-[#92400e] text-[11px] font-black px-3.5 py-1.5 rounded-full shadow-sm">
+                        Fleet Bestseller
+                    </span>
+                </div>
+
+                <!-- Right Column: Details & Actions -->
+                <div class="p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <!-- Category -->
+                        <span id="qv-category" class="text-[11px] font-black uppercase tracking-wider text-slate-400 dark:text-neutral-400">
+                            POWER TOOLS & SAWS
+                        </span>
+
+                        <!-- Product Title (Terracotta / Burnt Orange like Image 2) -->
+                        <h3 id="qv-title" class="text-2xl font-black font-heading text-[#b43e11] dark:text-amber-500 leading-tight mt-1.5">
+                            Equipment Title
+                        </h3>
+
+                        <!-- Rating -->
+                        <div class="flex items-center gap-1.5 mt-2">
+                            <div class="flex text-amber-500 text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span id="qv-rating" class="text-xs font-black text-slate-800 dark:text-white ml-0.5">4.9</span>
+                            <span id="qv-reviews" class="text-xs text-slate-400 dark:text-neutral-400 font-medium">(52 rentals)</span>
+                        </div>
+
+                        <!-- Description Paragraph -->
+                        <p id="qv-description" class="text-xs text-slate-600 dark:text-neutral-300 leading-relaxed mt-3">
+                            Equipment description goes here.
+                        </p>
+
+                        <!-- Pricing Panel (Light grey rounded box like Image 2) -->
+                        <div class="bg-slate-50 dark:bg-neutral-900/90 rounded-2xl p-4 my-4 border border-slate-100 dark:border-neutral-800/80 space-y-2.5 text-xs font-medium">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-500 dark:text-neutral-400">Daily Rental:</span>
+                                <span id="qv-daily-rate" class="font-black font-heading text-sm text-[#b43e11] dark:text-amber-500">$35 / day</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-500 dark:text-neutral-400">Weekend 3-Day Pass:</span>
+                                <span id="qv-weekend-rate" class="font-bold text-slate-800 dark:text-white">$60</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-500 dark:text-neutral-400">Refundable Deposit:</span>
+                                <span id="qv-deposit" class="font-bold text-slate-800 dark:text-white">$50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions & Guarantee -->
+                    <div class="mt-2">
+                        <div class="flex items-center gap-3">
+                            <!-- Primary Terracotta Add to Cart Button (Image 2) -->
+                            <button type="button" id="qv-add-btn" class="flex-1 bg-[#b43e11] hover:bg-[#9a3412] active:scale-[0.98] text-white text-xs font-black py-3 px-5 rounded-full flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition">
+                                <i class="fa-solid fa-bag-shopping text-sm"></i>
+                                <span>Add to Cart</span>
+                            </button>
+                            <!-- Secondary Outlined Full Details Button (Image 2) -->
+                            <a id="qv-details-btn" href="#" class="border border-slate-300 dark:border-neutral-700 hover:border-slate-400 dark:hover:border-neutral-600 text-slate-700 dark:text-neutral-200 hover:bg-slate-50 dark:hover:bg-neutral-800 text-xs font-bold py-3 px-5 rounded-full text-center transition whitespace-nowrap">
+                                Full Details
+                            </a>
+                        </div>
+                        <!-- Bottom Reassurance Guarantee -->
+                        <p class="text-center text-[10px] text-slate-500 dark:text-neutral-400 flex items-center justify-center gap-1.5 mt-3 font-medium">
+                            <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+                            <span>Sanitized, dyno-tested &amp; jobsite guaranteed</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/equipment-data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
