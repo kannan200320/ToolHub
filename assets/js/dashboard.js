@@ -433,6 +433,19 @@
                         if (window.ToolHub) window.ToolHub.showToast('Full Name and Email Address are required.', 'error');
                         return;
                     }
+                    if (newName.length < 2) {
+                        if (window.ToolHub) window.ToolHub.showToast('Name must be at least 2 characters.', 'error');
+                        return;
+                    }
+                    if (/[A-Z]/.test(newEmail)) {
+                        if (window.ToolHub) window.ToolHub.showToast('Email address must be lowercase.', 'error');
+                        return;
+                    }
+                    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+                    if (!emailRegex.test(newEmail)) {
+                        if (window.ToolHub) window.ToolHub.showToast('Please enter a valid email address.', 'error');
+                        return;
+                    }
 
                     const oldEmail = currentUser.email;
                     currentUser.name = newName;

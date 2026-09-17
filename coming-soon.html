@@ -128,8 +128,8 @@
 
         <!-- Notify Subscription Form -->
         <div class="max-w-md mx-auto">
-            <form onsubmit="event.preventDefault(); ToolHub.showToast('Thank you! You will receive a $25 voucher on launch day.', 'success');" class="flex flex-col sm:flex-row gap-2">
-                <input type="email" required placeholder="Enter your email for a $25 launch voucher..." class="flex-grow px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+            <form onsubmit="event.preventDefault(); const inp = this.querySelector('input[type=\'email\']'); const val = inp ? inp.value.trim() : ''; if (/[A-Z]/.test(val)) { ToolHub.showToast('Email address must be lowercase.', 'error'); return; } const regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/; if (!regex.test(val)) { ToolHub.showToast('Please enter a valid email address.', 'error'); return; } ToolHub.showToast('Thank you! You will receive a $25 voucher on launch day.', 'success'); inp.value = '';" class="flex flex-col sm:flex-row gap-2">
+                <input type="email" required autocapitalize="none" spellcheck="false" placeholder="Enter your email for a $25 launch voucher..." class="flex-grow px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
                 <button type="submit" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs transition shadow-lg shadow-amber-500/20 whitespace-nowrap btn-shine">
                     Notify Me
                 </button>

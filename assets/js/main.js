@@ -725,10 +725,13 @@
                                 errorMsg = 'Please select an option.';
                             }
                         } else if (input.type === 'email') {
-                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
                             if (!val) {
                                 fieldValid = false;
                                 errorMsg = 'Email address is required.';
+                            } else if (/[A-Z]/.test(val)) {
+                                fieldValid = false;
+                                errorMsg = 'Email address must be lowercase.';
                             } else if (!emailRegex.test(val)) {
                                 fieldValid = false;
                                 errorMsg = 'Please enter a valid email address.';
@@ -755,9 +758,21 @@
                                 errorMsg = 'Please select a valid option.';
                             }
                         } else {
+                            const isNameField = (input.id && (input.id.toLowerCase().includes('name') || input.id.toLowerCase().includes('fullname'))) ||
+                                                (input.name && (input.name.toLowerCase().includes('name') || input.name.toLowerCase().includes('fullname'))) ||
+                                                (input.placeholder && (input.placeholder.toLowerCase().includes('name') || input.placeholder.toLowerCase().includes('marcus') || input.placeholder.toLowerCase().includes('carpenter') || input.placeholder.toLowerCase().includes('reynolds'))) ||
+                                                input.getAttribute('autocomplete') === 'name';
                             if (!val) {
                                 fieldValid = false;
                                 errorMsg = 'Please fill out this field.';
+                            } else if (isNameField) {
+                                if (val.length < 2) {
+                                    fieldValid = false;
+                                    errorMsg = 'Name must be at least 2 characters.';
+                                } else if (!/^[a-zA-Z\s'.-]+$/.test(val)) {
+                                    fieldValid = false;
+                                    errorMsg = 'Please enter a valid name (letters only).';
+                                }
                             }
                         }
 
@@ -1046,14 +1061,29 @@
                     const errorContainer = document.getElementById('login-error-alert');
 
                     if (!emailInput) return;
-                    const enteredEmail = emailInput.value.trim().toLowerCase();
+                    const rawEmail = emailInput.value.trim();
                     const enteredPass = passwordInput ? passwordInput.value : '';
 
-                    if (!enteredEmail) {
+                    if (!rawEmail) {
                         ToolHub.showToast('Please enter your email address.', 'error');
                         emailInput.focus();
                         return;
                     }
+
+                    if (/[A-Z]/.test(rawEmail)) {
+                        ToolHub.showToast('Email address must be lowercase.', 'error');
+                        emailInput.focus();
+                        return;
+                    }
+
+                    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+                    if (!emailRegex.test(rawEmail)) {
+                        ToolHub.showToast('Please enter a valid email address.', 'error');
+                        emailInput.focus();
+                        return;
+                    }
+
+                    const enteredEmail = rawEmail.toLowerCase();
 
                     const submitBtn = loginForm.querySelector('button[type="submit"]');
                     if (submitBtn) {
@@ -1107,15 +1137,49 @@
                     const passInput = registerForm.querySelector('#reg-password');
 
                     if (!emailInput) return;
-                    const registeredEmail = emailInput.value.trim().toLowerCase();
-                    const registeredName = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : (registeredEmail.split('@')[0] || 'Renter Member');
+                    const rawEmail = emailInput.value.trim();
+                    const rawName = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : '';
                     const registeredPass = (passInput && passInput.value) ? passInput.value : 'password123';
 
-                    if (!registeredEmail) {
+                    if (!rawName) {
+                        ToolHub.showToast('Please enter your full name.', 'error');
+                        if (nameInput) nameInput.focus();
+                        return;
+                    }
+
+                    if (rawName.length < 2) {
+                        ToolHub.showToast('Name must be at least 2 characters.', 'error');
+                        if (nameInput) nameInput.focus();
+                        return;
+                    }
+
+                    if (!/^[a-zA-Z\s'.-]+$/.test(rawName)) {
+                        ToolHub.showToast('Please enter a valid name (letters only).', 'error');
+                        if (nameInput) nameInput.focus();
+                        return;
+                    }
+
+                    if (!rawEmail) {
                         ToolHub.showToast('Please enter an email address to register.', 'error');
                         emailInput.focus();
                         return;
                     }
+
+                    if (/[A-Z]/.test(rawEmail)) {
+                        ToolHub.showToast('Email address must be lowercase.', 'error');
+                        emailInput.focus();
+                        return;
+                    }
+
+                    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+                    if (!emailRegex.test(rawEmail)) {
+                        ToolHub.showToast('Please enter a valid email address.', 'error');
+                        emailInput.focus();
+                        return;
+                    }
+
+                    const registeredEmail = rawEmail.toLowerCase();
+                    const registeredName = rawName;
 
                     const submitBtn = registerForm.querySelector('button[type="submit"]');
                     if (submitBtn) {
@@ -1351,11 +1415,19 @@
             if (!input) return false;
 
             const email = (input.value || '').trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
             if (!email) {
                 if (typeof this.showToast === 'function') {
                     this.showToast('Please enter an email address.', 'error');
+                }
+                input.focus();
+                return false;
+            }
+
+            if (/[A-Z]/.test(email)) {
+                if (typeof this.showToast === 'function') {
+                    this.showToast('Email address must be lowercase.', 'error');
                 }
                 input.focus();
                 return false;

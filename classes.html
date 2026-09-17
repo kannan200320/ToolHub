@@ -110,7 +110,7 @@
                     <a href="how-it-works.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">How It Works</a>
                     <a href="pricing.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Rental Rates</a>
                     <a href="about.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">About Us</a>
-                    <a href="blog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Guides & Tips</a>
+                    <a href="blog.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Blog</a>
                     <a href="contact.html" class="nav-link-item px-3 py-2 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-amber-500 dark:hover:text-amber-400 transition">Contact</a>
                 </nav>
 
@@ -584,12 +584,12 @@
             <form onsubmit="handleRSVPSubmit(event)" class="mt-6 space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Full Operator Name</label>
-                    <input type="text" required placeholder="John Carpenter" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-toolhub-surface border border-slate-200 dark:border-toolhub-border text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                    <input type="text" required minlength="2" placeholder="John Carpenter" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-toolhub-surface border border-slate-200 dark:border-toolhub-border text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
-                        <input type="email" required placeholder="john@contractor.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-toolhub-surface border border-slate-200 dark:border-toolhub-border text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                        <input type="email" required autocapitalize="none" spellcheck="false" placeholder="john@contractor.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-toolhub-surface border border-slate-200 dark:border-toolhub-border text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Mobile Phone</label>
@@ -836,7 +836,7 @@
             <a href="how-it-works.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">How It Works</a>
             <a href="pricing.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Rental Rates</a>
             <a href="about.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">About Us</a>
-            <a href="blog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Guides & Tips</a>
+            <a href="blog.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Blog</a>
             <a href="contact.html" class="block text-base font-medium text-slate-800 dark:text-slate-200 hover:text-amber-500 py-2 transition-colors">Contact</a>
 
             <!-- Cart Link -->
@@ -887,6 +887,38 @@
 
         function handleRSVPSubmit(e) {
             e.preventDefault();
+            const form = e.target;
+            const nameInput = form.querySelector('input[type="text"]');
+            const emailInput = form.querySelector('input[type="email"]');
+            
+            const nameVal = nameInput ? nameInput.value.trim() : '';
+            const emailVal = emailInput ? emailInput.value.trim() : '';
+
+            if (nameVal.length < 2) {
+                if (window.ToolHub && window.ToolHub.showToast) {
+                    window.ToolHub.showToast('Name must be at least 2 characters.', 'error');
+                }
+                if (nameInput) nameInput.focus();
+                return;
+            }
+
+            if (/[A-Z]/.test(emailVal)) {
+                if (window.ToolHub && window.ToolHub.showToast) {
+                    window.ToolHub.showToast('Email address must be lowercase.', 'error');
+                }
+                if (emailInput) emailInput.focus();
+                return;
+            }
+
+            const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            if (!emailRegex.test(emailVal)) {
+                if (window.ToolHub && window.ToolHub.showToast) {
+                    window.ToolHub.showToast('Please enter a valid email address.', 'error');
+                }
+                if (emailInput) emailInput.focus();
+                return;
+            }
+
             const className = document.getElementById('modal-class-title').innerText;
             closeRSVP();
             if (window.ToolHub && window.ToolHub.showToast) {
