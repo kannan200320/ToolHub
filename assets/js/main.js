@@ -1052,193 +1052,36 @@
             // Pre-seed accounts on first load
             getRegisteredAccounts();
 
-            // Handle Sign In with Registered Credentials (No Error Guarantee)
-            if (loginForm) {
-                loginForm.addEventListener('submit', (e) => {
+            // Handle Sign In button & form (Dummy action per client specification: no redirect, no popup, no missing actions)
+            const loginBtn = document.getElementById('btn-login-submit');
+            const handleDummyLogin = (e) => {
+                if (e) {
                     e.preventDefault();
-                    const emailInput = loginForm.querySelector('#login-email') || loginForm.querySelector('input[type="email"]');
-                    const passwordInput = loginForm.querySelector('#login-password') || loginForm.querySelector('input[type="password"]');
-                    const errorContainer = document.getElementById('login-error-alert');
-
-                    if (!emailInput) return;
-                    const rawEmail = emailInput.value.trim();
-                    const enteredPass = passwordInput ? passwordInput.value : '';
-
-                    if (!rawEmail) {
-                        ToolHub.showToast('Please enter your email address.', 'error');
-                        emailInput.focus();
-                        return;
-                    }
-
-                    if (/[A-Z]/.test(rawEmail)) {
-                        ToolHub.showToast('Email address must be lowercase.', 'error');
-                        emailInput.focus();
-                        return;
-                    }
-
-                    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-                    if (!emailRegex.test(rawEmail)) {
-                        ToolHub.showToast('Please enter a valid email address.', 'error');
-                        emailInput.focus();
-                        return;
-                    }
-
-                    const enteredEmail = rawEmail.toLowerCase();
-
-                    const submitBtn = loginForm.querySelector('button[type="submit"]');
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin mr-2"></i>SIGNING IN...`;
-                    }
-
-                    setTimeout(() => {
-                        const currentAccounts = getRegisteredAccounts();
-                        let matchedUser = currentAccounts.find(acc => acc.email.toLowerCase() === enteredEmail);
-
-                        if (!matchedUser) {
-                            // Seamlessly register new account so testing credentials never throws an error!
-                            const namePart = enteredEmail.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-                            matchedUser = {
-                                name: namePart || 'Renter Member',
-                                email: enteredEmail,
-                                password: enteredPass || 'password123',
-                                role: 'Verified DIY Renter',
-                                registeredAt: new Date().toISOString()
-                            };
-                            currentAccounts.push(matchedUser);
-                            localStorage.setItem('toolhub_registered_accounts', JSON.stringify(currentAccounts));
-                        }
-
-                        // Set active session
-                        const userData = {
-                            email: matchedUser.email,
-                            name: matchedUser.name,
-                            role: matchedUser.role || 'Verified DIY Renter',
-                            loggedIn: true
-                        };
-                        localStorage.setItem('toolhub_user', JSON.stringify(userData));
-
-                        if (errorContainer) errorContainer.classList.add('hidden');
-                        ToolHub.showToast(`Welcome back, ${matchedUser.name}! Opening ToolHub Renter Portal...`, 'success');
-
-                        setTimeout(() => {
-                            window.location.href = 'dashboard/index.html';
-                        }, 400);
-                    }, 400);
-                });
+                    e.stopPropagation();
+                }
+                // Pure dummy action: does not redirect to dashboard or make any popups/missing actions
+            };
+            if (loginBtn) {
+                loginBtn.addEventListener('click', handleDummyLogin);
+            }
+            if (loginForm) {
+                loginForm.addEventListener('submit', handleDummyLogin);
             }
 
-            // Handle Register Form: Save account & open Dashboard cleanly without error
-            if (registerForm) {
-                registerForm.addEventListener('submit', (e) => {
+            // Handle Register button & form (Dummy action per client specification: no redirect, no popup, no missing actions)
+            const registerBtn = document.getElementById('btn-register-submit');
+            const handleDummyRegister = (e) => {
+                if (e) {
                     e.preventDefault();
-                    const nameInput = registerForm.querySelector('#reg-name');
-                    const emailInput = registerForm.querySelector('#reg-email');
-                    const passInput = registerForm.querySelector('#reg-password');
-
-                    if (!emailInput) return;
-                    const rawEmail = emailInput.value.trim();
-                    const rawName = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : '';
-                    const registeredPass = (passInput && passInput.value) ? passInput.value : 'password123';
-
-                    if (!rawName) {
-                        ToolHub.showToast('Please enter your full name.', 'error');
-                        if (nameInput) nameInput.focus();
-                        return;
-                    }
-
-                    if (rawName.length < 2) {
-                        ToolHub.showToast('Name must be at least 2 characters.', 'error');
-                        if (nameInput) nameInput.focus();
-                        return;
-                    }
-
-                    if (!/^[a-zA-Z\s'.-]+$/.test(rawName)) {
-                        ToolHub.showToast('Please enter a valid name (letters only).', 'error');
-                        if (nameInput) nameInput.focus();
-                        return;
-                    }
-
-                    if (!rawEmail) {
-                        ToolHub.showToast('Please enter an email address to register.', 'error');
-                        emailInput.focus();
-                        return;
-                    }
-
-                    if (/[A-Z]/.test(rawEmail)) {
-                        ToolHub.showToast('Email address must be lowercase.', 'error');
-                        emailInput.focus();
-                        return;
-                    }
-
-                    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-                    if (!emailRegex.test(rawEmail)) {
-                        ToolHub.showToast('Please enter a valid email address.', 'error');
-                        emailInput.focus();
-                        return;
-                    }
-
-                    const registeredEmail = rawEmail.toLowerCase();
-                    const registeredName = rawName;
-
-                    const submitBtn = registerForm.querySelector('button[type="submit"]');
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin mr-2"></i>CREATING ACCOUNT...`;
-                    }
-
-                    setTimeout(() => {
-                        const currentAccounts = getRegisteredAccounts();
-                        const existingIdx = currentAccounts.findIndex(acc => acc.email.toLowerCase() === registeredEmail);
-
-                        const newUserRecord = {
-                            name: registeredName,
-                            email: registeredEmail,
-                            password: registeredPass,
-                            role: 'Verified DIY Renter',
-                            registeredAt: new Date().toISOString()
-                        };
-
-                        if (existingIdx > -1) {
-                            currentAccounts[existingIdx] = newUserRecord;
-                        } else {
-                            currentAccounts.push(newUserRecord);
-                        }
-                        localStorage.setItem('toolhub_registered_accounts', JSON.stringify(currentAccounts));
-
-                        // Set active session
-                        const activeUser = {
-                            email: registeredEmail,
-                            name: registeredName,
-                            role: 'Verified DIY Renter',
-                            loggedIn: true
-                        };
-                        localStorage.setItem('toolhub_user', JSON.stringify(activeUser));
-
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.innerHTML = `<span>CREATE ACCOUNT</span>`;
-                        }
-
-                        // Show registration success confirmation modal
-                        ToolHub.showSuccessModal({
-                            title: 'Registration Success',
-                            message: `Welcome to ToolHub, ${registeredName}! Your account has been registered under the selected membership.`,
-                            confirmText: 'Confirm',
-                            onConfirm: () => {
-                                window.location.href = 'dashboard/index.html';
-                            }
-                        });
-
-                        // Fallback auto-redirect after 2.5s if modal confirm not clicked
-                        setTimeout(() => {
-                            if (window.location.pathname.includes('auth.html')) {
-                                window.location.href = 'dashboard/index.html';
-                            }
-                        }, 2500);
-
-                    }, 400);
-                });
+                    e.stopPropagation();
+                }
+                // Pure dummy action: does not redirect to dashboard or make any popups/missing actions
+            };
+            if (registerBtn) {
+                registerBtn.addEventListener('click', handleDummyRegister);
+            }
+            if (registerForm) {
+                registerForm.addEventListener('submit', handleDummyRegister);
             }
 
             // Sync stored user info into DOM if present

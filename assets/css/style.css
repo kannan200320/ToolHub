@@ -602,6 +602,8 @@ body.dashboard-body {
 .nav-link-item {
     position: relative;
     transition: all 0.2s ease;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
 }
 
 .nav-link-item.active {
@@ -627,12 +629,133 @@ body.dashboard-body {
     font-weight: 800;
     box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.25);
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    align-items: center;
+}
+
+.nav-pill-btn span {
+    white-space: nowrap !important;
 }
 
 .nav-pill-btn:hover {
     background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
     box-shadow: 0 6px 20px 0 rgba(245, 158, 11, 0.38);
     transform: translateY(-1px);
+}
+
+/* In mobile view (< 1024px), the header renter login button is hidden because it is already inside the mobile drawer menu */
+@media (max-width: 1023px) {
+    .glass-header .nav-pill-btn {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .glass-header .nav-pill-btn {
+        display: inline-flex !important;
+    }
+}
+
+/* Header nav anti-wrap base rules */
+.glass-header nav {
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+}
+
+/* ==========================================================================
+   Laptop / Compact Desktop Header Fit (1024px to 1279px)
+   Prevents overflow, ensures single-line fit with elegant proportions
+   ========================================================================== */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* 1. Header container: maximize usable width (16px horizontal padding) */
+    .glass-header > div {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        max-width: 100% !important;
+    }
+
+    /* 2. Logo container scaling: sleek, proportional size */
+    .glass-header .flex.items-center.justify-between > a:first-child,
+    .glass-header a[href="index.html"].flex {
+        gap: 0.5rem !important;
+        flex-shrink: 0 !important;
+    }
+    .glass-header .flex.items-center.justify-between > a:first-child > div:first-child,
+    .glass-header a[href="index.html"] > div:first-child {
+        width: 2.125rem !important;
+        height: 2.125rem !important;
+        font-size: 0.875rem !important;
+        border-radius: 0.625rem !important;
+    }
+    .glass-header .flex.items-center.justify-between > a:first-child > span,
+    .glass-header a[href="index.html"] > span {
+        font-size: 1.15rem !important;
+    }
+
+    /* 3. Spacing between Logo and Nav at 1024px */
+    .glass-header nav {
+        margin-inline-start: 0.75rem !important;
+        gap: 0.125rem !important;
+    }
+
+    /* 4. Nav link items: crisp, readable typography and compact padding */
+    .glass-header .nav-link-item {
+        padding: 0.35rem 0.35rem !important;
+        font-size: 0.72rem !important; /* ~11.5px */
+        letter-spacing: -0.015em !important;
+    }
+
+    .glass-header .nav-link-item button,
+    .glass-header button.nav-link-item {
+        gap: 0.25rem !important;
+    }
+
+    .glass-header .nav-link-item.active::after {
+        left: 4px !important;
+        right: 4px !important;
+        bottom: -2px !important;
+    }
+
+    /* 5. Right actions container and icons */
+    .glass-header .flex.items-center.justify-between > div:last-child {
+        gap: 0.35rem !important;
+        flex-shrink: 0 !important;
+    }
+
+    .glass-header .nav-icon-btn {
+        width: 2rem !important;
+        height: 2rem !important;
+        flex-shrink: 0 !important;
+    }
+    .glass-header .nav-icon-btn i {
+        font-size: 0.65rem !important;
+    }
+
+    /* 6. Renter Login CTA button */
+    .glass-header .nav-pill-btn {
+        padding: 0.35rem 0.65rem !important;
+        font-size: 0.6875rem !important; /* 11px */
+        gap: 0.25rem !important;
+        letter-spacing: 0.02em !important;
+        flex-shrink: 0 !important;
+    }
+    .glass-header .nav-pill-btn i {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* Wide Desktop Nav Spacing (1280px+) */
+@media (min-width: 1280px) {
+    .glass-header nav {
+        margin-inline-start: 1.5rem !important;
+    }
+}
+
+@media (min-width: 1536px) {
+    .glass-header nav {
+        margin-inline-start: 2rem !important;
+    }
 }
 
 .nav-icon-btn {
