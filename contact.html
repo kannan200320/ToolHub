@@ -297,7 +297,7 @@
                             </div>
                             <div>
                                 <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold">Email Address <span class="text-amber-500">*</span></label>
-                                <input type="email" name="email" required autocapitalize="none" spellcheck="false" placeholder="e.g. marcus@apexcontracting.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition font-semibold placeholder:text-slate-400">
+                                <input type="email" name="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address with a domain extension (e.g. name@example.com)" autocapitalize="none" spellcheck="false" placeholder="e.g. marcus@apexcontracting.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition font-semibold placeholder:text-slate-400">
                             </div>
                         </div>
 
@@ -765,11 +765,39 @@
                     e.preventDefault();
                     const nameInput = form.querySelector('[name="fullname"]');
                     const emailInput = form.querySelector('[name="email"]');
-                    if (!nameInput.value.trim() || !emailInput.value.trim()) {
+                    const nameVal = nameInput ? nameInput.value.trim() : '';
+                    const emailVal = emailInput ? emailInput.value.trim() : '';
+                    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+                    if (!nameVal) {
                         if (window.ToolHub) {
-                            ToolHub.showToast('Please enter your full name and email address.', 'error');
+                            ToolHub.showToast('Please enter your full name.', 'error');
                         } else {
-                            alert('Please enter your name and email.');
+                            alert('Please enter your full name.');
+                        }
+                        if (nameInput) nameInput.focus();
+                        return;
+                    }
+
+                    if (!emailVal) {
+                        if (window.ToolHub) {
+                            ToolHub.showToast('Please enter your email address.', 'error');
+                        } else {
+                            alert('Please enter your email address.');
+                        }
+                        if (emailInput) emailInput.focus();
+                        return;
+                    }
+
+                    if (!emailRegex.test(emailVal)) {
+                        if (window.ToolHub) {
+                            ToolHub.showToast('Please enter a valid email address (e.g. name@example.com). Invalid format: "' + emailVal + '".', 'error');
+                        } else {
+                            alert('Please enter a valid email address with a domain extension (e.g. name@example.com).');
+                        }
+                        if (emailInput) {
+                            emailInput.focus();
+                            emailInput.classList.add('input-error');
                         }
                         return;
                     }

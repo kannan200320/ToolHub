@@ -697,6 +697,32 @@
 
         // Universal Strict Form Validation Engine
         initFormValidation: function () {
+            // Enforce strict email pattern & custom validity universally on all email inputs
+            const emailStrictRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            document.querySelectorAll('input[type="email"]').forEach(input => {
+                if (!input.hasAttribute('pattern')) {
+                    input.setAttribute('pattern', '[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}');
+                }
+                if (!input.hasAttribute('title')) {
+                    input.setAttribute('title', 'Please enter a valid email address with a domain extension (e.g. name@example.com)');
+                }
+
+                const validateEmailField = () => {
+                    const val = input.value.trim();
+                    if (!val) {
+                        input.setCustomValidity('');
+                        return;
+                    }
+                    if (!emailStrictRegex.test(val)) {
+                        input.setCustomValidity('Please enter a valid email address with a domain extension (e.g. name@example.com).');
+                    } else {
+                        input.setCustomValidity('');
+                    }
+                };
+                input.addEventListener('input', validateEmailField);
+                input.addEventListener('blur', validateEmailField);
+            });
+
             const forms = document.querySelectorAll('form');
             forms.forEach(form => {
                 if (form.getAttribute('data-no-validate') === 'true' || form.classList.contains('footer-newsletter-form')) return;
@@ -727,16 +753,12 @@
                                 errorMsg = 'Please select an option.';
                             }
                         } else if (input.type === 'email') {
-                            const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
                             if (!val) {
                                 fieldValid = false;
                                 errorMsg = 'Email address is required.';
-                            } else if (/[A-Z]/.test(val)) {
+                            } else if (!emailStrictRegex.test(val)) {
                                 fieldValid = false;
-                                errorMsg = 'Email address must be lowercase.';
-                            } else if (!emailRegex.test(val)) {
-                                fieldValid = false;
-                                errorMsg = 'Please enter a valid email address.';
+                                errorMsg = 'Please enter a valid email address with a domain extension (e.g. name@example.com).';
                             }
                         } else if (input.type === 'password') {
                             if (!val) {
@@ -1054,14 +1076,46 @@
             // Pre-seed accounts on first load
             getRegisteredAccounts();
 
-            // Handle Sign In button & form (Dummy action per client specification: no redirect, no popup, no missing actions)
+            // Handle Sign In button & form (Validates email and password strictly)
+            const emailStrictPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             const loginBtn = document.getElementById('btn-login-submit');
             const handleDummyLogin = (e) => {
                 if (e) {
                     e.preventDefault();
                     e.stopPropagation();
                 }
-                // Pure dummy action: does not redirect to dashboard or make any popups/missing actions
+                const emailInput = document.getElementById('login-email');
+                const passwordInput = document.getElementById('login-password');
+                let hasError = false;
+
+                if (emailInput) {
+                    const val = emailInput.value.trim();
+                    if (!val) {
+                        emailInput.classList.add('border-rose-500', 'ring-2', 'ring-rose-500');
+                        ToolHub.showToast('Email address is required.', 'error');
+                        emailInput.focus();
+                        hasError = true;
+                    } else if (!emailStrictPattern.test(val)) {
+                        emailInput.classList.add('border-rose-500', 'ring-2', 'ring-rose-500');
+                        ToolHub.showToast('Please enter a valid email address with a domain extension (e.g. name@example.com). Format "' + val + '" is invalid.', 'error');
+                        emailInput.focus();
+                        hasError = true;
+                    } else {
+                        emailInput.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500');
+                    }
+                }
+                if (hasError) return false;
+
+                if (passwordInput && !passwordInput.value.trim()) {
+                    passwordInput.classList.add('border-rose-500', 'ring-2', 'ring-rose-500');
+                    ToolHub.showToast('Password is required.', 'error');
+                    passwordInput.focus();
+                    return false;
+                }
+                if (passwordInput) {
+                    passwordInput.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500');
+                }
+                ToolHub.showToast('Sign-in validated successfully (Demo Mode).', 'success');
             };
             if (loginBtn) {
                 loginBtn.addEventListener('click', handleDummyLogin);
@@ -1070,14 +1124,56 @@
                 loginForm.addEventListener('submit', handleDummyLogin);
             }
 
-            // Handle Register button & form (Dummy action per client specification: no redirect, no popup, no missing actions)
+            // Handle Register button & form (Validates name, email, and password strictly)
             const registerBtn = document.getElementById('btn-register-submit');
             const handleDummyRegister = (e) => {
                 if (e) {
                     e.preventDefault();
                     e.stopPropagation();
                 }
-                // Pure dummy action: does not redirect to dashboard or make any popups/missing actions
+                const nameInput = document.getElementById('reg-name');
+                const emailInput = document.getElementById('reg-email');
+                const passwordInput = document.getElementById('reg-password');
+                let hasError = false;
+
+                if (nameInput && !nameInput.value.trim()) {
+                    nameInput.classList.add('border-rose-500', 'ring-2', 'ring-rose-500');
+                    ToolHub.showToast('Full name is required.', 'error');
+                    nameInput.focus();
+                    hasError = true;
+                } else if (nameInput) {
+                    nameInput.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500');
+                }
+                if (hasError) return false;
+
+                if (emailInput) {
+                    const val = emailInput.value.trim();
+                    if (!val) {
+                        emailInput.classList.add('border-rose-500', 'ring-2', 'ring-rose-500');
+                        ToolHub.showToast('Email address is required.', 'error');
+                        emailInput.focus();
+                        hasError = true;
+                    } else if (!emailStrictPattern.test(val)) {
+                        emailInput.classList.add('border-rose-500', 'ring-2', 'ring-rose-500');
+                        ToolHub.showToast('Please enter a valid email address with a domain extension (e.g. name@example.com). Format "' + val + '" is invalid.', 'error');
+                        emailInput.focus();
+                        hasError = true;
+                    } else {
+                        emailInput.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500');
+                    }
+                }
+                if (hasError) return false;
+
+                if (passwordInput && (!passwordInput.value.trim() || passwordInput.value.length < 6)) {
+                    passwordInput.classList.add('border-rose-500', 'ring-2', 'ring-rose-500');
+                    ToolHub.showToast('Password must be at least 6 characters.', 'error');
+                    passwordInput.focus();
+                    return false;
+                }
+                if (passwordInput) {
+                    passwordInput.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500');
+                }
+                ToolHub.showToast('Registration validated successfully (Demo Mode).', 'success');
             };
             if (registerBtn) {
                 registerBtn.addEventListener('click', handleDummyRegister);
@@ -1085,6 +1181,16 @@
             if (registerForm) {
                 registerForm.addEventListener('submit', handleDummyRegister);
             }
+
+            // Realtime clear validation error styling on typing
+            ['login-email', 'reg-email', 'login-password', 'reg-password', 'reg-name'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('input', () => {
+                        el.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500', 'input-error');
+                    });
+                }
+            });
 
             // Sync stored user info into DOM if present
             try {

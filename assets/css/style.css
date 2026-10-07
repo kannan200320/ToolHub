@@ -659,52 +659,68 @@ body.dashboard-body {
 }
 
 /* ==========================================================================
-   Laptop / Compact Desktop Header Fit (1024px to 1279px)
-   Prevents overflow, ensures single-line fit with elegant proportions
+   Header Layout (Chrome Login CTA Fix)
+   - Eliminates Login CTA cutoff in Chrome on 1280px-1366px laptop screens
    ========================================================================== */
+.glass-header > div {
+    max-width: 1440px !important;
+    width: 100% !important;
+}
+
+.glass-header nav {
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+}
+
+.glass-header .nav-pill-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+}
+
+/* Laptop / Compact Desktop Header Fit (1024px to 1279px) */
 @media (min-width: 1024px) and (max-width: 1279px) {
-    /* 1. Header container: maximize usable width (16px horizontal padding) */
     .glass-header > div {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
-        max-width: 100% !important;
     }
 
-    /* 2. Logo container: sleek, consistent brand sizing */
     .glass-header .flex.items-center.justify-between > a:first-child,
     .glass-header a[href="index.html"].flex {
-        gap: 0.625rem !important;
+        gap: 0.5rem !important;
         flex-shrink: 0 !important;
     }
+
     .glass-header .flex.items-center.justify-between > a:first-child > div:first-child,
     .glass-header a[href="index.html"] > div:first-child {
-        width: 2.375rem !important;
-        height: 2.375rem !important;
-        font-size: 1rem !important;
+        width: 2.25rem !important;
+        height: 2.25rem !important;
+        font-size: 0.95rem !important;
         border-radius: 0.75rem !important;
     }
+
     .glass-header .flex.items-center.justify-between > a:first-child > span,
     .glass-header a[href="index.html"] > span {
-        font-size: 1.5rem !important;
+        font-size: 1.35rem !important;
         line-height: 1 !important;
     }
 
-    /* 3. Spacing between Logo and Nav at 1024px */
     .glass-header nav {
-        margin-inline-start: 0.75rem !important;
-        gap: 0.125rem !important;
+        margin-inline-start: 0.5rem !important;
+        gap: 0.15rem !important;
     }
 
-    /* 4. Nav link items: crisp, readable typography and compact padding */
     .glass-header .nav-link-item {
         padding: 0.35rem 0.35rem !important;
-        font-size: 0.72rem !important; /* ~11.5px */
-        letter-spacing: -0.015em !important;
+        font-size: 0.72rem !important;
+        letter-spacing: -0.02em !important;
     }
 
     .glass-header .nav-link-item button,
     .glass-header button.nav-link-item {
-        gap: 0.25rem !important;
+        gap: 0.2rem !important;
     }
 
     .glass-header .nav-link-item.active::after {
@@ -713,10 +729,10 @@ body.dashboard-body {
         bottom: -2px !important;
     }
 
-    /* 5. Right actions container and icons */
     .glass-header .flex.items-center.justify-between > div:last-child {
         gap: 0.35rem !important;
         flex-shrink: 0 !important;
+        margin-left: auto !important;
     }
 
     .glass-header .nav-icon-btn {
@@ -724,27 +740,44 @@ body.dashboard-body {
         height: 2rem !important;
         flex-shrink: 0 !important;
     }
+
     .glass-header .nav-icon-btn i {
-        font-size: 0.65rem !important;
+        font-size: 0.7rem !important;
     }
 
-    /* 6. Renter Login CTA button */
+    /* Login CTA Button: Fully visible, never cut off */
     .glass-header .nav-pill-btn {
-        padding: 0.35rem 0.65rem !important;
-        font-size: 0.6875rem !important; /* 11px */
-        gap: 0.25rem !important;
-        letter-spacing: 0.02em !important;
+        padding: 0.45rem 0.85rem !important;
+        font-size: 0.75rem !important; /* 12px */
+        gap: 0.35rem !important;
         flex-shrink: 0 !important;
     }
+
     .glass-header .nav-pill-btn i {
-        font-size: 0.75rem !important;
+        font-size: 0.8rem !important;
     }
 }
 
 /* Wide Desktop Nav Spacing (1280px+) */
 @media (min-width: 1280px) {
     .glass-header nav {
-        margin-inline-start: 1.5rem !important;
+        margin-inline-start: 1rem !important;
+        gap: 0.35rem !important;
+    }
+
+    .glass-header .nav-link-item {
+        font-size: 0.8125rem !important;
+    }
+
+    .glass-header .flex.items-center.justify-between > div:last-child {
+        margin-left: auto !important;
+        flex-shrink: 0 !important;
+    }
+
+    .glass-header .nav-pill-btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem !important;
+        flex-shrink: 0 !important;
     }
 }
 

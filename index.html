@@ -84,7 +84,7 @@
                 </a>
 
                 <!-- Center: Navigation Links -->
-                <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1.5 2xl:gap-2 flex-nowrap shrink-0 ml-2.5 xl:ml-6 2xl:ml-8">
+                <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1.5 2xl:gap-2 flex-nowrap min-w-0 ml-2 xl:ml-5 2xl:ml-6">
                     <!-- Home Dropdown (Active) -->
                     <div class="relative group shrink-0">
                         <button class="nav-link-item active px-2 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-bold flex items-center gap-1.5 transition text-slate-700 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 whitespace-nowrap">
@@ -158,12 +158,12 @@
     <section class="relative bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white pt-16 pb-28 sm:pt-20 sm:pb-36 overflow-hidden border-b border-slate-200 dark:border-slate-800 transition-colors">
         <!-- Hero Background Image (Workshop, Power Tools & Equipment Staging Yard) -->
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <img src="assets/images/home-diy-hero-bg.png" alt="ToolHub Workshop & Power Tools DIY Staging Garage" class="w-full h-full object-cover object-center filter brightness-[1.02] contrast-[1.02] dark:brightness-[0.92] dark:contrast-[1.06]">
-            <!-- Dedicated Crisp Light Mode Scrim: Gentle wash only behind text, workshop and tools completely visible -->
-            <div class="absolute inset-0 bg-gradient-to-r from-white/45 via-white/15 to-transparent dark:hidden"></div>
-            <!-- Dedicated Rich Dark Mode Scrim: Cinematic tone preserving workshop lights, tools and textures -->
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/65 via-slate-950/25 to-transparent hidden dark:block"></div>
-            <!-- Subtle bottom edge blending only (h-16) -->
+            <img src="assets/images/home-diy-hero-bg.png" alt="ToolHub Workshop & Power Tools DIY Staging Garage" class="w-full h-full object-cover object-right filter brightness-[1.02] contrast-[1.02] dark:brightness-[0.92] dark:contrast-[1.06]">
+            <!-- Dedicated Crisp Light Mode Scrim: Complete solid readability mask behind text, tools visible on right -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-50% to-white/60 lg:to-white/15 dark:hidden"></div>
+            <!-- Dedicated Rich Dark Mode Scrim: Complete solid readability mask behind text, tools visible on right -->
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 via-50% to-slate-950/60 lg:to-slate-950/15 hidden dark:block"></div>
+            <!-- Bottom edge blending (h-16) -->
             <div class="h-16 absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent"></div>
         </div>
 
@@ -367,6 +367,161 @@
         </div>
     </section>
 
+    <!-- SECTION: Official Commercial Equipment Tool Brands (Bug Fix: Clearly visible brand names with suitable OEM logos) -->
+    <section class="py-16 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10 reveal-up">
+                <span class="text-xs font-black uppercase tracking-widest text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full inline-block">
+                    <i class="fa-solid fa-award mr-1.5"></i>CERTIFIED OEM PARTNERS
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white mt-3">
+                    Official Commercial Equipment Tool Brands
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+                    All ToolHub rental equipment and heavy machinery are genuine OEM models maintained strictly to factory specifications with certified service logs.
+                </p>
+            </div>
+
+            <!-- 8 Official Brand Logo Cards (Clearly Identifiable with Logos & Spec Labels) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+                <!-- Brand 1: Caterpillar -->
+                <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex items-center gap-4 transition hover:border-amber-400 dark:hover:border-amber-500 group">
+                    <div class="w-13 h-13 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center shrink-0 p-2.5 text-amber-500 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-truck-monster text-2xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5">
+                            <h3 class="text-sm sm:text-base font-black font-heading tracking-wide text-slate-900 dark:text-white uppercase truncate">CATERPILLAR</h3>
+                            <span class="text-[9px] font-black bg-amber-500 text-slate-950 px-1.5 py-0.5 rounded uppercase">CAT</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">Mini Excavators & Earthmoving</p>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
+                            <i class="fa-solid fa-circle-check text-[9px]"></i> Factory Certified
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Brand 2: DeWalt -->
+                <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex items-center gap-4 transition hover:border-amber-400 dark:hover:border-amber-500 group">
+                    <div class="w-13 h-13 rounded-2xl bg-yellow-500/15 border border-yellow-500/30 flex items-center justify-center shrink-0 p-2.5 text-yellow-500 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-screwdriver-wrench text-2xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5">
+                            <h3 class="text-sm sm:text-base font-black font-heading tracking-wide text-slate-900 dark:text-white uppercase truncate">DEWALT</h3>
+                            <span class="text-[9px] font-black bg-yellow-400 text-slate-950 px-1.5 py-0.5 rounded uppercase">20V XR</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">Cordless Saws & Drill Kits</p>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
+                            <i class="fa-solid fa-circle-check text-[9px]"></i> Factory Certified
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Brand 3: Bobcat -->
+                <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex items-center gap-4 transition hover:border-amber-400 dark:hover:border-amber-500 group">
+                    <div class="w-13 h-13 rounded-2xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center shrink-0 p-2.5 text-orange-500 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-tractor text-2xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5">
+                            <h3 class="text-sm sm:text-base font-black font-heading tracking-wide text-slate-900 dark:text-white uppercase truncate">BOBCAT</h3>
+                            <span class="text-[9px] font-black bg-orange-500 text-white px-1.5 py-0.5 rounded uppercase">T76</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">Compact Track Skid Steers</p>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
+                            <i class="fa-solid fa-circle-check text-[9px]"></i> Factory Certified
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Brand 4: Milwaukee -->
+                <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex items-center gap-4 transition hover:border-amber-400 dark:hover:border-amber-500 group">
+                    <div class="w-13 h-13 rounded-2xl bg-red-500/15 border border-red-500/30 flex items-center justify-center shrink-0 p-2.5 text-red-500 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-bolt text-2xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5">
+                            <h3 class="text-sm sm:text-base font-black font-heading tracking-wide text-slate-900 dark:text-white uppercase truncate">MILWAUKEE</h3>
+                            <span class="text-[9px] font-black bg-red-600 text-white px-1.5 py-0.5 rounded uppercase">M18</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">FUEL High-Torque Fastening</p>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
+                            <i class="fa-solid fa-circle-check text-[9px]"></i> Factory Certified
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Brand 5: Bosch -->
+                <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex items-center gap-4 transition hover:border-amber-400 dark:hover:border-amber-500 group">
+                    <div class="w-13 h-13 rounded-2xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0 p-2.5 text-blue-500 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-hammer text-2xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5">
+                            <h3 class="text-sm sm:text-base font-black font-heading tracking-wide text-slate-900 dark:text-white uppercase truncate">BOSCH</h3>
+                            <span class="text-[9px] font-black bg-blue-600 text-white px-1.5 py-0.5 rounded uppercase">PRO</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">SDS-Max Rotary Hammer Drills</p>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
+                            <i class="fa-solid fa-circle-check text-[9px]"></i> Factory Certified
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Brand 6: Stihl -->
+                <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex items-center gap-4 transition hover:border-amber-400 dark:hover:border-amber-500 group">
+                    <div class="w-13 h-13 rounded-2xl bg-amber-600/15 border border-amber-600/30 flex items-center justify-center shrink-0 p-2.5 text-amber-600 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-tree text-2xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5">
+                            <h3 class="text-sm sm:text-base font-black font-heading tracking-wide text-slate-900 dark:text-white uppercase truncate">STIHL</h3>
+                            <span class="text-[9px] font-black bg-amber-600 text-white px-1.5 py-0.5 rounded uppercase">GAS</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">Chainsaws & Backpack Blowers</p>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
+                            <i class="fa-solid fa-circle-check text-[9px]"></i> Factory Certified
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Brand 7: Genie -->
+                <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex items-center gap-4 transition hover:border-amber-400 dark:hover:border-amber-500 group">
+                    <div class="w-13 h-13 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center shrink-0 p-2.5 text-cyan-500 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-arrows-up-down-left-right text-2xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5">
+                            <h3 class="text-sm sm:text-base font-black font-heading tracking-wide text-slate-900 dark:text-white uppercase truncate">GENIE</h3>
+                            <span class="text-[9px] font-black bg-cyan-600 text-white px-1.5 py-0.5 rounded uppercase">AERIAL</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">Telescopic TraX Boom Lifts</p>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
+                            <i class="fa-solid fa-circle-check text-[9px]"></i> Factory Certified
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Brand 8: Kubota -->
+                <div class="card-hover-lift bg-slate-50 dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 flex items-center gap-4 transition hover:border-amber-400 dark:hover:border-amber-500 group">
+                    <div class="w-13 h-13 rounded-2xl bg-orange-600/15 border border-orange-600/30 flex items-center justify-center shrink-0 p-2.5 text-orange-600 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-gears text-2xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-1.5">
+                            <h3 class="text-sm sm:text-base font-black font-heading tracking-wide text-slate-900 dark:text-white uppercase truncate">KUBOTA</h3>
+                            <span class="text-[9px] font-black bg-orange-600 text-white px-1.5 py-0.5 rounded uppercase">DIESEL</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">Trenchers & Site Machinery</p>
+                        <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 mt-1">
+                            <i class="fa-solid fa-circle-check text-[9px]"></i> Factory Certified
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- SECTION: Popular Tools for Home Projects (Requested in Detail) -->
     <section class="py-20 bg-slate-100/60 dark:bg-toolhub-card/60 border-b border-slate-200 dark:border-slate-800 relative">
