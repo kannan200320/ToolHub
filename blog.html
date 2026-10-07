@@ -76,7 +76,7 @@
                 <!-- Left: Brand Logo -->
                 <a href="index.html" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
-                        <i class="fa-solid fa-truck-monster"></i>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
                     <span class="text-2xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
                 </a>
@@ -154,7 +154,6 @@
 
     <!-- Page Hero Banner with High-Quality Workshop & Renovation Imagery -->
     <section class="py-16 sm:py-20 bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 relative overflow-hidden transition-colors">
-        <div class="absolute inset-0 bg-hazard-stripes opacity-0 dark:opacity-10 pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                 <!-- Left: Headline, Category Chips & Search -->
@@ -262,29 +261,65 @@
         </div>
     </section>
 
-    <!-- Blog Grid -->
-    <section class="pb-16">
+    <!-- Category Filter Bar (Requirement 12) -->
+    <section class="py-6 bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                <div class="flex items-center gap-2 shrink-0">
+                    <span class="text-xs font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center">
+                        <i class="fa-solid fa-filter text-amber-500 mr-1.5"></i> Filter Guides:
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1.5 sm:pb-0 sm:flex-wrap -mx-4 px-4 sm:mx-0 sm:px-0">
+                    <button type="button" onclick="filterBlog('all', this)" class="blog-filter-btn active shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider bg-amber-500 text-slate-950 shadow-md transition">
+                        All Guides (12)
+                    </button>
+                    <button type="button" onclick="filterBlog('earthmoving', this)" class="blog-filter-btn shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                        Heavy Earthmoving &amp; Aerial
+                    </button>
+                    <button type="button" onclick="filterBlog('concrete', this)" class="blog-filter-btn shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                        Concrete &amp; Masonry
+                    </button>
+                    <button type="button" onclick="filterBlog('power-tools', this)" class="blog-filter-btn shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                        Power Tools &amp; Fastening
+                    </button>
+                    <button type="button" onclick="filterBlog('painting-washers', this)" class="blog-filter-btn shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                        Painting &amp; Washers
+                    </button>
+                    <button type="button" onclick="filterBlog('forestry-lawn', this)" class="blog-filter-btn shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                        Lawn, Forestry &amp; Access
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Blog & Guide Grid (Requirement 12) -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="blog-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Post 1: Pressure Washing -->
-                <div class="card-hover-lift delay-100 bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="painting-washers">
                     <div>
                         <div class="aspect-[16/10] overflow-hidden relative">
                             <img src="https://i.pinimg.com/1200x/f0/22/9a/f0229aa9f20967de8527a18b38f631b5.jpg" alt="Pressure Washing Concrete Surface" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://i.pinimg.com/736x/82/bb/30/82bb30f022deab8d59e8ddfe61d0a4d2.jpg';">
                             <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
                                 Outdoor Cleaning
                             </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                3,200 PSI / 2.5 GPM
+                            </span>
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
                                 <i class="fa-regular fa-clock text-amber-500"></i>
-                                <span>5 Min Read · Updated Aug 2026</span>
+                                <span>5 Min Read · Updated Oct 2026</span>
                             </div>
                             <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white group-hover:text-amber-500 transition leading-snug">
                                 <a href="blog-details.html?id=pressure-washer">Pressure Washer PSI Guide: What Pressure to Use for Siding vs Concrete</a>
                             </h3>
                             <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2.5 line-clamp-2 leading-relaxed">
-                                Learn which nozzle tip angles prevent gouging cedar wood decking while delivering 4,000 PSI deep cleaning on commercial oil-stained driveways.
+                                Learn which nozzle tip angles prevent gouging cedar wood decking while delivering 3,200 PSI deep cleaning on commercial oil-stained driveways.
                             </p>
                         </div>
                     </div>
@@ -298,12 +333,15 @@
                 </div>
 
                 <!-- Post 2: Chainsaw Safety -->
-                <div class="card-hover-lift delay-200 bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="forestry-lawn">
                     <div>
                         <div class="aspect-[16/10] overflow-hidden relative">
                             <img src="https://i.pinimg.com/1200x/a2/5d/bb/a25dbb444e394a705324e8a50ac4ac8c.jpg" alt="Gas Chainsaw Cutting Tree Log" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://i.pinimg.com/1200x/7a/ef/4e/7aef4e2438063a26643ef6fc491d9172.jpg';">
                             <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
-                                Forestry & Safety
+                                Forestry &amp; Safety
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                45.4cc Gas Engine
                             </span>
                         </div>
                         <div class="p-6">
@@ -312,7 +350,7 @@
                                 <span>7 Min Read · Pro Checklist</span>
                             </div>
                             <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white group-hover:text-amber-500 transition leading-snug">
-                                <a href="blog-details.html?id=chainsaw-safety">Chainsaw Kickback Safety: How to Properly Hold & Prime a Gas Saw</a>
+                                <a href="blog-details.html?id=chainsaw-safety">Chainsaw Kickback Safety: How to Properly Hold &amp; Prime a Gas Saw</a>
                             </h3>
                             <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2.5 line-clamp-2 leading-relaxed">
                                 The essential 5-step pre-cut checklist every homeowner must know before taking down fallen storm timber or clearing heavy branches.
@@ -329,12 +367,15 @@
                 </div>
 
                 <!-- Post 3: Mini Excavator DIY -->
-                <div class="card-hover-lift delay-300 bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="earthmoving">
                     <div>
                         <div class="aspect-[16/10] overflow-hidden relative">
                             <img src="assets/images/cat-excavator.jpg" alt="Caterpillar Compact Hydraulic Mini Excavator Trenching" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
                                 Earthmoving
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                8.4 ft Dig Depth
                             </span>
                         </div>
                         <div class="p-6">
@@ -360,12 +401,15 @@
                 </div>
 
                 <!-- Post 4: Airless Paint Sprayer -->
-                <div class="card-hover-lift delay-150 bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="painting-washers">
                     <div>
                         <div class="aspect-[16/10] overflow-hidden relative">
                             <img src="https://i.pinimg.com/1200x/bc/96/f8/bc96f8d8cf437803cbb9cebfaa6fdd7d.jpg" alt="Graco Magnum X7 Airless Paint Sprayer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://media.bunnings.com.au/api/public/content/5245b7db1753445d8efe308eaab3101f?v=26029255&t=w700dpr2';">
                             <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
-                                Painting & Finishing
+                                Painting &amp; Finishing
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                3,000 PSI / 0.31 GPM
                             </span>
                         </div>
                         <div class="p-6">
@@ -374,7 +418,7 @@
                                 <span>6 Min Read · Equipment Tutorial</span>
                             </div>
                             <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white group-hover:text-amber-500 transition leading-snug">
-                                <a href="blog-details.html?id=paint-sprayer">Airless Paint Sprayer Masterclass: Tip Sizing, Pressure & Thinning</a>
+                                <a href="blog-details.html?id=paint-sprayer">Airless Paint Sprayer Masterclass: Tip Sizing, Pressure &amp; Thinning</a>
                             </h3>
                             <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2.5 line-clamp-2 leading-relaxed">
                                 How to achieve flawless spray finishes without overspray or clogging on exterior siding, drywall interiors, and industrial metal fencing.
@@ -391,12 +435,15 @@
                 </div>
 
                 <!-- Post 5: Scaffolding vs Ladder -->
-                <div class="bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="forestry-lawn">
                     <div>
                         <div class="aspect-[16/10] overflow-hidden relative">
                             <img src="https://i.pinimg.com/1200x/e7/68/0e/e7680e5a31a6e68621e1fbb1d7e63040.jpg" alt="Baker Style Rolling Scaffold Tower on Renovation Site" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://i.pinimg.com/1200x/18/63/23/186323f26e8fc3d68101db25ac6c6d19.jpg';">
                             <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
-                                Access & Scaffolding
+                                Access &amp; Scaffolding
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                1,000 lb Load Rated
                             </span>
                         </div>
                         <div class="p-6">
@@ -422,12 +469,15 @@
                 </div>
 
                 <!-- Post 6: Soil Preparation & Rototiller -->
-                <div class="bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="forestry-lawn">
                     <div>
                         <div class="aspect-[16/10] overflow-hidden relative">
                             <img src="https://i.pinimg.com/1200x/41/b0/d7/41b0d74cf69f8c03143bef0b559acf19.jpg" alt="Honda Gas Garden Rototiller Cultivating Hardpack Soil" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://i.pinimg.com/1200x/0e/aa/80/0eaa80aef6e0bfbd5e5b3654fc799290.jpg';">
                             <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
-                                Lawn & Landscaping
+                                Lawn &amp; Landscaping
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                21" Bolo Tines
                             </span>
                         </div>
                         <div class="p-6">
@@ -451,6 +501,414 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Post 7: Bosch SDS-Max Rotary Hammer & Slab Demolition -->
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="concrete">
+                    <div>
+                        <div class="aspect-[16/10] overflow-hidden relative">
+                            <img src="https://i.pinimg.com/1200x/18/e4/ca/18e4ca90f593a5267a1862505c6cb42b.jpg" alt="Bosch GBH SDS-Max Rotary Hammer Drill Demolition" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=800&q=80';">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Concrete &amp; Demolition
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                8.5 Ft-Lbs Impact
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
+                                <i class="fa-regular fa-clock text-amber-500"></i>
+                                <span>7 Min Read · Pro Masonry</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white group-hover:text-amber-500 transition leading-snug">
+                                <a href="blog-details.html?id=bosch-hammer">SDS-Max vs Demolition Breakers: Breaking Foundation Slabs Without HAVS Vibration</a>
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2.5 line-clamp-2 leading-relaxed">
+                                Master the zero-pressure electro-pneumatic strike technique and 2-inch edge relief pattern to break patio slabs twice as fast.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-100 dark:border-toolhub-border flex justify-between items-center text-xs">
+                        <span class="text-slate-400">By Jack Callahan</span>
+                        <a href="blog-details.html?id=bosch-hammer" class="font-bold text-amber-500 hover:text-amber-600 flex items-center gap-1">
+                            <span>Read Guide</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Post 8: Genie Boom Lift Wind & Elevated Safety -->
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="earthmoving">
+                    <div>
+                        <div class="aspect-[16/10] overflow-hidden relative">
+                            <img src="https://i.pinimg.com/1200x/e4/b4/12/e4b412ad893abe62e353bf6dcfd4f53c.jpg" alt="Genie S-65 TraX Rough Terrain Boom Lift Operating at Height" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1541888946425-d0fbb180c5f7?auto=format&fit=crop&w=800&q=80';">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Aerial Access
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                71-Ft Reach TraX
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
+                                <i class="fa-regular fa-clock text-amber-500"></i>
+                                <span>9 Min Read · OSHA Standard</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white group-hover:text-amber-500 transition leading-snug">
+                                <a href="blog-details.html?id=genie-boom">Operating Telescopic Boom Lifts in High Winds: Critical Tip-Over Thresholds &amp; OSHA Rules</a>
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2.5 line-clamp-2 leading-relaxed">
+                                Critical 28 MPH velocity cutoff protocols, harness tie-off mandates, and the 4-point TraX low-ground-pressure footprint on soft site soils.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-100 dark:border-toolhub-border flex justify-between items-center text-xs">
+                        <span class="text-slate-400">By Samantha Wright</span>
+                        <a href="blog-details.html?id=genie-boom" class="font-bold text-amber-500 hover:text-amber-600 flex items-center gap-1">
+                            <span>Read Guide</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Post 9: Doosan Generator Sizing & Temporary Power -->
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="earthmoving">
+                    <div>
+                        <div class="aspect-[16/10] overflow-hidden relative">
+                            <img src="assets/images/honda-generator.jpg" alt="Doosan G70 Towable Prime Diesel Generator" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80';">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Power Generation
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                70 kVA / 56 kW
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
+                                <i class="fa-regular fa-clock text-amber-500"></i>
+                                <span>8 Min Read · Electrical Eng</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white group-hover:text-amber-500 transition leading-snug">
+                                <a href="blog-details.html?id=doosan-generator">Calculating Jobsite KVA &amp; Voltage Loads: Eliminating Voltage Drops Across 200ft Extension Cables</a>
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2.5 line-clamp-2 leading-relaxed">
+                                Prevent costly motor burnouts. Step-by-step wire gauge calculations, Locked Rotor Amperage (LRA) surge sizing, and 3-phase balancing.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-100 dark:border-toolhub-border flex justify-between items-center text-xs">
+                        <span class="text-slate-400">By Marcus Thorne</span>
+                        <a href="blog-details.html?id=doosan-generator" class="font-bold text-amber-500 hover:text-amber-600 flex items-center gap-1">
+                            <span>Read Guide</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Post 10: Bobcat T76 Track Loader Operation -->
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="earthmoving">
+                    <div>
+                        <div class="aspect-[16/10] overflow-hidden relative">
+                            <img src="https://i.pinimg.com/1200x/9e/3c/d3/9e3cd3e492785789c5fe1c628bb13e59.jpg" alt="Bobcat T76 Compact Track Skid Steer Loader" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Site Grading
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                2,900 lb Capacity
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
+                                <i class="fa-regular fa-clock text-amber-500"></i>
+                                <span>7 Min Read · Fleet Masterclass</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white group-hover:text-amber-500 transition leading-snug">
+                                <a href="blog-details.html?id=bobcat-grading">Skid Steer Track Maintenance, Zero-Radius Turning, and Hydraulic Bob-Tach Safety</a>
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2.5 line-clamp-2 leading-relaxed">
+                                Reduce track lug wear by 70% with the 3-point Y-turn technique, plus essential hydraulic pin lock confirmation rules for attachments.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-100 dark:border-toolhub-border flex justify-between items-center text-xs">
+                        <span class="text-slate-400">By Elena Vance</span>
+                        <a href="blog-details.html?id=bobcat-grading" class="font-bold text-amber-500 hover:text-amber-600 flex items-center gap-1">
+                            <span>Read Guide</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Post 11: Stihl Backpack Blower Commercial Debris Clearing -->
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="forestry-lawn">
+                    <div>
+                        <div class="aspect-[16/10] overflow-hidden relative">
+                            <img src="https://i.pinimg.com/1200x/92/74/97/92749747c10cc8a52e0e6d07fcdeb688.jpg" alt="Stihl BR 600 Professional Heavy Backpack Leaf Blower" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=800&q=80';">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Site Cleanup
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                677 CFM / 238 MPH
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
+                                <i class="fa-regular fa-clock text-amber-500"></i>
+                                <span>6 Min Read · Commercial Grounds</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white group-hover:text-amber-500 transition leading-snug">
+                                <a href="blog-details.html?id=stihl-blower">CFM vs MPH: Commercial Debris Clearing Strategy with 677 CFM Stihl 4-MIX Blowers</a>
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2.5 line-clamp-2 leading-relaxed">
+                                The science of moving heavy wet site mud and autumn leaves: nozzle angles, windrow corridors, and 50:1 ethanol-free fuel tuning.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-100 dark:border-toolhub-border flex justify-between items-center text-xs">
+                        <span class="text-slate-400">By David Chen</span>
+                        <a href="blog-details.html?id=stihl-blower" class="font-bold text-amber-500 hover:text-amber-600 flex items-center gap-1">
+                            <span>Read Guide</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Post 12: Milwaukee High-Torque Impact Wrench -->
+                <div class="blog-post-card card-hover-lift bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-toolhub-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-category="power-tools">
+                    <div>
+                        <div class="aspect-[16/10] overflow-hidden relative">
+                            <img src="https://i.pinimg.com/736x/50/0f/43/500f43d5b4e88eff8ef80ab5b14855fd.jpg" alt="Milwaukee M18 FUEL High Torque Impact Wrench Kit" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80';">
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Heavy Fastening
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                1,400 Ft-Lbs Torque
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
+                                <i class="fa-regular fa-clock text-amber-500"></i>
+                                <span>6 Min Read · Structural Steel</span>
+                            </div>
+                            <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white group-hover:text-amber-500 transition leading-snug">
+                                <a href="blog-details.html?id=milwaukee-impact">Nut-Busting Torque vs Controlled Fastening: How M18 FUEL Protects Structural Bolts from Over-Torquing</a>
+                            </h3>
+                            <p class="text-xs text-slate-500 dark:text-zinc-400 mt-2.5 line-clamp-2 leading-relaxed">
+                                Protect Grade 8 bolts and trailer studs. Why chrome sockets shatter under impact and how Mode 4 auto-slowdown stops stripped threads.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 border-t border-slate-100 dark:border-toolhub-border flex justify-between items-center text-xs">
+                        <span class="text-slate-400">By Jack Callahan</span>
+                        <a href="blog-details.html?id=milwaukee-impact" class="font-bold text-amber-500 hover:text-amber-600 flex items-center gap-1">
+                            <span>Read Guide</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Filter Script -->
+            <script>
+            function filterBlog(category, btn) {
+                // Update active tab buttons
+                document.querySelectorAll('.blog-filter-btn').forEach(b => {
+                    b.className = 'blog-filter-btn shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition';
+                });
+                btn.className = 'blog-filter-btn active shrink-0 whitespace-nowrap px-3.5 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider bg-amber-500 text-slate-950 shadow-md transition';
+
+                // Filter cards
+                const cards = document.querySelectorAll('.blog-post-card');
+                cards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (category === 'all' || cardCategory === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            </script>
+        </div>
+    </section>
+
+    <!-- Equipment Selection Guide & Jobsite Decision Matrix Table (Requirement 12) -->
+    <section class="py-16 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-black uppercase tracking-widest text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                    QUICK DECISION MATRIX
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white mt-3">
+                    Equipment Selection &amp; Jobsite Matching Matrix
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+                    Match your specific renovation project or jobsite scope to the certified tool, required safety gear, and recommended rental duration.
+                </p>
+            </div>
+
+            <div class="bg-white dark:bg-toolhub-card rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs font-semibold">
+                        <thead class="bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 text-slate-400 uppercase font-black tracking-wider text-[10px]">
+                            <tr>
+                                <th class="p-4">Project / Task</th>
+                                <th class="p-4">Recommended Tool / Machinery</th>
+                                <th class="p-4">Key Specification</th>
+                                <th class="p-4">Required PPE</th>
+                                <th class="p-4">Best Duration</th>
+                                <th class="p-4">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                            <tr>
+                                <td class="p-4 font-bold text-slate-900 dark:text-white">Foundation Trenching &amp; Drainage</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="text-amber-500">🚜</span>
+                                    <span>Caterpillar 302.7 CR Mini Excavator</span>
+                                </td>
+                                <td class="p-4">8.4 ft Dig Depth · 24.7 HP</td>
+                                <td class="p-4"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px]">Hard Hat, Steel-Toes</span></td>
+                                <td class="p-4 text-emerald-500 font-bold">3-Day Weekend ($412)</td>
+                                <td class="p-4"><a href="equipment-details.html?id=cat-excavator" class="text-amber-500 font-bold hover:underline">View Unit</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-900 dark:text-white">2-Story Siding Painting &amp; Eaves</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="text-purple-500">🎨</span>
+                                    <span>Graco Magnum X7 Airless Sprayer</span>
+                                </td>
+                                <td class="p-4">3,000 PSI · 100 ft Hose Support</td>
+                                <td class="p-4"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px]">Organic Vapor Mask, Shield</span></td>
+                                <td class="p-4 text-emerald-500 font-bold">Daily ($58)</td>
+                                <td class="p-4"><a href="equipment-details.html?id=graco-sprayer" class="text-amber-500 font-bold hover:underline">View Unit</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-900 dark:text-white">High Roof &amp; Commercial Facade Work</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="text-blue-500">🏗️</span>
+                                    <span>Genie S-65 TraX Telescopic Boom Lift</span>
+                                </td>
+                                <td class="p-4">71 ft Reach · 4WD Rubber TraX</td>
+                                <td class="p-4"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px]">Full Fall Harness, Vest</span></td>
+                                <td class="p-4 text-emerald-500 font-bold">Weekly ($1,400)</td>
+                                <td class="p-4"><a href="equipment-details.html?id=genie-s65" class="text-amber-500 font-bold hover:underline">View Unit</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-900 dark:text-white">Driveway &amp; Deck Restoration</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="text-sky-500">💧</span>
+                                    <span>Simpson MegaShot 3200 PSI Washer</span>
+                                </td>
+                                <td class="p-4">3,200 PSI · 2.5 GPM Honda GC190</td>
+                                <td class="p-4"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px]">Eye Splash Shield, Boots</span></td>
+                                <td class="p-4 text-emerald-500 font-bold">Daily ($65)</td>
+                                <td class="p-4"><a href="equipment-details.html?id=simpson-washer" class="text-amber-500 font-bold hover:underline">View Unit</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-900 dark:text-white">Patio Tile &amp; Paver Cutting</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="text-amber-500">🪚</span>
+                                    <span>DeWalt 10" Wet Tile Saw with Stand</span>
+                                </td>
+                                <td class="p-4">28" Rip Capacity · Dual Water Jets</td>
+                                <td class="p-4"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px]">Safety Glasses, Ear Plugs</span></td>
+                                <td class="p-4 text-emerald-500 font-bold">3-Day Weekend ($112)</td>
+                                <td class="p-4"><a href="equipment-details.html?id=dewalt-tile-saw" class="text-amber-500 font-bold hover:underline">View Unit</a></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-slate-900 dark:text-white">Hardpack Clay Garden Bed Prep</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="text-emerald-500">🌱</span>
+                                    <span>Honda Mid-Tine Gas Garden Rototiller</span>
+                                </td>
+                                <td class="p-4">21" Tilling Width · 8" Depth</td>
+                                <td class="p-4"><span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-[10px]">Heavy Boots, Gloves</span></td>
+                                <td class="p-4 text-emerald-500 font-bold">Daily ($62)</td>
+                                <td class="p-4"><a href="equipment-details.html?id=honda-tiller" class="text-amber-500 font-bold hover:underline">View Unit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Operator Safety & Equipment FAQs Accordion (Requirement 12) -->
+    <section class="py-16 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-black uppercase tracking-widest text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3.5 py-1 rounded-full">
+                    KNOWLEDGE BASE
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black font-heading text-slate-900 dark:text-white mt-3">
+                    Frequently Asked Equipment &amp; Safety Questions
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+                    Everything you need to know about operator qualifications, fuel policies, delivery logistics, and safety protocols.
+                </p>
+            </div>
+
+            <!-- Accordion List -->
+            <div class="space-y-4">
+                <details class="group p-5 rounded-2xl bg-slate-50 dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 open:border-amber-500 transition-colors">
+                    <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-sm text-slate-900 dark:text-white">
+                        <span>Do I need a special commercial license to rent an excavator or boom lift?</span>
+                        <span class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-xs group-open:rotate-180 transition-transform">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                        No special commercial license (CDL) is required for homeowners or contractors operating machinery under 10,000 lbs on private jobsite property. However, if you plan to tow the equipment yourself, your personal tow vehicle must meet certified gross trailer weight ratings. ToolHub provides complimentary loading safety checks or full jobsite flatbed delivery.
+                    </p>
+                </details>
+
+                <details class="group p-5 rounded-2xl bg-slate-50 dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 open:border-amber-500 transition-colors">
+                    <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-sm text-slate-900 dark:text-white">
+                        <span>What is ToolHub's fuel policy upon return?</span>
+                        <span class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-xs group-open:rotate-180 transition-transform">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                        All gas and diesel machinery is provided with a 100% full fuel tank or fully charged battery packs. Renters can either return the machine full to avoid refueling charges, or opt for our at-cost depot refueling service with zero penalty surcharges.
+                    </p>
+                </details>
+
+                <details class="group p-5 rounded-2xl bg-slate-50 dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 open:border-amber-500 transition-colors">
+                    <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-sm text-slate-900 dark:text-white">
+                        <span>How does the Zero-Liability Damage Waiver protect me?</span>
+                        <span class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-xs group-open:rotate-180 transition-transform">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                        Our optional damage waiver relieves renters of financial responsibility for accidental jobsite damage, including blown hydraulic hoses, punctured tires, body scratches, or rock dents up to $50,000. It covers normal field incidents so your security deposit is safely returned.
+                    </p>
+                </details>
+
+                <details class="group p-5 rounded-2xl bg-slate-50 dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 open:border-amber-500 transition-colors">
+                    <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-sm text-slate-900 dark:text-white">
+                        <span>What weather conditions prevent aerial boom lift operation?</span>
+                        <span class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-xs group-open:rotate-180 transition-transform">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                        OSHA and ANSI standards mandate grounding aerial boom platforms whenever sustained winds or gusts exceed 28 MPH (12.5 m/s). If carrying large sheet materials that catch wind like a sail, work must cease at 15 MPH. Boom lifts must also never be operated within 10 feet of live electrical power lines.
+                    </p>
+                </details>
+
+                <details class="group p-5 rounded-2xl bg-slate-50 dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 open:border-amber-500 transition-colors">
+                    <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-sm text-slate-900 dark:text-white">
+                        <span>How fast is the security deposit escrow refunded?</span>
+                        <span class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-xs group-open:rotate-180 transition-transform">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                        Because deposits are pre-authorization holds rather than settled charges, the hold is electronically released immediately upon completing the 60-second depot return check-in. Funds reappear in your available credit or checking balance within minutes.
+                    </p>
+                </details>
             </div>
         </div>
     </section>
@@ -540,11 +998,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
                 <!-- Col 1: Brand & Contact (Desktop 6 cols, Tablet full, Mobile full) -->
                 <div class="sm:col-span-2 lg:col-span-6 space-y-5 sm:space-y-6">
-                    <a href="index.html" class="flex items-center gap-3.5">
-                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl sm:text-2xl shadow-lg shadow-amber-500/20 shrink-0">
-                            <i class="fa-solid fa-truck-monster"></i>
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 shrink-0 group-hover:scale-105 transition transform">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
                         </div>
-                        <span class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                        <span class="text-2xl font-black font-heading tracking-tight text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
                     </a>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
                         Curating premium heavy equipment, commercial construction machinery, and precision DIY power tools for contractors, craftsmen, and home renovators worldwide.
@@ -735,10 +1193,10 @@
     <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
     <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
         <!-- Header: Menu title & Close button -->
-        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-2">
-            <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 mb-2 shrink-0">
+            <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
             <button data-close="mobile-menu" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" aria-label="Close menu">
-                <i class="fa-solid fa-xmark text-2xl"></i>
+                <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
 
@@ -780,20 +1238,17 @@
                     <span>RENTER LOGIN</span>
                 </a>
             </div>
-
-            <!-- Divider Line -->
-            <div class="border-t border-slate-200 dark:border-slate-800 my-4"></div>
-
-            <!-- Bottom Toggle Buttons (Below the menu as in Image 2) -->
-            <div class="flex items-center justify-around py-2">
-                <button type="button" data-toggle="theme" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
-                    <i class="fa-solid fa-moon text-2xl"></i>
-                </button>
-                <button type="button" data-toggle="direction" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
-                    <i class="fa-solid fa-right-left text-xl"></i>
-                </button>
-            </div>
         </nav>
+
+        <!-- Pinned Drawer Footer: Theme & RTL Toggles (Firmly visible on mobile < 640px/768px; hidden on >= 640px/768px tablet where navbar already has them) -->
+        <div class="drawer-toggles-container pt-3 mt-auto border-t border-slate-200 dark:border-slate-800 shrink-0 flex items-center justify-around sm:hidden">
+            <button type="button" data-toggle="theme" class="w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-700/80 shadow-sm" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+                <i class="fa-solid fa-moon text-lg"></i>
+            </button>
+            <button type="button" data-toggle="direction" class="w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-700/80 shadow-sm" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
+                <i class="fa-solid fa-right-left text-base"></i>
+            </button>
+        </div>
     </div>
 
     <!-- Scripts -->

@@ -78,7 +78,7 @@
                 <!-- Left: Brand Logo -->
                 <a href="index.html" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
-                        <i class="fa-solid fa-truck-monster"></i>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
                     <span class="text-2xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
                 </a>
@@ -154,24 +154,31 @@
         </div>
     </header>
 
-    <!-- Hero Section: Commercial Contractor Heavy Fleet -->
-    <section class="relative bg-white dark:bg-neutral-950 text-slate-900 dark:text-white py-24 overflow-hidden border-b border-slate-200 dark:border-neutral-800 transition-colors">
-        <!-- Hero Background Image Overlay (dark mode only) -->
-        <div class="hidden dark:block absolute inset-0 z-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=85');"></div>
-        <div class="hidden dark:block absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/95 to-neutral-950/70 z-0"></div>
+    <!-- Hero Section: Commercial Contractor Fleet -->
+    <section class="relative bg-white dark:bg-neutral-950 text-slate-900 dark:text-white py-20 lg:py-24 overflow-hidden border-b border-slate-200 dark:border-neutral-800 transition-colors">
+        <!-- Hero Background Image (Commercial Heavy Equipment Yard & Fleet) -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <img src="assets/images/home-contractor-hero-bg.jpg" alt="ToolHub Commercial Heavy Equipment Yard & Fleet" class="w-full h-full object-cover object-center filter brightness-[1.02] contrast-[1.02] dark:brightness-[0.92] dark:contrast-[1.06]">
+            <!-- Dedicated Crisp Light Mode Scrim: Gentle wash only behind text, fleet yard completely visible -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white/50 via-white/20 to-transparent dark:hidden"></div>
+            <!-- Dedicated Rich Dark Mode Scrim: Cinematic tone preserving machinery lights and fleet colors -->
+            <div class="absolute inset-0 bg-gradient-to-r from-neutral-950/65 via-neutral-950/25 to-transparent hidden dark:block"></div>
+            <!-- Subtle bottom edge blending only (h-16) -->
+            <div class="h-16 absolute bottom-0 inset-x-0 bg-gradient-to-t from-white dark:from-neutral-950 to-transparent"></div>
+        </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- Left Details -->
                 <div class="lg:col-span-7 reveal-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold mb-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold mb-6 shadow-sm">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-dot"></span>
                         SAME-DAY FLATBED JOBSITE DELIVERY AVAILABLE
                     </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight leading-tight text-slate-900 dark:text-white">
-                        Commercial Heavy Equipment Rental <span class="text-amber-500">Zero Jobsite Downtime.</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight leading-tight text-slate-950 dark:text-white drop-shadow-sm">
+                        Commercial Heavy Equipment Rental <span class="text-orange-500 dark:text-orange-400">Zero Jobsite Downtime.</span>
                     </h1>
-                    <p class="mt-6 text-lg text-slate-600 dark:text-neutral-300 leading-relaxed max-w-2xl">
+                    <p class="mt-6 text-lg text-slate-950 dark:text-white leading-relaxed max-w-2xl font-semibold">
                         Power your jobsite with modern Caterpillar, Bobcat, Kubota, and Genie machinery. Rent excavators, telehandlers, scissor lifts, and industrial generators with flexible Net-30 trade credit.
                     </p>
 
@@ -180,25 +187,25 @@
                             <span>Explore Heavy Fleet</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="pricing.html" class="px-7 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-slate-900 dark:text-white font-bold text-sm border border-slate-300 dark:border-neutral-700 transition flex items-center gap-2">
+                        <a href="pricing.html" class="px-7 py-3.5 rounded-xl bg-white/90 hover:bg-white dark:bg-neutral-900/90 dark:hover:bg-neutral-800 backdrop-blur-md text-slate-900 dark:text-white font-bold text-sm border border-slate-300 dark:border-neutral-700 shadow-sm transition flex items-center gap-2">
                             <i class="fa-solid fa-handshake text-amber-500 dark:text-amber-400"></i>
                             <span>Contractor Trade Credit</span>
                         </a>
                     </div>
 
-                    <!-- Fleet Metrics -->
-                    <div class="mt-12 pt-8 border-t border-slate-200 dark:border-neutral-800 grid grid-cols-3 gap-2 min-[400px]:gap-4 sm:gap-6">
+                    <!-- Fleet Metrics (ToolHub Style Glass Card) -->
+                    <div class="mt-12 p-4 sm:p-5 rounded-2xl bg-white/85 dark:bg-neutral-900/85 backdrop-blur-md border border-slate-200/80 dark:border-neutral-800/80 shadow-md grid grid-cols-3 gap-2 min-[400px]:gap-4 sm:gap-6">
                         <div>
                             <span class="text-xl min-[400px]:text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-amber-500 whitespace-nowrap">1,200+</span>
-                            <p class="text-[10px] min-[400px]:text-xs text-slate-500 dark:text-neutral-400 mt-1 uppercase tracking-wider font-semibold leading-tight">Heavy Units in Fleet</p>
+                            <p class="text-[10px] min-[400px]:text-xs text-slate-600 dark:text-neutral-300 mt-1 uppercase tracking-wider font-bold leading-tight">Heavy Units in Fleet</p>
                         </div>
                         <div>
-                            <span class="text-xl min-[400px]:text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-slate-900 dark:text-white whitespace-nowrap">4 Hrs</span>
-                            <p class="text-[10px] min-[400px]:text-xs text-slate-500 dark:text-neutral-400 mt-1 uppercase tracking-wider font-semibold leading-tight">Average Jobsite Dispatch</p>
+                            <span class="text-xl min-[400px]:text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-slate-950 dark:text-white whitespace-nowrap">4 Hrs</span>
+                            <p class="text-[10px] min-[400px]:text-xs text-slate-600 dark:text-neutral-300 mt-1 uppercase tracking-wider font-bold leading-tight">Average Dispatch</p>
                         </div>
                         <div>
                             <span class="text-xl min-[400px]:text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-emerald-600 dark:text-emerald-400 whitespace-nowrap">99.8%</span>
-                            <p class="text-[10px] min-[400px]:text-xs text-slate-500 dark:text-neutral-400 mt-1 uppercase tracking-wider font-semibold leading-tight">Fleet Uptime Guarantee</p>
+                            <p class="text-[10px] min-[400px]:text-xs text-slate-600 dark:text-neutral-300 mt-1 uppercase tracking-wider font-bold leading-tight">Uptime Guarantee</p>
                         </div>
                     </div>
                 </div>
@@ -257,105 +264,371 @@
         </div>
     </section>
 
-    <!-- Heavy Fleet Category Grid -->
-    <section class="py-20 bg-white dark:bg-neutral-950">
+    <!-- Equipment Categories: Heavy Fleet vs Small Equipment -->
+    <section class="py-20 bg-white dark:bg-neutral-950 border-b border-slate-200 dark:border-neutral-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-amber-500">HEAVY EQUIPMENT DIVISIONS</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white mt-2">Engineered for Maximum Jobsite Production</h2>
-                <p class="mt-3 text-slate-600 dark:text-neutral-400 text-sm">Every heavy machine is serviced by factory-certified technicians with 100% fluid, hydraulic, and safety checks prior to delivery.</p>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-amber-500">EQUIPMENT CATEGORIES &amp; FLEET CLASSIFICATION</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white mt-2">Heavy Machinery &amp; Small Jobsite Equipment</h2>
+                <p class="mt-3 text-slate-600 dark:text-neutral-400 text-sm">
+                    ToolHub categorizes equipment into two distinct divisions to match your exact jobsite scale. Learn about our heavy earthmoving and aerial machinery versus agile, trailer-towable small support tools.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Fleet 1 -->
-                <div class="tool-card card-hover-lift delay-100 bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+            <!-- Two-Column Category Explanation Cards with Relevant Visuals -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Category Explanation 1: Commercial Heavy Equipment -->
+                <div class="bg-slate-50 dark:bg-neutral-900 rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-lg p-6 sm:p-8 flex flex-col justify-between card-hover-lift">
                     <div>
-                        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950">
-                            <img src="assets/images/cat-excavator.jpg" alt="Mini Excavator" class="w-full h-full object-cover">
+                        <div class="relative aspect-[16/9] rounded-2xl overflow-hidden mb-6 bg-slate-200 dark:bg-neutral-950">
+                            <img src="assets/images/cat-excavator.jpg" alt="Commercial Heavy Equipment" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&q=85';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-amber-500 text-slate-950 text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                                Heavy Equipment Division
+                            </span>
+                            <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <span class="text-xs font-bold text-amber-400">Tonnage: 2.5T to 25T &bull; Flatbed Dispatched</span>
+                                <h4 class="text-xl font-bold font-heading">Earthmoving, Aerial Lifts &amp; Civil Fleet</h4>
+                            </div>
                         </div>
-                        <span class="text-xs font-bold text-amber-500">Earthmoving Division</span>
-                        <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mt-1">
-                            <a href="equipment-details.html?id=cat-excavator" class="hover:text-amber-500 transition">Caterpillar 302.7 CR Mini Excavator</a>
+
+                        <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white mb-2">
+                            Commercial Heavy Equipment Overview
                         </h3>
-                        <p class="text-xs text-slate-500 dark:text-neutral-400 mt-2">Zero tail swing, 24.7 HP diesel, enclosed cab with AC, hydraulic thumb included.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
-                        <div>
-                            <span class="text-xl font-black text-slate-900 dark:text-white">$275</span>
-                            <span class="text-xs text-slate-500">/day</span>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-neutral-300 leading-relaxed">
+                            Heavy machinery designed for high-capacity civil works, deep excavation, site clearing, multi-story structural access, and bulk material handling. Dispatched directly to active jobsites on commercial lowboy flatbeds with certified hydraulic inspections.
+                        </p>
+
+                        <!-- Key Operational Pillars -->
+                        <div class="mt-5 space-y-2.5 text-xs text-slate-700 dark:text-neutral-300">
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-truck-moving text-amber-500 mt-0.5"></i>
+                                <span><strong>Delivery Logistics:</strong> Delivered via commercial flatbed tilt-tray; guaranteed on-time site placement.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-certificate text-amber-500 mt-0.5"></i>
+                                <span><strong>Safety Compliance:</strong> 50-point hydraulic inspection log, OSHA certified, enclosed ROPS/FOPS cabs.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-file-invoice text-amber-500 mt-0.5"></i>
+                                <span><strong>Account Terms:</strong> Net-30 monthly trade credit, $0 security deposit, 2-hour field swap SLA.</span>
+                            </div>
                         </div>
-                        <a href="equipment-details.html?id=cat-excavator" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-500 dark:text-neutral-400">Typical Rates: <strong class="text-amber-500">$275 - $385 / day</strong></span>
+                        <span class="text-[11px] font-semibold text-slate-400 dark:text-neutral-500">Commercial Heavy Fleet</span>
                     </div>
                 </div>
 
-                <!-- Fleet 2 -->
-                <div class="tool-card card-hover-lift delay-200 bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+                <!-- Category Explanation 2: Small Equipment & Site Support -->
+                <div class="bg-slate-50 dark:bg-neutral-900 rounded-3xl border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-lg p-6 sm:p-8 flex flex-col justify-between card-hover-lift">
                     <div>
-                        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950">
-                            <img src="https://i.pinimg.com/1200x/9e/3c/d3/9e3cd3e492785789c5fe1c628bb13e59.jpg" alt="Bobcat Skid Steer" class="w-full h-full object-cover">
+                        <div class="relative aspect-[16/9] rounded-2xl overflow-hidden mb-6 bg-slate-200 dark:bg-neutral-950">
+                            <img src="https://i.pinimg.com/1200x/0e/aa/80/0eaa80aef6e0bfbd5e5b3654fc799290.jpg" alt="Small Equipment &amp; Site Support" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510662179966-f3e62f0fb4fe?auto=format&fit=crop&w=1200&q=85';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-amber-500 text-slate-950 text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                                Small Equipment Division
+                            </span>
+                            <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <span class="text-xs font-bold text-amber-400">Trailer-Towable &bull; Drive-Thru Depot Pickup</span>
+                                <h4 class="text-xl font-bold font-heading">Rototillers, Pressure Washers &amp; Blowers</h4>
+                            </div>
                         </div>
-                        <span class="text-xs font-bold text-amber-500">Loading & Clearing</span>
-                        <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mt-1">
-                            <a href="equipment-details.html?id=bobcat-t76" class="hover:text-amber-500 transition">Bobcat T76 Compact Track Loader</a>
+
+                        <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white mb-2">
+                            Small Equipment &amp; Support Tools Overview
                         </h3>
-                        <p class="text-xs text-slate-500 dark:text-neutral-400 mt-2">74 HP inline engine, 2,900 lb operating capacity, high-flow auxiliary hydraulics.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
-                        <div>
-                            <span class="text-xl font-black text-slate-900 dark:text-white">$310</span>
-                            <span class="text-xs text-slate-500">/day</span>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-neutral-300 leading-relaxed">
+                            Compact, high-output equipment built for agile jobsite support, dense soil cultivation, high-pressure surface restoration, and debris clearing. Fast turnaround with contractor drive-thru depot pickup or same-day utility dispatch.
+                        </p>
+
+                        <!-- Key Operational Pillars -->
+                        <div class="mt-5 space-y-2.5 text-xs text-slate-700 dark:text-neutral-300">
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-caravan text-amber-500 mt-0.5"></i>
+                                <span><strong>Delivery Logistics:</strong> Standard pickup bed loadable or depot drive-thru lane; zero commercial CDL required.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-gauge-high text-amber-500 mt-0.5"></i>
+                                <span><strong>Rapid Deployment:</strong> Dyno-tested, 100% full fuel tank, pre-calibrated tines, spray tips, and blowers.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-arrows-spin text-amber-500 mt-0.5"></i>
+                                <span><strong>Flexibility:</strong> Hourly, daily, or weekend rentals with instant digital yard pickup &amp; return.</span>
+                            </div>
                         </div>
-                        <a href="equipment-details.html?id=bobcat-t76" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
                     </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-500 dark:text-neutral-400">Typical Rates: <strong class="text-amber-500">$45 - $65 / day</strong></span>
+                        <span class="text-[11px] font-semibold text-slate-400 dark:text-neutral-500">Agile Jobsite Support</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heavy Equipment Featured Fleet Subgrid (3 High-Impact Fleet Units) -->
+            <div class="mb-14">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-3 border-b border-slate-200 dark:border-neutral-800">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-extrabold text-amber-500 uppercase tracking-wider">
+                            <i class="fa-solid fa-truck-monster"></i>
+                            <span>COMMERCIAL HEAVY FLEET</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900 dark:text-white mt-1">High-Tonnage Earthmoving &amp; Aerial Equipment</h3>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-neutral-400 mt-2 sm:mt-0 font-medium">Flatbed delivery &bull; 4-hr dispatch</span>
                 </div>
 
-                <!-- Fleet 3 -->
-                <div class="tool-card card-hover-lift delay-300 bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950">
-                            <img src="https://i.pinimg.com/1200x/e4/b4/12/e4b412ad893abe62e353bf6dcfd4f53c.jpg" alt="Genie Boom Lift" class="w-full h-full object-cover">
-                        </div>
-                        <span class="text-xs font-bold text-amber-500">Aerial Access</span>
-                        <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mt-1">
-                            <a href="equipment-details.html?id=genie-s65" class="hover:text-amber-500 transition">Genie S-65 TraX Rough Terrain Boom</a>
-                        </h3>
-                        <p class="text-xs text-slate-500 dark:text-neutral-400 mt-2">71 ft working height, 500 lb platform load, 4-point track drive for mud & gravel.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Heavy Fleet 1: Cat Excavator -->
+                    <div class="tool-card card-hover-lift bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
                         <div>
-                            <span class="text-xl font-black text-slate-900 dark:text-white">$385</span>
-                            <span class="text-xs text-slate-500">/day</span>
+                            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950 relative">
+                                <a href="equipment-details.html?id=cat-excavator" class="block w-full h-full">
+                                    <img src="assets/images/cat-excavator.jpg" alt="Mini Excavator" class="w-full h-full object-cover">
+                                </a>
+                                <span class="absolute top-2.5 left-2.5 bg-amber-500 text-slate-950 font-black text-[9px] uppercase px-2 py-0.5 rounded-full shadow">Heavy Fleet</span>
+                            </div>
+                            <span class="text-xs font-bold text-amber-500">Earthmoving Division</span>
+                            <h4 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1">
+                                <a href="equipment-details.html?id=cat-excavator" class="hover:text-amber-500 transition">Cat 302.7 CR Mini Excavator</a>
+                            </h4>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5">Zero tail swing, 24.7 HP diesel, enclosed cab with AC, hydraulic thumb.</p>
+                            
+                            <div class="mt-3 flex flex-wrap gap-1.5 text-[10px] font-semibold text-slate-600 dark:text-neutral-400">
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">8.4 ft Dig Depth</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">6,129 lbs Weight</span>
+                            </div>
                         </div>
-                        <a href="equipment-details.html?id=genie-s65" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                        <div class="mt-5 pt-3.5 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-lg font-black text-slate-900 dark:text-white">$275</span>
+                                <span class="text-xs text-slate-500">/day</span>
+                            </div>
+                            <a href="equipment-details.html?id=cat-excavator" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                        </div>
                     </div>
+
+                    <!-- Heavy Fleet 2: Bobcat T76 -->
+                    <div class="tool-card card-hover-lift bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950 relative">
+                                <a href="equipment-details.html?id=bobcat-t76" class="block w-full h-full">
+                                    <img src="https://i.pinimg.com/1200x/9e/3c/d3/9e3cd3e492785789c5fe1c628bb13e59.jpg" alt="Bobcat Track Loader" class="w-full h-full object-cover">
+                                </a>
+                                <span class="absolute top-2.5 left-2.5 bg-amber-500 text-slate-950 font-black text-[9px] uppercase px-2 py-0.5 rounded-full shadow">Heavy Fleet</span>
+                            </div>
+                            <span class="text-xs font-bold text-amber-500">Loading &amp; Clearing</span>
+                            <h4 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1">
+                                <a href="equipment-details.html?id=bobcat-t76" class="hover:text-amber-500 transition">Bobcat T76 Track Loader</a>
+                            </h4>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5">74 HP inline engine, 2,900 lb operating capacity, high-flow auxiliary hydraulics.</p>
+                            
+                            <div class="mt-3 flex flex-wrap gap-1.5 text-[10px] font-semibold text-slate-600 dark:text-neutral-400">
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">2,900 lb Cap.</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">Rubber Tracks</span>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-3.5 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-lg font-black text-slate-900 dark:text-white">$310</span>
+                                <span class="text-xs text-slate-500">/day</span>
+                            </div>
+                            <a href="equipment-details.html?id=bobcat-t76" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                        </div>
+                    </div>
+
+                    <!-- Heavy Fleet 3: Genie S-65 TraX -->
+                    <div class="tool-card card-hover-lift bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950 relative">
+                                <a href="equipment-details.html?id=genie-s65" class="block w-full h-full">
+                                    <img src="https://i.pinimg.com/1200x/e4/b4/12/e4b412ad893abe62e353bf6dcfd4f53c.jpg" alt="Genie Boom Lift" class="w-full h-full object-cover">
+                                </a>
+                                <span class="absolute top-2.5 left-2.5 bg-amber-500 text-slate-950 font-black text-[9px] uppercase px-2 py-0.5 rounded-full shadow">Heavy Fleet</span>
+                            </div>
+                            <span class="text-xs font-bold text-amber-500">Aerial Access</span>
+                            <h4 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1">
+                                <a href="equipment-details.html?id=genie-s65" class="hover:text-amber-500 transition">Genie S-65 TraX Boom Lift</a>
+                            </h4>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5">71 ft working height, 500 lb platform load, 4-point track drive for rough terrain.</p>
+                            
+                            <div class="mt-3 flex flex-wrap gap-1.5 text-[10px] font-semibold text-slate-600 dark:text-neutral-400">
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">71 ft Reach</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">4-Point Tracks</span>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-3.5 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-lg font-black text-slate-900 dark:text-white">$385</span>
+                                <span class="text-xs text-slate-500">/day</span>
+                            </div>
+                            <a href="equipment-details.html?id=genie-s65" class="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Small Equipment Featured Subgrid (Using Exact Machinery Page Cards) -->
+            <div class="mb-14">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-3 border-b border-slate-200 dark:border-neutral-800">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs font-extrabold text-amber-500 uppercase tracking-wider">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <span>SMALL EQUIPMENT &amp; JOBSITE SUPPORT</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold font-heading text-slate-900 dark:text-white mt-1">Honda Rototiller, Simpson Washer &amp; Stihl Blower</h3>
+                    </div>
+                    <span class="text-xs text-slate-500 dark:text-neutral-400 mt-2 sm:mt-0 font-medium">Trailer-towable &bull; Depot drive-thru pickup</span>
                 </div>
 
-                <!-- Fleet 4 -->
-                <div class="tool-card card-hover-lift delay-400 bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-200 dark:bg-neutral-950">
-                            <img src="assets/images/honda-generator.jpg" alt="Commercial Generator" class="w-full h-full object-cover">
-                        </div>
-                        <span class="text-xs font-bold text-amber-500">Power Generation</span>
-                        <h3 class="text-lg font-bold font-heading text-slate-900 dark:text-white mt-1">
-                            <a href="equipment-details.html?id=doosan-g70" class="hover:text-amber-500 transition">Doosan G70 Towable Diesel Generator</a>
-                        </h3>
-                        <p class="text-xs text-slate-500 dark:text-neutral-400 mt-2">70 kVA prime power, ultra-quiet sound enclosure (65 dBA), 24-hour run fuel tank.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Small Equipment Card 1: Honda Mid-Tine Gas Rototiller (from Machinery Page) -->
+                    <div class="tool-card card-hover-lift bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
                         <div>
-                            <span class="text-xl font-black text-slate-900 dark:text-white">$215</span>
-                            <span class="text-xs text-slate-500">/day</span>
+                            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-neutral-950 relative">
+                                <a href="equipment-details.html?id=honda-tiller" class="block w-full h-full">
+                                    <img src="https://i.pinimg.com/1200x/0e/aa/80/0eaa80aef6e0bfbd5e5b3654fc799290.jpg" alt="Honda FC600 Gas Rototiller" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510662179966-f3e62f0fb4fe?auto=format&fit=crop&w=1200&q=85';">
+                                </a>
+                                <span class="absolute top-2.5 left-2.5 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[9px] font-black px-2 py-0.5 rounded-full border border-neutral-800 shadow">Gas Honda GX160</span>
+                                <span class="absolute top-2.5 right-2.5 bg-emerald-500 text-slate-950 font-black text-[9px] uppercase px-2 py-0.5 rounded-full shadow">In Stock</span>
+                            </div>
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Gardening &amp; Forestry</span>
+                                <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (42)</span>
+                            </div>
+                            <h4 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1">
+                                <a href="equipment-details.html?id=honda-tiller" class="hover:text-amber-500 transition">Honda Mid-Tine Gas Rototiller</a>
+                            </h4>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Commercial 163cc overhead valve engine with 26-inch wide slasher tines for dense clay breaking.</p>
+                            
+                            <div class="mt-3 flex flex-wrap gap-1.5 text-[10px] font-semibold text-slate-600 dark:text-neutral-400">
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">26" Tilling Width</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">GX160 Commercial</span>
+                            </div>
                         </div>
-                        <a href="equipment-details.html?id=doosan-g70" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine">Reserve</a>
+                        <div class="mt-5 pt-3.5 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-lg font-black text-slate-900 dark:text-white">$65</span>
+                                <span class="text-xs text-slate-500">/day</span>
+                            </div>
+                            <a href="equipment-details.html?id=honda-tiller" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine transition">Reserve</a>
+                        </div>
+                    </div>
+
+                    <!-- Small Equipment Card 2: Simpson MegaShot 3200 PSI Washer (from Machinery Page) -->
+                    <div class="tool-card card-hover-lift bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-neutral-950 relative">
+                                <a href="equipment-details.html?id=simpson-washer" class="block w-full h-full">
+                                    <img src="https://i.pinimg.com/736x/82/bb/30/82bb30f022deab8d59e8ddfe61d0a4d2.jpg" alt="Simpson MegaShot 3200 PSI Pressure Washer" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://i.pinimg.com/1200x/f0/22/9a/f0229aa9f20967de8527a18b38f631b5.jpg';">
+                                </a>
+                                <span class="absolute top-2.5 left-2.5 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[9px] font-black px-2 py-0.5 rounded-full border border-neutral-800 shadow">Gas 3200 PSI</span>
+                                <span class="absolute top-2.5 right-2.5 bg-emerald-500 text-slate-950 font-black text-[9px] uppercase px-2 py-0.5 rounded-full shadow">In Stock</span>
+                            </div>
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Pressure Washers</span>
+                                <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (43)</span>
+                            </div>
+                            <h4 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1">
+                                <a href="equipment-details.html?id=simpson-washer" class="hover:text-amber-500 transition">Simpson MegaShot 3200 PSI Washer</a>
+                            </h4>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Commercial Honda GC190 engine, OEM axial brass pump, 25-ft MorFlex hose, and 5 spray tips.</p>
+                            
+                            <div class="mt-3 flex flex-wrap gap-1.5 text-[10px] font-semibold text-slate-600 dark:text-neutral-400">
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">2.5 GPM Flow</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">Honda GC190</span>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-3.5 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-lg font-black text-slate-900 dark:text-white">$65</span>
+                                <span class="text-xs text-slate-500">/day</span>
+                            </div>
+                            <a href="equipment-details.html?id=simpson-washer" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine transition">Reserve</a>
+                        </div>
+                    </div>
+
+                    <!-- Small Equipment Card 3: Stihl BR 600 Backpack Blower (from Machinery Page) -->
+                    <div class="tool-card card-hover-lift bg-slate-50 dark:bg-neutral-900 rounded-2xl border border-slate-200 dark:border-neutral-800 overflow-hidden p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-slate-100 dark:bg-neutral-950 relative">
+                                <a href="equipment-details.html?id=stihl-blower" class="block w-full h-full">
+                                    <img src="https://i.pinimg.com/1200x/92/74/97/92749747c10cc8a52e0e6d07fcdeb688.jpg" alt="Stihl BR 600 Backpack Leaf Blower" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510662179966-f3e62f0fb4fe?auto=format&fit=crop&w=1200&q=85';">
+                                </a>
+                                <span class="absolute top-2.5 left-2.5 bg-neutral-950/85 backdrop-blur-sm text-amber-400 text-[9px] font-black px-2 py-0.5 rounded-full border border-neutral-800 shadow">Gas 64.8cc 4-MIX</span>
+                                <span class="absolute top-2.5 right-2.5 bg-emerald-500 text-slate-950 font-black text-[9px] uppercase px-2 py-0.5 rounded-full shadow">In Stock</span>
+                            </div>
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[10px] font-black uppercase tracking-wider text-amber-500">Gardening &amp; Forestry</span>
+                                <span class="text-[10px] font-semibold text-slate-400"><i class="fa-solid fa-star text-amber-400 text-[9px] mr-0.5"></i>4.9 (47)</span>
+                            </div>
+                            <h4 class="text-base font-bold font-heading text-slate-900 dark:text-white mt-1">
+                                <a href="equipment-details.html?id=stihl-blower" class="hover:text-amber-500 transition">Stihl BR 600 Backpack Blower</a>
+                            </h4>
+                            <p class="text-xs text-slate-500 dark:text-neutral-400 mt-1.5 line-clamp-2">Professional backpack blower with anti-vibration harness and 677 CFM volume for wet leaf clearing.</p>
+                            
+                            <div class="mt-3 flex flex-wrap gap-1.5 text-[10px] font-semibold text-slate-600 dark:text-neutral-400">
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">677 CFM Volume</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-200/70 dark:bg-neutral-800">238 MPH Velocity</span>
+                            </div>
+                        </div>
+                        <div class="mt-5 pt-3.5 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-lg font-black text-slate-900 dark:text-white">$45</span>
+                                <span class="text-xs text-slate-500">/day</span>
+                            </div>
+                            <a href="equipment-details.html?id=stihl-blower" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs btn-shine transition">Reserve</a>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Operational Comparison Guide Card -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-x-auto shadow-sm">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                    <h4 class="text-base font-bold font-heading text-slate-900 dark:text-white uppercase tracking-wider">Operational Comparison: Heavy Fleet vs Small Equipment</h4>
+                </div>
+                <table class="w-full text-left text-xs text-slate-600 dark:text-neutral-300 min-w-[600px]">
+                    <thead>
+                        <tr class="border-b border-slate-200 dark:border-neutral-800 text-slate-900 dark:text-white font-bold">
+                            <th class="py-2.5 px-3">Criteria</th>
+                            <th class="py-2.5 px-3 text-amber-600 dark:text-amber-400">Commercial Heavy Fleet</th>
+                            <th class="py-2.5 px-3 text-slate-900 dark:text-white">Small Equipment &amp; Site Support</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 dark:divide-neutral-800/60 font-medium">
+                        <tr>
+                            <td class="py-2.5 px-3 font-bold text-slate-900 dark:text-white">Transport &amp; Delivery</td>
+                            <td class="py-2.5 px-3">Commercial flatbed tilt-tray dispatched to site</td>
+                            <td class="py-2.5 px-3">Depot drive-thru pickup or standard pickup bed load</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-3 font-bold text-slate-900 dark:text-white">Target Job Scope</td>
+                            <td class="py-2.5 px-3">Major grading, deep excavation, multi-story aerial access</td>
+                            <td class="py-2.5 px-3">Garden tilling, high-pressure surface wash &amp; leaf clearing</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-3 font-bold text-slate-900 dark:text-white">Power &amp; Engines</td>
+                            <td class="py-2.5 px-3">Tier 4 Final Heavy Industrial Diesel (24 HP – 74+ HP)</td>
+                            <td class="py-2.5 px-3">Commercial Gas Engines (Honda GX / Stihl 4-MIX)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2.5 px-3 font-bold text-slate-900 dark:text-white">Contractor Terms</td>
+                            <td class="py-2.5 px-3">Net-30 / Net-60 monthly trade billing with $0 deposit</td>
+                            <td class="py-2.5 px-3">Daily, weekly, or flex commercial trade charge</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- Contractor Advantages Banner -->
-    <section class="py-20 bg-slate-100 dark:bg-neutral-950 text-slate-900 dark:text-white border-t border-slate-200 dark:border-neutral-800 transition-colors">
+    <!-- Contractor Advantages Banner: ToolHub Commercial Trade Account -->
+    <section class="py-20 bg-slate-100 dark:bg-neutral-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-neutral-800 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="reveal-left">
@@ -405,9 +678,59 @@
                     </div>
                 </div>
 
-                <div class="relative reveal-right delay-150">
-                    <div class="rounded-3xl overflow-hidden border-2 border-slate-200 dark:border-neutral-700 shadow-2xl aspect-[4/3] card-hover-lift">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85" alt="Jobsite Equipment Fleet" class="w-full h-full object-cover">
+                <!-- Commercial Trade Account Facility Card (Pure UI, No Photo) -->
+                <div class="reveal-right delay-150">
+                    <div class="rounded-3xl bg-slate-900 dark:bg-neutral-900 text-white p-7 sm:p-9 border-2 border-slate-300 dark:border-neutral-800 shadow-2xl relative overflow-hidden card-hover-lift">
+                        <div class="absolute -right-12 -top-12 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="flex items-center justify-between pb-6 border-b border-slate-800 dark:border-neutral-800 relative z-10">
+                            <div>
+                                <span class="text-[10px] font-black uppercase tracking-wider text-amber-400">COMMERCIAL FLEET FACILITY</span>
+                                <h3 class="text-xl font-bold font-heading text-white mt-0.5">Trade Credit Account Pass</h3>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/30 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Active Net-30
+                            </span>
+                        </div>
+
+                        <div class="my-6 space-y-4 relative z-10">
+                            <div class="p-5 rounded-2xl bg-slate-950/80 dark:bg-neutral-950/80 border border-slate-800 dark:border-neutral-800 flex items-center justify-between">
+                                <div>
+                                    <span class="text-[11px] text-slate-400 dark:text-neutral-400 block font-semibold">Pre-Approved Line Facility</span>
+                                    <span class="text-2xl sm:text-3xl font-black text-amber-400 font-heading">$50,000.00</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="inline-block px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-400 text-[11px] font-bold border border-amber-500/30">$0 Cash Deposit</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <div class="p-4 rounded-xl bg-slate-950/60 dark:bg-neutral-950/60 border border-slate-800 dark:border-neutral-800">
+                                    <span class="text-slate-400 dark:text-neutral-400 block text-[10px] uppercase font-bold tracking-wider">Payment Terms</span>
+                                    <strong class="text-white text-sm mt-0.5 block">Net-30 / Net-60</strong>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-950/60 dark:bg-neutral-950/60 border border-slate-800 dark:border-neutral-800">
+                                    <span class="text-slate-400 dark:text-neutral-400 block text-[10px] uppercase font-bold tracking-wider">Maintenance SLA</span>
+                                    <strong class="text-emerald-400 text-sm mt-0.5 block">2-Hr Rapid Swap</strong>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-950/60 dark:bg-neutral-950/60 border border-slate-800 dark:border-neutral-800">
+                                    <span class="text-slate-400 dark:text-neutral-400 block text-[10px] uppercase font-bold tracking-wider">Invoicing</span>
+                                    <strong class="text-white text-sm mt-0.5 block">Consolidated Monthly</strong>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-950/60 dark:bg-neutral-950/60 border border-slate-800 dark:border-neutral-800">
+                                    <span class="text-slate-400 dark:text-neutral-400 block text-[10px] uppercase font-bold tracking-wider">Fleet Manager</span>
+                                    <strong class="text-amber-400 text-sm mt-0.5 block">Dedicated Priority</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800 dark:border-neutral-800 flex items-center justify-between text-xs text-slate-400 dark:text-neutral-400 relative z-10">
+                            <span>Instant Digital Contractor Onboarding</span>
+                            <span class="text-amber-400 font-bold flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield-check text-emerald-400"></i>
+                                Certified Facility
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -517,11 +840,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
                 <!-- Col 1: Brand & Contact (Desktop 6 cols, Tablet full, Mobile full) -->
                 <div class="sm:col-span-2 lg:col-span-6 space-y-5 sm:space-y-6">
-                    <a href="index.html" class="flex items-center gap-3.5">
-                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl sm:text-2xl shadow-lg shadow-amber-500/20 shrink-0">
-                            <i class="fa-solid fa-truck-monster"></i>
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 shrink-0 group-hover:scale-105 transition transform">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
                         </div>
-                        <span class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                        <span class="text-2xl font-black font-heading tracking-tight text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
                     </a>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
                         Curating premium heavy equipment, commercial construction machinery, and precision DIY power tools for contractors, craftsmen, and home renovators worldwide.
@@ -668,10 +991,10 @@
     <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
     <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
         <!-- Header: Menu title & Close button -->
-        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-2">
-            <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 mb-2 shrink-0">
+            <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
             <button data-close="mobile-menu" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" aria-label="Close menu">
-                <i class="fa-solid fa-xmark text-2xl"></i>
+                <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
 
@@ -713,21 +1036,21 @@
                     <span>RENTER LOGIN</span>
                 </a>
             </div>
-
-            <!-- Divider Line -->
-            <div class="border-t border-slate-200 dark:border-slate-800 my-4"></div>
-
-            <!-- Bottom Toggle Buttons (Below the menu as in Image 2) -->
-            <div class="flex items-center justify-around py-2">
-                <button type="button" data-toggle="theme" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
-                    <i class="fa-solid fa-moon text-2xl"></i>
-                </button>
-                <button type="button" data-toggle="direction" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
-            </div>
         </nav>
+
+        <!-- Pinned Drawer Footer: Theme & RTL Toggles (Firmly visible on mobile < 640px/768px; hidden on >= 640px/768px tablet where navbar already has them) -->
+        <div class="drawer-toggles-container pt-3 mt-auto border-t border-slate-200 dark:border-slate-800 shrink-0 flex items-center justify-around sm:hidden">
+            <button type="button" data-toggle="theme" class="w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-700/80 shadow-sm" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+                <i class="fa-solid fa-moon text-lg"></i>
+            </button>
+            <button type="button" data-toggle="direction" class="w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-700/80 shadow-sm" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
+                <i class="fa-solid fa-right-left text-base"></i>
+            </button>
+        </div>
     </div>
 
     <!-- Scripts -->
+    <script src="assets/js/equipment-data.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

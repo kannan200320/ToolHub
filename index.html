@@ -78,7 +78,7 @@
                 <!-- Left: Brand Logo -->
                 <a href="index.html" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
-                        <i class="fa-solid fa-truck-monster"></i>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
                     <span class="text-2xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
                 </a>
@@ -154,49 +154,88 @@
         </div>
     </header>
 
-    <!-- Hero Section (ToolHub Heavy Construction Hero) -->
-    <section class="relative bg-white dark:bg-slate-950 text-slate-900 dark:text-white pt-16 pb-28 sm:pt-20 sm:pb-36 overflow-hidden border-b border-slate-200 dark:border-slate-800 transition-colors">
-        <!-- Heavy Equipment Background Banner with Contrast Overlays (Dark Mode Only) -->
-        <div class="hidden dark:block absolute inset-0 z-0 opacity-30 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=85');"></div>
-        <div class="hidden dark:block absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/95 to-slate-950/70 z-0"></div>
-        <div class="absolute inset-0 bg-hazard-stripes opacity-0 dark:opacity-10 pointer-events-none z-0"></div>
+    <!-- Hero Section (Tool & Equipment Rental for DIY Projects) -->
+    <section class="relative bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white pt-16 pb-28 sm:pt-20 sm:pb-36 overflow-hidden border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <!-- Hero Background Image (Workshop, Power Tools & Equipment Staging Yard) -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <img src="assets/images/home-diy-hero-bg.png" alt="ToolHub Workshop & Power Tools DIY Staging Garage" class="w-full h-full object-cover object-center filter brightness-[1.02] contrast-[1.02] dark:brightness-[0.92] dark:contrast-[1.06]">
+            <!-- Dedicated Crisp Light Mode Scrim: Gentle wash only behind text, workshop and tools completely visible -->
+            <div class="absolute inset-0 bg-gradient-to-r from-white/45 via-white/15 to-transparent dark:hidden"></div>
+            <!-- Dedicated Rich Dark Mode Scrim: Cinematic tone preserving workshop lights, tools and textures -->
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/65 via-slate-950/25 to-transparent hidden dark:block"></div>
+            <!-- Subtle bottom edge blending only (h-16) -->
+            <div class="h-16 absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent"></div>
+        </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- Left Hero Content -->
                 <div class="lg:col-span-7 reveal-left">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight leading-[1.1] text-slate-900 dark:text-white">
-                        Heavy Construction Equipment & <span class="text-amber-500">Pro Tool Rentals</span>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-black uppercase tracking-wider mb-4 shadow-sm">
+                        <i class="fa-solid fa-screwdriver-wrench text-amber-500"></i>
+                        <span>DIY & Residential Tool Rentals</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-heading tracking-tight leading-[1.1] text-slate-950 dark:text-white drop-shadow-sm">
+                        Tool & Equipment Rentals for <span class="text-orange-500 dark:text-orange-400">DIY Projects</span>
                     </h1>
-                    <p class="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal">
-                        Power your residential DIY projects and commercial jobsites with certified Caterpillar, Bobcat, Kubota, Stihl, and DeWalt equipment. Enjoy 1-hour depot drive-thru pickup or same-day flatbed delivery with zero hidden fees.
+                    <p class="mt-5 text-base sm:text-lg text-slate-950 dark:text-white leading-relaxed max-w-2xl font-semibold">
+                        Power your home renovations, landscaping, and weekend DIY builds with certified professional gear. Rent high-performance power tools, pressure washers, lawn aerators, tile saws, concrete mixers, and scaffolding with 1-hour depot pickup or direct doorstep delivery.
                     </p>
+
+                    <!-- Tool & Equipment Rental Services Offered - Quick Feature Badges -->
+                    <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-w-xl text-xs font-bold">
+                        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm text-slate-950 dark:text-slate-100">
+                            <span class="text-amber-500 text-sm">⚡</span>
+                            <span>Cordless Power Tools</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm text-slate-950 dark:text-slate-100">
+                            <span class="text-amber-500 text-sm">🌿</span>
+                            <span>Lawn & Yard Care</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm text-slate-950 dark:text-slate-100">
+                            <span class="text-amber-500 text-sm">💧</span>
+                            <span>Pressure Washers</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm text-slate-950 dark:text-slate-100">
+                            <span class="text-amber-500 text-sm">🏗️</span>
+                            <span>Concrete & Masonry</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm text-slate-950 dark:text-slate-100">
+                            <span class="text-amber-500 text-sm">🎨</span>
+                            <span>Paint & Drywall Sprayers</span>
+                        </div>
+                        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-sm text-slate-950 dark:text-slate-100">
+                            <span class="text-amber-500 text-sm">🪜</span>
+                            <span>Ladders & Scaffolding</span>
+                        </div>
+                    </div>
 
                     <!-- CTAs -->
                     <div class="mt-8 flex flex-wrap items-center gap-4">
                         <a href="catalog.html" class="btn-shine px-7 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-sm shadow-xl shadow-amber-500/30 transition transform hover:-translate-y-0.5 flex items-center gap-2">
-                            <span>EXPLORE RENTAL FLEET</span>
+                            <span>EXPLORE RENTAL TOOLS</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="how-it-works.html" class="px-6 py-4 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-900/80 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-bold text-sm border border-slate-300 dark:border-slate-700 transition flex items-center gap-2">
+                        <a href="how-it-works.html" class="px-6 py-4 rounded-xl bg-white/90 hover:bg-white dark:bg-slate-900/90 dark:hover:bg-slate-800 backdrop-blur-md text-slate-900 dark:text-white font-bold text-sm border border-slate-300 dark:border-slate-700 shadow-sm transition flex items-center gap-2">
                             <i class="fa-regular fa-circle-play text-amber-500"></i>
                             <span>HOW RENTAL WORKS</span>
                         </a>
                     </div>
 
-                    <!-- Fleet Metrics (ToolHub Style) -->
-                    <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800/80 grid grid-cols-3 gap-2 min-[400px]:gap-4 sm:gap-6">
+                    <!-- Fleet Metrics (ToolHub Style Glass Card) -->
+                    <div class="mt-10 p-4 sm:p-5 rounded-2xl bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border border-slate-200/80 dark:border-slate-800/80 shadow-md grid grid-cols-3 gap-2 min-[400px]:gap-4 sm:gap-6">
                         <div>
                             <span class="text-xl min-[400px]:text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-amber-500 whitespace-nowrap">4,500+</span>
-                            <p class="text-[10px] min-[400px]:text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-semibold leading-tight">Active Fleet Units</p>
+                            <p class="text-[10px] min-[400px]:text-xs text-slate-600 dark:text-slate-300 mt-1 uppercase tracking-wider font-bold leading-tight">DIY & Pro Fleet</p>
                         </div>
                         <div>
-                            <span class="text-xl min-[400px]:text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-slate-900 dark:text-white whitespace-nowrap">4 Hours</span>
-                            <p class="text-[10px] min-[400px]:text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-semibold leading-tight">Jobsite Flatbed Dispatch</p>
+                            <span class="text-xl min-[400px]:text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-slate-950 dark:text-white whitespace-nowrap">1 Hour</span>
+                            <p class="text-[10px] min-[400px]:text-xs text-slate-600 dark:text-slate-300 mt-1 uppercase tracking-wider font-bold leading-tight">Express Pickup</p>
                         </div>
                         <div>
-                            <span class="text-xl min-[400px]:text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-emerald-500 whitespace-nowrap">99.8%</span>
-                            <p class="text-[10px] min-[400px]:text-xs text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider font-semibold leading-tight">Fleet Uptime Guarantee</p>
+                            <span class="text-xl min-[400px]:text-2xl sm:text-3xl lg:text-4xl font-black font-heading text-emerald-600 dark:text-emerald-400 whitespace-nowrap">99.8%</span>
+                            <p class="text-[10px] min-[400px]:text-xs text-slate-600 dark:text-slate-300 mt-1 uppercase tracking-wider font-bold leading-tight">Tested Uptime</p>
                         </div>
                     </div>
                 </div>
@@ -328,36 +367,6 @@
         </div>
     </section>
 
-    <!-- Animated Partner Brand Ticker (Continuous Infinite Marquee) -->
-    <section class="py-10 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-toolhub-dark overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
-            <p class="text-center text-xs font-extrabold uppercase tracking-widest text-slate-400">
-                Official Commercial Equipment & Pro Tool Brands in Stock
-            </p>
-        </div>
-        <div class="marquee-container py-2">
-            <div class="marquee-content gap-12 sm:gap-16 items-center text-slate-400 font-black text-lg sm:text-xl">
-                <span class="hover:text-amber-500 transition">CATERPILLAR</span>
-                <span class="hover:text-amber-500 transition">DEWALT</span>
-                <span class="hover:text-amber-500 transition">BOBCAT</span>
-                <span class="hover:text-amber-500 transition">MILWAUKEE</span>
-                <span class="hover:text-amber-500 transition">STIHL</span>
-                <span class="hover:text-amber-500 transition">WERNER LADDERS</span>
-                <span class="hover:text-amber-500 transition">GRACO PAINT</span>
-                <span class="hover:text-amber-500 transition">MAKITA</span>
-                <span class="hover:text-amber-500 transition">HILTI PRO</span>
-                <span class="hover:text-amber-500 transition">CATERPILLAR</span>
-                <span class="hover:text-amber-500 transition">DEWALT</span>
-                <span class="hover:text-amber-500 transition">BOBCAT</span>
-                <span class="hover:text-amber-500 transition">MILWAUKEE</span>
-                <span class="hover:text-amber-500 transition">STIHL</span>
-                <span class="hover:text-amber-500 transition">WERNER LADDERS</span>
-                <span class="hover:text-amber-500 transition">GRACO PAINT</span>
-                <span class="hover:text-amber-500 transition">MAKITA</span>
-                <span class="hover:text-amber-500 transition">HILTI PRO</span>
-            </div>
-        </div>
-    </section>
 
     <!-- SECTION: Popular Tools for Home Projects (Requested in Detail) -->
     <section class="py-20 bg-slate-100/60 dark:bg-toolhub-card/60 border-b border-slate-200 dark:border-slate-800 relative">
@@ -390,13 +399,13 @@
             <!-- Home Project Tools Grid (6 Main High-Impact Tools) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="home-tools-grid">
                 <!-- Tool 1: DeWalt 20V Combo Kit (Power Tools) -->
-                <div class="home-tool-item card-hover-lift delay-75 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between" data-category="power-tools">
+                <div class="home-tool-item card-hover-lift delay-75 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between shadow-sm" data-category="power-tools">
                     <div>
                         <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-800 mb-4">
                             <img src="https://i.pinimg.com/736x/a6/18/0a/a6180aff19f2a1a27d6c118fb75bcf34.jpg" alt="DeWalt 20V Max Combo Kit" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581244277943-84b7608ea834?auto=format&fit=crop&w=1200&q=85';">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow">Power Tool</span>
-                            <span class="absolute top-3 right-3 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> In Stock
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow tracking-wider">Power Tool</span>
+                            <span class="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm border border-slate-700/60 text-slate-200 text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Available
                             </span>
                             <button type="button" onclick="ToolHub.openQuickView('dewalt-drill')" class="quick-view-btn">
                                 <span>Quick View</span>
@@ -405,34 +414,46 @@
                         <h4 class="font-extrabold text-base text-slate-900 dark:text-white hover:text-amber-500 transition line-clamp-1">
                             <a href="equipment-details.html?id=dewalt-drill">DeWalt 20V Max XR Drill Kit</a>
                         </h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">High-efficiency brushless motor delivers up to 57% more run time over brushed. 15 clutch settings.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 line-clamp-2">High-efficiency brushless motor delivers up to 57% more run time. Ideal for framing, cabinetry, and deck fastening.</p>
                         
-                        <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">20V Brushless</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">2x 5.0Ah Pack</span>
+                        <!-- Structured Technical Specifications -->
+                        <div class="mt-3.5 grid grid-cols-2 gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-bolt text-amber-500 text-[10px]"></i> 20V Brushless
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-battery-full text-amber-500 text-[10px]"></i> 2x 5.0Ah XR
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-screwdriver-wrench text-amber-500 text-[10px]"></i> 1/2" Metal Chuck
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-gauge text-amber-500 text-[10px]"></i> 2,000 RPM Max
+                            </span>
                         </div>
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                         <div>
-                            <span class="text-xs text-slate-400 block font-bold">Daily Rate</span>
-                            <div class="text-lg font-black font-heading text-amber-500">$35 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[11px] text-slate-400 block font-bold uppercase tracking-wider">Rental Rate</span>
+                            <div class="text-xl font-black font-heading text-amber-500 leading-tight">$35 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 block font-medium">$140/wk &bull; Refundable deposit</span>
                         </div>
-                        <a href="equipment-details.html?id=dewalt-drill" class="px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-amber-500 text-slate-700 dark:text-slate-200 hover:text-amber-500 font-bold text-xs transition flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 shadow-sm btn-shine">
-                            <span>Read More</span>
+                        <a href="equipment-details.html?id=dewalt-drill" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition flex items-center gap-1.5 shadow-md shadow-amber-500/20 btn-shine">
+                            <span>Rent Now</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Tool 2: DeWalt 10" Wet Tile Saw (Power Tools) -->
-                <div class="home-tool-item card-hover-lift delay-150 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between" data-category="power-tools">
+                <div class="home-tool-item card-hover-lift delay-150 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between shadow-sm" data-category="power-tools">
                     <div>
                         <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-800 mb-4">
                             <img src="https://i.pinimg.com/1200x/e1/8a/d6/e18ad632c8e0e45a943ee5f063cf4510.jpg" alt="DeWalt 10in Wet Tile Saw" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581244277943-84b7608ea834?auto=format&fit=crop&w=1200&q=85';">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow">Power Tool</span>
-                            <span class="absolute top-3 right-3 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> In Stock
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow tracking-wider">Power Tool</span>
+                            <span class="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm border border-slate-700/60 text-slate-200 text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Available
                             </span>
                             <button type="button" onclick="ToolHub.openQuickView('dewalt-tile-saw')" class="quick-view-btn">
                                 <span>Quick View</span>
@@ -441,34 +462,46 @@
                         <h4 class="font-extrabold text-base text-slate-900 dark:text-white hover:text-amber-500 transition line-clamp-1">
                             <a href="equipment-details.html?id=dewalt-tile-saw">DeWalt 10" Wet Tile Saw</a>
                         </h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">Cantilevering rail / cart system allows for 24" rip cut capacity and 18" tile on diagonal. Built-in water nozzles.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 line-clamp-2">Precision cantilevering rail cart system for clean porcelain, ceramic, and stone cuts with water containment.</p>
                         
-                        <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">10" Diamond</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Folding Stand</span>
+                        <!-- Structured Technical Specifications -->
+                        <div class="mt-3.5 grid grid-cols-2 gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-bolt text-amber-500 text-[10px]"></i> 1.5 HP Motor
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-ruler-combined text-amber-500 text-[10px]"></i> 24" Rip Capacity
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-droplet text-amber-500 text-[10px]"></i> Dual Water Jets
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-table text-amber-500 text-[10px]"></i> Folding Stand
+                            </span>
                         </div>
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                         <div>
-                            <span class="text-xs text-slate-400 block font-bold">Daily Rate</span>
-                            <div class="text-lg font-black font-heading text-amber-500">$62 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[11px] text-slate-400 block font-bold uppercase tracking-wider">Rental Rate</span>
+                            <div class="text-xl font-black font-heading text-amber-500 leading-tight">$62 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 block font-medium">$245/wk &bull; Refundable deposit</span>
                         </div>
-                        <a href="equipment-details.html?id=dewalt-tile-saw" class="px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-amber-500 text-slate-700 dark:text-slate-200 hover:text-amber-500 font-bold text-xs transition flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 shadow-sm">
-                            <span>Read More</span>
+                        <a href="equipment-details.html?id=dewalt-tile-saw" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition flex items-center gap-1.5 shadow-md shadow-amber-500/20 btn-shine">
+                            <span>Rent Now</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Tool 3: Werner 24ft Extension Ladder (Ladders) -->
-                <div class="home-tool-item card-hover-lift delay-200 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between" data-category="ladders">
+                <div class="home-tool-item card-hover-lift delay-200 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between shadow-sm" data-category="ladders">
                     <div>
                         <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-800 mb-4">
                             <img src="https://i.pinimg.com/1200x/18/63/23/186323f26e8fc3d68101db25ac6c6d19.jpg" alt="Werner 24ft Extension Ladder" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85';">
-                            <span class="absolute top-3 left-3 bg-sky-500 text-white font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow">Ladders</span>
-                            <span class="absolute top-3 right-3 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> In Stock
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow tracking-wider">Ladders</span>
+                            <span class="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm border border-slate-700/60 text-slate-200 text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Available
                             </span>
                             <button type="button" onclick="ToolHub.openQuickView('werner-ladder')" class="quick-view-btn">
                                 <span>Quick View</span>
@@ -477,34 +510,46 @@
                         <h4 class="font-extrabold text-base text-slate-900 dark:text-white hover:text-amber-500 transition line-clamp-1">
                             <a href="equipment-details.html?id=werner-ladder">Werner 24ft Extension Ladder</a>
                         </h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">Non-conductive fiberglass rails, 300 lbs capacity, TRACTION-TRED rungs, and dual-action feet.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 line-clamp-2">Non-conductive fiberglass rails for roof access, gutter maintenance, painting, and high siding tasks.</p>
                         
-                        <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">23-ft Reach</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">300 lbs Duty IA</span>
+                        <!-- Structured Technical Specifications -->
+                        <div class="mt-3.5 grid grid-cols-2 gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-weight-hanging text-amber-500 text-[10px]"></i> 300 lbs Duty IA
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-ruler-vertical text-amber-500 text-[10px]"></i> 23-ft Safe Reach
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield text-amber-500 text-[10px]"></i> Non-Conductive
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-shoe-prints text-amber-500 text-[10px]"></i> Swivel Feet
+                            </span>
                         </div>
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                         <div>
-                            <span class="text-xs text-slate-400 block font-bold">Daily Rate</span>
-                            <div class="text-lg font-black font-heading text-amber-500">$32 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[11px] text-slate-400 block font-bold uppercase tracking-wider">Rental Rate</span>
+                            <div class="text-xl font-black font-heading text-amber-500 leading-tight">$32 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 block font-medium">$125/wk &bull; Refundable deposit</span>
                         </div>
-                        <a href="equipment-details.html?id=werner-ladder" class="px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-amber-500 text-slate-700 dark:text-slate-200 hover:text-amber-500 font-bold text-xs transition flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 shadow-sm btn-shine">
-                            <span>Read More</span>
+                        <a href="equipment-details.html?id=werner-ladder" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition flex items-center gap-1.5 shadow-md shadow-amber-500/20 btn-shine">
+                            <span>Rent Now</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Tool 4: Graco Magnum X5 Paint Sprayer (Painting) -->
-                <div class="home-tool-item card-hover-lift delay-250 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between" data-category="painting">
+                <div class="home-tool-item card-hover-lift delay-250 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between shadow-sm" data-category="painting">
                     <div>
                         <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-800 mb-4">
                             <img src="https://i.pinimg.com/1200x/bc/96/f8/bc96f8d8cf437803cbb9cebfaa6fdd7d.jpg" alt="Graco Magnum X5 Sprayer" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581244277943-84b7608ea834?auto=format&fit=crop&w=1200&q=85';">
-                            <span class="absolute top-3 left-3 bg-purple-500 text-white font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow">Painting</span>
-                            <span class="absolute top-3 right-3 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> In Stock
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow tracking-wider">Painting</span>
+                            <span class="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm border border-slate-700/60 text-slate-200 text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Available
                             </span>
                             <button type="button" onclick="ToolHub.openQuickView('graco-sprayer')" class="quick-view-btn">
                                 <span>Quick View</span>
@@ -513,34 +558,46 @@
                         <h4 class="font-extrabold text-base text-slate-900 dark:text-white hover:text-amber-500 transition line-clamp-1">
                             <a href="equipment-details.html?id=graco-sprayer">Graco Magnum X5 Airless Sprayer</a>
                         </h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">Spray unthinned latex and oil stains directly from 1 or 5 gallon buckets. Fully adjustable pressure control.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 line-clamp-2">Spray unthinned latex and exterior stains directly from 1 or 5 gallon buckets with smooth, professional atomization.</p>
                         
-                        <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">3000 PSI Max</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">50ft Hose</span>
+                        <!-- Structured Technical Specifications -->
+                        <div class="mt-3.5 grid grid-cols-2 gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-gauge-high text-amber-500 text-[10px]"></i> 3,000 PSI Max
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-faucet-drip text-amber-500 text-[10px]"></i> 0.27 GPM Flow
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-bucket text-amber-500 text-[10px]"></i> Direct 1/5 Gal
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-arrows-left-right text-amber-500 text-[10px]"></i> 50ft DuraFlex Hose
+                            </span>
                         </div>
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                         <div>
-                            <span class="text-xs text-slate-400 block font-bold">Daily Rate</span>
-                            <div class="text-lg font-black font-heading text-amber-500">$48 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[11px] text-slate-400 block font-bold uppercase tracking-wider">Rental Rate</span>
+                            <div class="text-xl font-black font-heading text-amber-500 leading-tight">$48 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 block font-medium">$190/wk &bull; Refundable deposit</span>
                         </div>
-                        <a href="equipment-details.html?id=graco-sprayer" class="px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-amber-500 text-slate-700 dark:text-slate-200 hover:text-amber-500 font-bold text-xs transition flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 shadow-sm btn-shine">
-                            <span>Read More</span>
+                        <a href="equipment-details.html?id=graco-sprayer" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition flex items-center gap-1.5 shadow-md shadow-amber-500/20 btn-shine">
+                            <span>Rent Now</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Tool 5: Stihl MS 250 18" Gas Chainsaw (Gardening) -->
-                <div class="home-tool-item card-hover-lift delay-300 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between" data-category="gardening">
+                <div class="home-tool-item card-hover-lift delay-300 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between shadow-sm" data-category="gardening">
                     <div>
                         <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-800 mb-4">
                             <img src="https://i.pinimg.com/1200x/7a/ef/4e/7aef4e2438063a26643ef6fc491d9172.jpg" alt="Stihl MS 250 18-inch Gas Chainsaw" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1510662179966-f3e62f0fb4fe?auto=format&fit=crop&w=1200&q=85';">
-                            <span class="absolute top-3 left-3 bg-emerald-600 text-white font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow">Gardening</span>
-                            <span class="absolute top-3 right-3 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> In Stock
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow tracking-wider">Gardening</span>
+                            <span class="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm border border-slate-700/60 text-slate-200 text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Available
                             </span>
                             <button type="button" onclick="ToolHub.openQuickView('stihl-chainsaw')" class="quick-view-btn">
                                 <span>Quick View</span>
@@ -549,34 +606,46 @@
                         <h4 class="font-extrabold text-base text-slate-900 dark:text-white hover:text-amber-500 transition line-clamp-1">
                             <a href="equipment-details.html?id=stihl-chainsaw">Stihl MS 250 18" Gas Chainsaw</a>
                         </h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">High power-to-weight ratio for tree felling, firewood, and storm cleanup. QuickStop inertia chain brake.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 line-clamp-2">High power-to-weight ratio for tree felling, storm cleanup, yard clearing, and firewood processing.</p>
                         
-                        <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">3.0 bhp Engine</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">18" Bar Scabbard</span>
+                        <!-- Structured Technical Specifications -->
+                        <div class="mt-3.5 grid grid-cols-2 gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-fire text-amber-500 text-[10px]"></i> 45.4 cc / 3.0 bhp
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-ruler-horizontal text-amber-500 text-[10px]"></i> 18" Guide Bar
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield-halved text-amber-500 text-[10px]"></i> QuickStop Brake
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-hand text-amber-500 text-[10px]"></i> Anti-Vibration
+                            </span>
                         </div>
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                         <div>
-                            <span class="text-xs text-slate-400 block font-bold">Daily Rate</span>
-                            <div class="text-lg font-black font-heading text-amber-500">$55 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[11px] text-slate-400 block font-bold uppercase tracking-wider">Rental Rate</span>
+                            <div class="text-xl font-black font-heading text-amber-500 leading-tight">$55 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 block font-medium">$215/wk &bull; Refundable deposit</span>
                         </div>
-                        <a href="equipment-details.html?id=stihl-chainsaw" class="px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-amber-500 text-slate-700 dark:text-slate-200 hover:text-amber-500 font-bold text-xs transition flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 shadow-sm btn-shine">
-                            <span>Read More</span>
+                        <a href="equipment-details.html?id=stihl-chainsaw" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition flex items-center gap-1.5 shadow-md shadow-amber-500/20 btn-shine">
+                            <span>Rent Now</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Tool 6: Simpson MegaShot 3200 PSI Pressure Washer (Pressure Washers) -->
-                <div class="home-tool-item card-hover-lift delay-350 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between" data-category="pressure-washers">
+                <div class="home-tool-item card-hover-lift delay-350 bg-white dark:bg-toolhub-dark rounded-3xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between shadow-sm" data-category="pressure-washers">
                     <div>
                         <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 dark:bg-slate-800 mb-4">
                             <img src="https://i.pinimg.com/736x/82/bb/30/82bb30f022deab8d59e8ddfe61d0a4d2.jpg" alt="Simpson MegaShot 3200 PSI Pressure Washer" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581244277943-84b7608ea834?auto=format&fit=crop&w=1200&q=85';">
-                            <span class="absolute top-3 left-3 bg-cyan-600 text-white font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow">Pressure Washer</span>
-                            <span class="absolute top-3 right-3 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span> In Stock
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow tracking-wider">Pressure Washers</span>
+                            <span class="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm border border-slate-700/60 text-slate-200 text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 shadow">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Available
                             </span>
                             <button type="button" onclick="ToolHub.openQuickView('simpson-washer')" class="quick-view-btn">
                                 <span>Quick View</span>
@@ -585,21 +654,33 @@
                         <h4 class="font-extrabold text-base text-slate-900 dark:text-white hover:text-amber-500 transition line-clamp-1">
                             <a href="equipment-details.html?id=simpson-washer">Simpson MegaShot 3200 PSI Washer</a>
                         </h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">Honda GC190 residential engine, OEM Technologies axial cam pump, MorFlex non-marring hose & 5 quick tips.</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 line-clamp-2">Reliable Honda GC190 residential engine with axial cam pump for driveways, brickwork, decks, and siding.</p>
                         
-                        <div class="mt-3 flex items-center gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">3,200 PSI</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">2.5 GPM</span>
+                        <!-- Structured Technical Specifications -->
+                        <div class="mt-3.5 grid grid-cols-2 gap-2 text-[11px] font-semibold text-slate-600 dark:text-slate-400">
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-gauge-high text-amber-500 text-[10px]"></i> 3,200 PSI / 2.5 GPM
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-gas-pump text-amber-500 text-[10px]"></i> Honda GC190 Engine
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-spray-can text-amber-500 text-[10px]"></i> 5 Pro Spray Tips
+                            </span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-arrows-left-right text-amber-500 text-[10px]"></i> 25ft MorFlex Hose
+                            </span>
                         </div>
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                         <div>
-                            <span class="text-xs text-slate-400 block font-bold">Daily Rate</span>
-                            <div class="text-lg font-black font-heading text-amber-500">$68 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[11px] text-slate-400 block font-bold uppercase tracking-wider">Rental Rate</span>
+                            <div class="text-xl font-black font-heading text-amber-500 leading-tight">$68 <span class="text-xs text-slate-400 font-normal">/ day</span></div>
+                            <span class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 block font-medium">$265/wk &bull; Refundable deposit</span>
                         </div>
-                        <a href="equipment-details.html?id=simpson-washer" class="px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-amber-500 text-slate-700 dark:text-slate-200 hover:text-amber-500 font-bold text-xs transition flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 shadow-sm">
-                            <span>Read More</span>
+                        <a href="equipment-details.html?id=simpson-washer" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition flex items-center gap-1.5 shadow-md shadow-amber-500/20 btn-shine">
+                            <span>Rent Now</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
@@ -1164,43 +1245,43 @@
                 <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white mt-1">Built for Zero Jobsite Downtime</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card-hover-lift delay-100 p-6 rounded-3xl bg-white dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl mb-4 icon-float">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <div class="flex flex-col h-full card-hover-lift delay-100 p-6 rounded-3xl bg-white dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-2xl mb-4 icon-float shrink-0">
                         <i class="fa-solid fa-truck-ramp-box"></i>
                     </div>
-                    <h3 class="font-bold font-heading text-lg text-slate-900 dark:text-white">4-Hour Jobsite Dispatch</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                    <h3 class="min-h-[3.5rem] flex items-center font-bold font-heading text-lg text-slate-900 dark:text-white leading-snug">4-Hour Jobsite Dispatch</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed flex-grow">
                         Flatbed trucks ready to drop off machinery straight to your residential or commercial project site.
                     </p>
                 </div>
 
-                <div class="card-hover-lift delay-200 p-6 rounded-3xl bg-white dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-2xl mb-4 icon-float">
+                <div class="flex flex-col h-full card-hover-lift delay-200 p-6 rounded-3xl bg-white dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-2xl mb-4 icon-float shrink-0">
                         <i class="fa-solid fa-wrench"></i>
                     </div>
-                    <h3 class="font-bold font-heading text-lg text-slate-900 dark:text-white">2-Hour Rapid Swap Guarantee</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                    <h3 class="min-h-[3.5rem] flex items-center font-bold font-heading text-lg text-slate-900 dark:text-white leading-snug">2-Hour Rapid Swap Guarantee</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed flex-grow">
                         If a machine experiences hydraulic or engine issues, our field technicians swap it out in under 2 hours.
                     </p>
                 </div>
 
-                <div class="card-hover-lift delay-300 p-6 rounded-3xl bg-white dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-500 flex items-center justify-center text-2xl mb-4 icon-float">
+                <div class="flex flex-col h-full card-hover-lift delay-300 p-6 rounded-3xl bg-white dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-500 flex items-center justify-center text-2xl mb-4 icon-float shrink-0">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
-                    <h3 class="font-bold font-heading text-lg text-slate-900 dark:text-white">Automated Escrow Refund</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                    <h3 class="min-h-[3.5rem] flex items-center font-bold font-heading text-lg text-slate-900 dark:text-white leading-snug">Automated Escrow Refund</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed flex-grow">
                         Temporary authorization hold canceled in under 60 seconds upon return check-in. Zero paperwork delays.
                     </p>
                 </div>
 
-                <div class="card-hover-lift delay-400 p-6 rounded-3xl bg-white dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-2xl mb-4 icon-float">
+                <div class="flex flex-col h-full card-hover-lift delay-400 p-6 rounded-3xl bg-white dark:bg-toolhub-card border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 text-orange-500 flex items-center justify-center text-2xl mb-4 icon-float shrink-0">
                         <i class="fa-solid fa-file-invoice-dollar"></i>
                     </div>
-                    <h3 class="font-bold font-heading text-lg text-slate-900 dark:text-white">Trade Credit & Net-30</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                    <h3 class="min-h-[3.5rem] flex items-center font-bold font-heading text-lg text-slate-900 dark:text-white leading-snug">Trade Credit & Net-30</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed flex-grow">
                         Flexible monthly billing and preferential volume rates for licensed contractors and builders.
                     </p>
                 </div>
@@ -1242,11 +1323,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
                 <!-- Col 1: Brand & Contact (Desktop 6 cols, Tablet full, Mobile full) -->
                 <div class="sm:col-span-2 lg:col-span-6 space-y-5 sm:space-y-6">
-                    <a href="index.html" class="flex items-center gap-3.5">
-                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl sm:text-2xl shadow-lg shadow-amber-500/20 shrink-0">
-                            <i class="fa-solid fa-truck-monster"></i>
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 shrink-0 group-hover:scale-105 transition transform">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
                         </div>
-                        <span class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                        <span class="text-2xl font-black font-heading tracking-tight text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
                     </a>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
                         Curating premium heavy equipment, commercial construction machinery, and precision DIY power tools for contractors, craftsmen, and home renovators worldwide.
@@ -1437,10 +1518,10 @@
     <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
     <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
         <!-- Header: Menu title & Close button -->
-        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-2">
-            <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 mb-2 shrink-0">
+            <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
             <button data-close="mobile-menu" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" aria-label="Close menu">
-                <i class="fa-solid fa-xmark text-2xl"></i>
+                <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
 
@@ -1482,20 +1563,17 @@
                     <span>RENTER LOGIN</span>
                 </a>
             </div>
-
-            <!-- Divider Line -->
-            <div class="border-t border-slate-200 dark:border-slate-800 my-4"></div>
-
-            <!-- Bottom Toggle Buttons (Below the menu as in Image 2) -->
-            <div class="flex items-center justify-around py-2">
-                <button type="button" data-toggle="theme" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
-                    <i class="fa-solid fa-moon text-2xl"></i>
-                </button>
-                <button type="button" data-toggle="direction" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
-                    <i class="fa-solid fa-right-left text-xl"></i>
-                </button>
-            </div>
         </nav>
+
+        <!-- Pinned Drawer Footer: Theme & RTL Toggles (Firmly visible on mobile < 640px/768px; hidden on >= 640px/768px tablet where navbar already has them) -->
+        <div class="drawer-toggles-container pt-3 mt-auto border-t border-slate-200 dark:border-slate-800 shrink-0 flex items-center justify-around sm:hidden">
+            <button type="button" data-toggle="theme" class="w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-700/80 shadow-sm" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+                <i class="fa-solid fa-moon text-lg"></i>
+            </button>
+            <button type="button" data-toggle="direction" class="w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-700/80 shadow-sm" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
+                <i class="fa-solid fa-right-left text-base"></i>
+            </button>
+        </div>
     </div>
 
     <!-- Quick View Modal (Strictly matching template Image 2) -->

@@ -473,6 +473,416 @@
                     Lower the drag stake to full 6-8 inch depth and make your second pass perpendicular (east-west). This cross-hatch pattern breaks up clumps, eliminates compaction layers, and leaves an aerated, silky seedbed ready for organic compost and turf seed.
                 </p>
             `
+        },
+
+        'bosch-hammer': {
+            id: 'bosch-hammer',
+            category: 'CONCRETE & DEMOLITION',
+            title: 'SDS-Max vs Demolition Breakers: Breaking Foundation Slabs Without HAVS Vibration',
+            readTime: '7 Min Read',
+            date: 'October 2026',
+            author: {
+                name: 'Jack Callahan',
+                role: 'Master Mason & Concrete Specialist',
+                bio: 'Specialist in structural concrete cutting, foundation underpinning, and commercial masonry demolition with over 22 years of field experience.',
+                avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85'
+            },
+            heroImage: 'https://i.pinimg.com/1200x/18/e4/ca/18e4ca90f593a5267a1862505c6cb42b.jpg',
+            toolsRequired: [
+                'Bosch GBH 13.5 Amp SDS-Max Rotary Hammer & Breaker',
+                'Point & Flat Chisels with Sintered Carbide Tips',
+                'Anti-Vibration Gel-Padded Demolition Work Gloves',
+                'ANSI Z87+ Impact Face Shield & N95 / HEPA Silica Dust Mask',
+                'Heavy-Duty 10-Gauge Contractor Extension Cord'
+            ],
+            bundleRate: '$42/day',
+            bundleLink: 'equipment-details.html?id=bosch-hammer',
+            featuredTool: {
+                name: 'Bosch SDS-Max Rotary Hammer',
+                image: 'https://i.pinimg.com/1200x/18/e4/ca/18e4ca90f593a5267a1862505c6cb42b.jpg',
+                dailyRate: 42,
+                stock: 'In Stock',
+                link: 'equipment-details.html?id=bosch-hammer'
+            },
+            contentHtml: `
+                <p class="text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-200 font-medium">
+                    Breaking apart a 4-inch reinforced concrete patio slab or chiseling out foundation footings requires serious impact energy. However, using the wrong tool or pushing down with your body weight can cause Hand-Arm Vibration Syndrome (HAVS) and premature tool burnout. Understanding how electro-pneumatic hammer mechanisms work is the secret to breaking concrete twice as fast with half the effort.
+                </p>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">1</span>
+                    Electro-Pneumatic Physics: Let the Tool Do the Work
+                </h3>
+                <p>
+                    Unlike consumer hammer drills that rely on mechanical ratcheting discs, industrial SDS-Max hammers utilize a free-floating steel striker driven by air pressure. This generates true kinetic impact energy (8.5 ft-lbs per blow).
+                </p>
+                <div class="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border-l-4 border-amber-500 my-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <strong class="font-bold text-slate-900 dark:text-white block mb-1">THE "ZERO-PRESSURE" RULE:</strong>
+                    Never lean your body weight onto an SDS-Max hammer. Leaning deadens the internal pneumatic rebound chamber, reducing impact force by up to 40% and transferring destructive vibration into your joints. Simply guide the chisel with light, steady pressure and let the piston strike.
+                </div>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">2</span>
+                    The 2-Inch Edge Chipping Strategy
+                </h3>
+                <p>
+                    Never place your chisel directly in the dead center of a massive slab. Without an open expansion relief plane, the kinetic energy is absorbed by the surrounding earth, causing the chisel bit to bind tightly in the hole.
+                </p>
+                <ol class="list-decimal pl-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                    <li>Start at the free outside perimeter of the slab, 2 to 3 inches from the exposed edge.</li>
+                    <li>Angle the chisel at roughly 75 degrees toward the free edge rather than perpendicular.</li>
+                    <li>Strike for 10-15 seconds until a clean fracture fissure propagates to the edge.</li>
+                    <li>Work inward in parallel bites. Once you encounter steel rebar or wire mesh, expose it and cut with bolt cutters.</li>
+                </ol>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">3</span>
+                    Silica Dust OSHA Table 1 Compliance
+                </h3>
+                <p>
+                    Dry chipping of concrete releases respirable crystalline silica particles that remain suspended in the air for hours. When operating indoors or in residential backyards, always pair the hammer with a continuous water mist or a shroud connected to an OSHA Table 1 compliant HEPA dust extractor.
+                </p>
+            `
+        },
+
+        'genie-boom': {
+            id: 'genie-boom',
+            category: 'AERIAL ACCESS & LIFTS',
+            title: 'Operating Telescopic Boom Lifts in High Winds: Critical Tip-Over Thresholds & OSHA 1926 Rules',
+            readTime: '9 Min Read',
+            date: 'October 2026',
+            author: {
+                name: 'Samantha Wright',
+                role: 'Safety & OSHA Compliance Director',
+                bio: 'OSHA authorized safety instructor and heavy lift inspector with over 18 years managing aerial work platforms and crane operations.',
+                avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85'
+            },
+            heroImage: 'https://i.pinimg.com/1200x/e4/b4/12/e4b412ad893abe62e353bf6dcfd4f53c.jpg',
+            toolsRequired: [
+                'Genie S-65 TraX Rough Terrain Telescopic Boom Lift (71 ft Reach)',
+                'ANSI A10.32 Full Body Safety Harness with Energy-Absorbing Lanyard',
+                'Handheld Digital Anemometer (Wind Speed Gauge)',
+                'Heavy-Duty Heavy Timber Cribbing Pads (Soft Ground Support)',
+                'Jobsite Hard Hat with Chinstrap & Class 3 Reflective Vest'
+            ],
+            bundleRate: '$385/day',
+            bundleLink: 'equipment-details.html?id=genie-s65',
+            featuredTool: {
+                name: 'Genie S-65 TraX Telescopic Boom',
+                image: 'https://i.pinimg.com/1200x/e4/b4/12/e4b412ad893abe62e353bf6dcfd4f53c.jpg',
+                dailyRate: 385,
+                stock: 'Available at Depot',
+                link: 'equipment-details.html?id=genie-s65'
+            },
+            contentHtml: `
+                <p class="text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-200 font-medium">
+                    Telescoping to a 71-foot elevation puts workers above rooftops, high-bay warehouses, and commercial steel framing. At that height, ground-level breezes can amplify into severe wind gusts that dramatically alter machine stability. Operating safely requires strict adherence to maximum wind ratings, ground bearing calculations, and fall arrest tie-off protocols.
+                </p>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">1</span>
+                    The 28 MPH Maximum Wind Velocity Threshold
+                </h3>
+                <p>
+                    All Genie aerial boom lifts are rated for a strict maximum wind speed of <strong>28 MPH (12.5 m/s)</strong>. Do not rely on local weather forecasts—winds at 70 feet can be double the speed measured at ground level.
+                </p>
+                <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/30 border border-amber-300 dark:border-amber-800 my-4 text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+                    <strong class="font-bold text-amber-500 block mb-1">THE "SAIL EFFECT" FACTOR:</strong>
+                    Carrying sheet metal panels, plywood, or large signage in the platform creates a massive sail. If handling large materials, the maximum allowable wind threshold decreases to 15 MPH. If sustained wind exceeds 28 MPH, immediately lower the boom to ground level and park the unit.
+                </div>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">2</span>
+                    The Genie 4-Point TraX Advantage on Soft Grades
+                </h3>
+                <p>
+                    Standard pneumatic or foam-filled tires can sink into rain-soaked mud or freshly backfilled utility trenches, causing dangerous machine tilt. The Genie S-65 TraX replaces wheels with four independent pivoting rubber track modules. This distributes the unit's 27,000 lb weight over four wide contact footprints, reducing ground pressure to just 12.5 PSI.
+                </p>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">3</span>
+                    Harness Lanyard Attachment: Never Clip to Exterior Structures
+                </h3>
+                <p>
+                    OSHA 1926.453 explicitly mandates that all personnel in a boom platform must wear a full-body harness connected to the designated factory lanyard anchorage point inside the platform. Never tie off to an adjacent steel beam or building facade while standing in the lift basket: if the lift shifts or drives, the operator can be catastrophically ejected.
+                </p>
+            `
+        },
+
+        'doosan-generator': {
+            id: 'doosan-generator',
+            category: 'POWER GENERATION',
+            title: 'Calculating Jobsite KVA & Voltage Loads: Eliminating Voltage Drops Across 200ft Extension Cables',
+            readTime: '8 Min Read',
+            date: 'October 2026',
+            author: {
+                name: 'Marcus Thorne',
+                role: 'Master Heavy Equipment Specialist',
+                bio: 'Caterpillar Master Technician with 20+ years expertise in prime power generation, tier 4 diesel engines, and mobile temporary electrical distribution.',
+                avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85'
+            },
+            heroImage: 'assets/images/honda-generator.jpg',
+            toolsRequired: [
+                'Doosan G70 Towable Prime Diesel Generator (70 kVA / 56 kW)',
+                '50A 120/240V Heavy-Duty Temporary Power Spider Box',
+                '50-Foot 6/4 SOOW 50-Amp Industrial Extension Cable',
+                'True-RMS Digital Clamp Multimeter for Phase Balance',
+                'Proper 8-ft Copper Grounding Rod & Clamp Assembly'
+            ],
+            bundleRate: '$215/day',
+            bundleLink: 'equipment-details.html?id=doosan-g70',
+            featuredTool: {
+                name: 'Doosan G70 Towable Diesel Generator',
+                image: 'assets/images/honda-generator.jpg',
+                dailyRate: 215,
+                stock: 'In Stock',
+                link: 'equipment-details.html?id=doosan-g70'
+            },
+            contentHtml: `
+                <p class="text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-200 font-medium">
+                    When developing commercial sites prior to utility grid interconnection, a 70 kVA mobile diesel generator provides the lifeblood for lighting towers, airless sprayers, concrete saws, and jobsite office trailers. However, running power across long cord runs without calculating startup surges or wire gauge voltage drop will burn out expensive electric motors in hours.
+                </p>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">1</span>
+                    Running Watts vs. Motor Starting Surges (LRA)
+                </h3>
+                <p>
+                    Resistive loads (like incandescent work lights and space heaters) draw the same amperage continuously. However, inductive loads driven by electric motors (air compressors, table saws, submersible pumps) demand a temporary Locked Rotor Amperage (LRA) up to <strong>3 to 5 times</strong> their running wattage for the first 2-3 seconds of startup.
+                </p>
+                <div class="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border-l-4 border-amber-500 my-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <strong class="font-bold text-slate-900 dark:text-white block mb-1">SURGE SIZING CALCULATION:</strong>
+                    Always calculate the total running wattage of all connected tools, then add the single largest starting surge wattage. The Doosan G70 provides 56 kW prime continuous power with 61.6 kW standby surge reserve, easily handling simultaneous compressor and saw startups.
+                </div>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">2</span>
+                    Preventing Voltage Drop Across Long Cord Runs
+                </h3>
+                <p>
+                    Electrical resistance causes voltage to drop as cord length increases. If terminal voltage drops below 108V on a standard 120V motor, current spikes sharply—causing internal motor windings to overheat and melt.
+                </p>
+                <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600 dark:text-slate-300">
+                    <li><strong>Under 50 Feet:</strong> 12-Gauge (12/3) extension cord supports up to 15 Amps.</li>
+                    <li><strong>50 to 100 Feet:</strong> Upgrade to 10-Gauge (10/3) to keep voltage drop under 3%.</li>
+                    <li><strong>Over 100 Feet:</strong> Run a 50-Amp 6/4 SOOW feed to a portable Spider Distribution Box staged closer to the workspace, then run short 25-ft drops to individual tools.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">3</span>
+                    Proper Three-Phase Phase Balancing
+                </h3>
+                <p>
+                    When operating the Doosan G70 in 120/208V three-phase mode, balance single-phase 120V loads equally across Leg 1, Leg 2, and Leg 3. Unbalanced phase loading generates excessive heat in the generator alternator stator, triggering internal thermal overloads.
+                </p>
+            `
+        },
+
+        'bobcat-grading': {
+            id: 'bobcat-grading',
+            category: 'EARTHMOVING & HEAVY FLEET',
+            title: 'Skid Steer Track Maintenance, Zero-Radius Turning, and Hydraulic Bob-Tach Safety',
+            readTime: '7 Min Read',
+            date: 'October 2026',
+            author: {
+                name: 'Elena Vance',
+                role: 'Fleet Operations Director',
+                bio: 'Managing 4,500+ commercial machinery units across North America with a focus on telematics, heavy equipment uptime, and operator training.',
+                avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85'
+            },
+            heroImage: 'https://i.pinimg.com/1200x/9e/3c/d3/9e3cd3e492785789c5fe1c628bb13e59.jpg',
+            toolsRequired: [
+                'Bobcat T76 R-Series Compact Track Skid Steer Loader (74 HP Turbo)',
+                '74" Severe Duty Construction Dirt Bucket with Bolt-On Edge',
+                '48" Heavy-Duty Pallet Fork Attachment',
+                'Grease Gun with Heavy Lithium Moly Grease for Pivot Pins',
+                'Towing Tie-Down Chains & Grade 70 Ratchet Binders'
+            ],
+            bundleRate: '$310/day',
+            bundleLink: 'equipment-details.html?id=bobcat-t76',
+            featuredTool: {
+                name: 'Bobcat T76 Compact Track Loader',
+                image: 'https://i.pinimg.com/1200x/9e/3c/d3/9e3cd3e492785789c5fe1c628bb13e59.jpg',
+                dailyRate: 310,
+                stock: 'Available at Depot',
+                link: 'equipment-details.html?id=bobcat-t76'
+            },
+            contentHtml: `
+                <p class="text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-200 font-medium">
+                    The Bobcat T76 compact track loader is the ultimate earthmoving workhorse, lifting 2,900 lbs and pushing tons of wet subgrade with high-flotation rubber tracks. However, improper turning techniques on abrasive asphalt can shred expensive rubber lugs, while failing to verify hydraulic attachment pins can lead to catastrophic bucket releases.
+                </p>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">1</span>
+                    The 3-Point "Y-Turn" Technique vs Counter-Rotating
+                </h3>
+                <p>
+                    While skid steers have the ability to spin on a dime by counter-rotating opposite tracks (one forward, one reverse), doing so on gravel, pavement, or compacted clay grinds rocks directly into the track rollers and shreds the rubber undercarriage.
+                </p>
+                <div class="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border-l-4 border-amber-500 my-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <strong class="font-bold text-slate-900 dark:text-white block mb-1">PRO OPERATOR TECHNIQUE:</strong>
+                    Always make wide gradual turns while keeping the machine moving forward, or perform a 3-point Y-turn. This cuts undercarriage wear by up to 70% and prevents tearing deep ruts into finished subgrades.
+                </div>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">2</span>
+                    The Bob-Tach Visual Inspection Protocol
+                </h3>
+                <p>
+                    The Bobcat hydraulic Bob-Tach system allows operators to swap between buckets, pallet forks, and trenchers from inside the air-conditioned cab. However, never begin operating based solely on cab switch lights.
+                </p>
+                <ol class="list-decimal pl-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                    <li>Hook the top lip of the attachment and tilt the carriage upward.</li>
+                    <li>Engage the hydraulic wedge pins switch in the cab.</li>
+                    <li><strong>Step out and visually confirm</strong> that both heavy steel wedge pins have fully penetrated through the attachment bottom holes.</li>
+                    <li>Perform a ground-push test: press the front lip of the attachment against the earth and back up slightly to verify lock engagement.</li>
+                </ol>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">3</span>
+                    Managing Center of Gravity on Inclines
+                </h3>
+                <p>
+                    When traveling up or down slopes, always keep the heavy end of the machine pointed uphill:
+                </p>
+                <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600 dark:text-slate-300">
+                    <li><strong>With an Empty Bucket:</strong> The rear engine compartment is the heavy end. Back down slopes; drive forward up slopes.</li>
+                    <li><strong>With a Fully Loaded Bucket:</strong> The front is the heavy end. Drive forward down slopes; back up slopes.</li>
+                    <li>Always keep the bucket carried low (6 to 12 inches above grade) during travel to maintain maximum rollover stability.</li>
+                </ul>
+            `
+        },
+
+        'stihl-blower': {
+            id: 'stihl-blower',
+            category: 'LAWN & SITE CLEARING',
+            title: 'CFM vs MPH: Commercial Debris Clearing Strategy with 677 CFM Stihl 4-MIX Blowers',
+            readTime: '6 Min Read',
+            date: 'October 2026',
+            author: {
+                name: 'David Chen',
+                role: 'Commercial Grounds & Site Prep Lead',
+                bio: 'Landscape site manager overseeing large-acreage grading, post-construction debris removal, and high-efficiency grounds maintenance.',
+                avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=85'
+            },
+            heroImage: 'https://i.pinimg.com/1200x/92/74/97/92749747c10cc8a52e0e6d07fcdeb688.jpg',
+            toolsRequired: [
+                'Stihl BR 600 Professional Heavy Backpack Leaf Blower (64.8cc)',
+                'Flexible Tube Assembly with Duckbill Concentrator Jet Nozzle',
+                '25dB ANSI Rated Hearing Protection Earmuffs',
+                'Polycarbonate Impact Safety Glasses & Dust Mask',
+                'Pre-Mixed 50:1 Synthetic High-Performance Fuel'
+            ],
+            bundleRate: '$45/day',
+            bundleLink: 'equipment-details.html?id=stihl-blower',
+            featuredTool: {
+                name: 'Stihl BR 600 Backpack Blower',
+                image: 'https://i.pinimg.com/1200x/92/74/97/92749747c10cc8a52e0e6d07fcdeb688.jpg',
+                dailyRate: 45,
+                stock: 'In Stock',
+                link: 'equipment-details.html?id=stihl-blower'
+            },
+            contentHtml: `
+                <p class="text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-200 font-medium">
+                    Clearing a 2-acre commercial parking lot or blowing wet sawdust, drywall shavings, and heavy mud off a construction driveway can take all day with consumer tools. The Stihl BR 600 backpack blower delivers 677 CFM at 238 MPH, generating 32 Newtons of blowing force. But unlocking that power requires understanding the vital relationship between CFM and MPH.
+                </p>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">1</span>
+                    CFM vs. MPH: What Actually Moves Heavy Wet Debris?
+                </h3>
+                <p>
+                    Manufacturers often advertise high MPH numbers to impress buyers. However, airspeed (MPH) and air volume (CFM) perform entirely different physical tasks:
+                </p>
+                <ul class="list-disc pl-5 space-y-1.5 text-sm text-slate-600 dark:text-slate-300">
+                    <li><strong>MPH (Miles Per Hour):</strong> Measures air velocity. High MPH lifts stubborn, stuck-down debris (like wet leaves plastered to asphalt or clay clumps).</li>
+                    <li><strong>CFM (Cubic Feet Per Minute):</strong> Measures the total volume of air pushed through the tube. High CFM keeps huge piles of debris rolling forward without spilling around the edges.</li>
+                </ul>
+                <div class="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border-l-4 border-amber-500 my-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <strong class="font-bold text-slate-900 dark:text-white block mb-1">THE FORMULA FOR PRODUCTIVITY:</strong>
+                    The Stihl BR 600 balances both: 238 MPH breaks surface adhesion, while 677 CFM carries large windrows across wide paved expanses in single passes.
+                </div>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">2</span>
+                    The "Windrow Corridor" Sweeping Technique
+                </h3>
+                <p>
+                    Never blow debris randomly toward the center of a yard. Establish a prevailing wind direction and blow in continuous parallel lines, creating a concentrated "windrow" along the edge of the property where a leaf vacuum or trailer loader can scoop it up cleanly. Keep the nozzle angled at roughly 45 degrees to the ground—aiming straight down creates blowback into your face.
+                </p>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">3</span>
+                    Stihl 4-MIX Engine Fuel Requirements
+                </h3>
+                <p>
+                    The patented 4-MIX engine combines the lightweight benefits of a 2-stroke with the low emissions and torque of a 4-stroke valve system. Always run 50:1 pre-mixed ethanol-free synthetic fuel. Using standard pump gas with ethanol causes carburetor gumming and valve carbon accumulation.
+                </p>
+            `
+        },
+
+        'milwaukee-impact': {
+            id: 'milwaukee-impact',
+            category: 'POWER TOOLS & FASTENING',
+            title: 'Nut-Busting Torque vs Controlled Fastening: How M18 FUEL Protects Structural Bolts from Over-Torquing',
+            readTime: '6 Min Read',
+            date: 'October 2026',
+            author: {
+                name: 'Jack Callahan',
+                role: 'Commercial Fastening & Steel Specialist',
+                bio: 'Structural steel erection and framing specialist with over 20 years in commercial and residential infrastructure construction.',
+                avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=85'
+            },
+            heroImage: 'https://i.pinimg.com/736x/50/0f/43/500f43d5b4e88eff8ef80ab5b14855fd.jpg',
+            toolsRequired: [
+                'Milwaukee M18 FUEL 1/2" High-Torque Impact Wrench Kit',
+                '(2) M18 REDLITHIUM 5.0Ah High-Output Battery Packs',
+                '14-Piece Heat-Treated Chromoly Deep Impact Sockets (1/2" Drive)',
+                'Calibrated Manual Click-Type Torque Wrench (Verification)',
+                'ANSI Z87+ Certified Safety Glasses & Leather Mechanics Gloves'
+            ],
+            bundleRate: '$38/day',
+            bundleLink: 'equipment-details.html?id=milwaukee-impact',
+            featuredTool: {
+                name: 'Milwaukee M18 High-Torque Wrench',
+                image: 'https://i.pinimg.com/736x/50/0f/43/500f43d5b4e88eff8ef80ab5b14855fd.jpg',
+                dailyRate: 38,
+                stock: 'In Stock',
+                link: 'equipment-details.html?id=milwaukee-impact'
+            },
+            contentHtml: `
+                <p class="text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-200 font-medium">
+                    With an astonishing 1,400 ft-lbs of nut-busting breakaway torque and 1,000 ft-lbs of fastening torque, the cordless Milwaukee M18 FUEL 1/2" impact wrench delivers pure pneumatic power without compressors or air hoses. But unchecked high-torque impact tools can easily snap Grade 8 structural bolts or strip trailer lug studs if not dialed in correctly.
+                </p>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">1</span>
+                    Breakaway (Nut-Busting) vs. Fastening Torque
+                </h3>
+                <p>
+                    Corrosion, rust, and road grime require significantly more force to break free than the initial tightening torque. The anvil mechanism hits with rapid rotational hammer blows that shock the rusted threads loose in seconds.
+                </p>
+                <div class="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border-l-4 border-amber-500 my-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                    <strong class="font-bold text-slate-900 dark:text-white block mb-1">MODE 4 AUTO-SHUTOFF ADVANTAGE:</strong>
+                    Milwaukee's DRIVE CONTROL Mode 4 features smart Bolt Removal mode: it strikes at full 1,400 ft-lbs to break the fastener loose, then automatically slows down to 750 RPM once the nut spins freely. This eliminates dropped nuts on steel girders or damaged wheel threads.
+                </div>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">2</span>
+                    Why Standard Chrome Sockets Are Strictly Prohibited
+                </h3>
+                <p>
+                    Never use standard thin-walled chrome hand-ratchet sockets on high-torque impact wrenches. Chrome sockets are brittle and will shatter under high-velocity anvil strikes, ejecting sharp metal shards. Always use black phosphate-coated heat-treated Chromium-Molybdenum (CR-MO) impact sockets.
+                </p>
+
+                <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white pt-4 flex items-center gap-2">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">3</span>
+                    Snugging with Mode 1 & Final Verification with a Calibrated Torque Wrench
+                </h3>
+                <p>
+                    When installing critical fasteners—such as structural framing anchors, heavy equipment blade bolts, or commercial trailer wheels—never rely on an impact wrench for final tightening. Use Mode 1 (approx. 100 ft-lbs) to run the nut flush, then finish each fastener with a manual calibrated click-type torque wrench to the exact engineering foot-pound specification.
+                </p>
+            `
         }
     };
 })();

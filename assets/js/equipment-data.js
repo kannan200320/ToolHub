@@ -136,7 +136,7 @@
             gallery: [
                 'https://i.pinimg.com/1200x/d6/c1/5a/d6c15a59108bd7c7e511a0f6a5bb7d85.jpg',
                 'https://i.pinimg.com/1200x/fa/27/c3/fa27c34a8b7d838e655607b7ef1cc371.jpg',
-                'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85'
+        
             ],
             description: 'The Doosan G70 mobile diesel generator delivers rock-solid, prime three-phase and single-phase jobsite electrical power. Built inside a sound-attenuated acoustic enclosure generating just 65 dBA at 23 feet. Equipped with a digital engine controller, multi-voltage selector switch (120V/208V/240V/480V), and internal 108-gallon diesel fuel cell for 24+ hour continuous runtimes.',
             specs: [
@@ -578,7 +578,7 @@
             stockStatus: 'In Stock (Express Pickup Ready)',
             mainImage: 'https://i.pinimg.com/1200x/bc/96/f8/bc96f8d8cf437803cbb9cebfaa6fdd7d.jpg',
             gallery: [
-                'https://www.paintaccess.com.au/cdn/shop/files/Group_1_384f3db9-034c-4af8-9370-b2c429e96e1e_1024x.png?v=1754604593',
+                'https://i.pinimg.com/1200x/bc/96/f8/bc96f8d8cf437803cbb9cebfaa6fdd7d.jpg',
                 'https://www.paintaccess.com.au/cdn/shop/files/GracoUltra650XTElectricAirlessSprayerLo-Boy20B304-1_b2f913c3-2fa0-49a1-8d83-ee0542074152_1024x.png?v=1754604593',
                 
             ],

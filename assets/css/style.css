@@ -74,25 +74,20 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     background: #f59e0b;
 }
 
-/* Hazard Stripes Pattern */
-.bg-hazard-stripes {
-    background: repeating-linear-gradient(
-        -45deg,
-        rgba(245, 158, 11, 0.12),
-        rgba(245, 158, 11, 0.12) 10px,
-        rgba(0, 0, 0, 0.05) 10px,
-        rgba(0, 0, 0, 0.05) 20px
-    );
+/* Hide scrollbar for clean horizontal chip bars */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
+/* Hazard Stripes Pattern Completely Removed */
+.bg-hazard-stripes,
 .dark .bg-hazard-stripes {
-    background: repeating-linear-gradient(
-        -45deg,
-        rgba(245, 158, 11, 0.15),
-        rgba(245, 158, 11, 0.15) 10px,
-        rgba(0, 0, 0, 0.35) 10px,
-        rgba(0, 0, 0, 0.35) 20px
-    );
+    background: none !important;
+    display: none !important;
 }
 
 /* ToolHub Glow & Accents */
@@ -675,22 +670,23 @@ body.dashboard-body {
         max-width: 100% !important;
     }
 
-    /* 2. Logo container scaling: sleek, proportional size */
+    /* 2. Logo container: sleek, consistent brand sizing */
     .glass-header .flex.items-center.justify-between > a:first-child,
     .glass-header a[href="index.html"].flex {
-        gap: 0.5rem !important;
+        gap: 0.625rem !important;
         flex-shrink: 0 !important;
     }
     .glass-header .flex.items-center.justify-between > a:first-child > div:first-child,
     .glass-header a[href="index.html"] > div:first-child {
-        width: 2.125rem !important;
-        height: 2.125rem !important;
-        font-size: 0.875rem !important;
-        border-radius: 0.625rem !important;
+        width: 2.375rem !important;
+        height: 2.375rem !important;
+        font-size: 1rem !important;
+        border-radius: 0.75rem !important;
     }
     .glass-header .flex.items-center.justify-between > a:first-child > span,
     .glass-header a[href="index.html"] > span {
-        font-size: 1.15rem !important;
+        font-size: 1.5rem !important;
+        line-height: 1 !important;
     }
 
     /* 3. Spacing between Logo and Nav at 1024px */
@@ -1052,6 +1048,16 @@ html[dir="ltr"] body {
 [dir="rtl"] #mobile-menu-drawer.translate-x-0,
 [dir="rtl"] #mobile-menu-drawer.is-open {
     transform: translateX(0) !important;
+}
+
+/* Hamburg Menu Theme & RTL Toggles Responsive Behavior:
+   - Mobile (< 640px / < 768px): firmly visible in Hamburg menu drawer
+   - Tablet & Laptop (>= 640px, especially 768px): removed/hidden from Hamburg menu as already placed in top navbar */
+@media (min-width: 640px) {
+    #mobile-menu-drawer .drawer-toggles-container,
+    #mobile-menu-drawer [data-drawer-toggles] {
+        display: none !important;
+    }
 }
 
 /* Background scroll lock helper */

@@ -76,7 +76,7 @@
                 <!-- Left: Brand Logo -->
                 <a href="index.html" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 group-hover:scale-105 transition transform">
-                        <i class="fa-solid fa-truck-monster"></i>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
                     <span class="text-2xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
                 </a>
@@ -154,7 +154,6 @@
 
     <!-- Hero Section with High-Quality Fleet Imagery -->
     <section class="py-16 sm:py-20 bg-white dark:bg-slate-950 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 relative overflow-hidden transition-colors">
-        <div class="absolute inset-0 bg-hazard-stripes opacity-0 dark:opacity-10 pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <!-- Left: Headline & Pricing Value Propositions -->
@@ -198,17 +197,17 @@
                 <!-- Right: High-Quality Commercial Fleet Image Card -->
                 <div class="lg:col-span-5 reveal-right delay-150">
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200 dark:border-slate-800 aspect-[4/3] group">
-                        <img src="assets/images/rental-rates.jpg" alt="ToolHub Commercial Equipment Rental Rates" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <img src="assets/images/rental-rates.jpg" alt="Customer Reviewing ToolHub Equipment Rental Rates Online" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=85';">
                         <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent"></div>
                         <span class="absolute top-4 left-4 bg-neutral-950/85 backdrop-blur-md text-amber-400 text-xs font-black px-3 py-1.5 rounded-xl border border-neutral-800 shadow">
-                            <i class="fa-solid fa-tag mr-1.5"></i>Volume Trade Discount Active
+                            <i class="fa-solid fa-calculator mr-1.5"></i>Live Equipment Rates Online
                         </span>
                         <div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-neutral-900/90 backdrop-blur-md border border-neutral-800 flex items-center justify-between text-xs">
                             <div>
-                                <span class="text-[10px] text-slate-400 block font-bold uppercase">Weekly Savings Tier</span>
-                                <span class="font-extrabold text-white">Save Up To 35% on 7-Day Bookings</span>
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase">Rate Transparency</span>
+                                <span class="font-extrabold text-white">Daily, Weekly &amp; Monthly Pricing</span>
                             </div>
-                            <span class="text-amber-400 font-black text-sm">$35 - $68/day</span>
+                            <span class="text-amber-400 font-black text-xs flex items-center gap-1"><i class="fa-solid fa-circle-check text-emerald-400"></i> No Hidden Fees</span>
                         </div>
                     </div>
                 </div>
@@ -304,7 +303,1183 @@
         </div>
     </section>
 
-    <!-- Security Deposit Escrow Table -->
+    <!-- Detailed Equipment & Tool Rates by Rental Duration (Requirement 10) -->
+    <section id="rates-grid" class="py-20 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal-up">
+                <span class="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3.5 py-1 rounded-full inline-block">
+                    COMPREHENSIVE FLEET DIRECTORY
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black font-heading text-slate-900 dark:text-white mt-3">
+                    Rental Rates by Tool &amp; Duration
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                    Compare daily, 3-day weekend, weekly, and monthly rates across our entire catalog. Every rental includes comprehensive maintenance sign-off, full initial power/fuel, and automated deposit release.
+                </p>
+            </div>
+
+            <!-- Duration Structure Explanation Guide -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14 reveal-up">
+                <div class="bg-white dark:bg-toolhub-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-black text-sm">
+                            <i class="fa-solid fa-clock"></i>
+                        </span>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-slate-900 dark:text-white">24-Hour Daily</h4>
+                            <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Standard Base Rate</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Full 24 hours of machine possession from pickup time. Ideal for quick single-day trenching, emergency cutting, or home exterior prep. Includes 8 engine meter hours.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-toolhub-card p-5 rounded-2xl border-2 border-amber-500 shadow-md relative">
+                    <span class="absolute -top-2.5 right-4 bg-amber-500 text-slate-950 text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow">
+                        SAVE 50%
+                    </span>
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-black text-sm">
+                            <i class="fa-solid fa-calendar-week"></i>
+                        </span>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-slate-900 dark:text-white">3-Day Weekend</h4>
+                            <span class="text-[10px] text-amber-500 uppercase font-bold tracking-wider">1.5x Daily Rate</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Pick up Friday at 4:00 PM and return Monday by 9:00 AM. Get 64 consecutive hours of continuous access for the price of only 1.5 standard rental days.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-toolhub-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-black text-sm">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </span>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-slate-900 dark:text-white">7-Day Weekly</h4>
+                            <span class="text-[10px] text-emerald-500 uppercase font-bold tracking-wider">Save 18% – 25%</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Full consecutive week package priced at just ~3.5 to 4 standard days. Perfect for major patio remodels, tree felling, and home extensions. Includes 40 meter hours.
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-toolhub-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center font-black text-sm">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </span>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-slate-900 dark:text-white">30-Day Monthly</h4>
+                            <span class="text-[10px] text-blue-500 uppercase font-bold tracking-wider">Save 35% – 45%</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                        Commercial general contractor billing with Net-30 credit terms. Free flatbed jobsite delivery, 2-hour field maintenance swap SLA, and zero cash escrow hold.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 sm:pb-0 sm:flex-wrap sm:justify-center mb-10 -mx-4 px-4 sm:mx-0 sm:px-0">
+                <button type="button" onclick="filterRates('all', this)" class="rate-tab-btn active shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider bg-amber-500 text-slate-950 shadow-md transition">
+                    All Equipment &amp; Tools (12)
+                </button>
+                <button type="button" onclick="filterRates('heavy', this)" class="rate-tab-btn shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                    Heavy Earthmoving &amp; Aerial
+                </button>
+                <button type="button" onclick="filterRates('power', this)" class="rate-tab-btn shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                    Power Tools &amp; Saws
+                </button>
+                <button type="button" onclick="filterRates('lawn', this)" class="rate-tab-btn shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                    Lawn &amp; Forestry
+                </button>
+                <button type="button" onclick="filterRates('painting-washers', this)" class="rate-tab-btn shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                    Washers &amp; Sprayers
+                </button>
+                <button type="button" onclick="filterRates('ladders', this)" class="rate-tab-btn shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition">
+                    Ladders &amp; Scaffolding
+                </button>
+            </div>
+
+            <!-- Equipment Rates Grid -->
+            <div id="rate-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Caterpillar 302.7 CR Mini Excavator -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="heavy">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="assets/images/cat-excavator.jpg" alt="Caterpillar 302.7 CR Mini Excavator" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579298245158-33e8f568f7d3?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Earthmoving
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                24.7 HP Diesel
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Caterpillar OEM</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Cat 302.7 CR Mini Excavator</h3>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs Summary -->
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Max Dig Depth</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">8.4 ft</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Operating Weight</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">6,050 lbs</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Tail Swing</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">Zero Radius</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Includes 18" toothed trenching bucket, hydraulic thumb clamp, and heavy-duty towable trailer.
+                            </p>
+                        </div>
+
+                        <!-- Pricing Table by Duration -->
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h · 8h Meter)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$275.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$412.50</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $412</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly (40h)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$980.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-49%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly (Net-30)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$2,850.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-65%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$500.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card CTA -->
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=cat-excavator" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Cat Excavator
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Bobcat T76 Track Skid Steer Loader -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="heavy">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/9e/3c/d3/9e3cd3e492785789c5fe1c628bb13e59.jpg" alt="Bobcat T76 Compact Track Skid Steer" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Earthmoving
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                74 HP Turbo Diesel
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Bobcat R-Series</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Bobcat T76 Track Skid Steer</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Operating Capacity</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">2,900 lbs</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Aux Hydraulic Flow</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">30.3 GPM</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Lift Path</span>
+                                    <strong class="text-amber-500 text-xs block leading-none truncate">Vertical 128"</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Includes 74" severe duty construction dirt bucket and hydraulic quick coupler.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h · 8h Meter)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$310.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$465.00</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $465</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly (40h)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$1,150.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-47%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly (Net-30)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$3,200.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-65%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$500.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=bobcat-t76" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Bobcat T76
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Genie S-65 TraX Rough Terrain Boom Lift -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="heavy">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/e4/b4/12/e4b412ad893abe62e353bf6dcfd4f53c.jpg" alt="Genie S-65 TraX Rough Terrain Telescopic Boom Lift" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1541888946425-d0fbb180c5f7?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Aerial Lift
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                4WD 4-Point TraX
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Genie Genuine OEM</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Genie S-65 TraX Boom Lift</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Working Height</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">71 ft Reach</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Horizontal Reach</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">56 ft 2 in</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Platform Cap</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">500 lbs</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Includes 8-ft steel basket, full fall arrest safety harness kit, and 360° rotation.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h · 8h Meter)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$385.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$577.50</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $577</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly (40h)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$1,400.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-48%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly (Net-30)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$3,900.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-66%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$600.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=genie-s65" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Genie Boom
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Doosan G70 Towable Diesel Generator -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="heavy">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="assets/images/honda-generator.jpg" alt="Doosan G70 Towable Diesel Generator" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Power Generation
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                70 kVA / 56 kW
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Doosan Industrial</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Doosan G70 Diesel Generator</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Sound Level</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">65 dBA Quiet</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Voltage Mode</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">Multi-Switch</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Fuel Cell</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">108 Gal (24h)</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Prime three-phase &amp; single-phase generator with DOT tow trailer and full fuel tank.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h · 8h Meter)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$215.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$322.50</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $322</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly (40h)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$790.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-47%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly (Net-30)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$2,250.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-65%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$350.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=doosan-g70" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Generator
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: DeWalt 10" Wet Tile Saw with Stand -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="power">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/e1/8a/d6/e18ad632c8e0e45a943ee5f063cf4510.jpg" alt="DeWalt 10 Inch Wet Tile Saw" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Floor &amp; Tile
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                Electric 120V
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">DeWalt Precision</span>
+                                <h3 class="text-base font-extrabold text-white truncate">DeWalt 10" Wet Tile Saw</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Rip Capacity</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">28 in. Rip</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Blade Diamond</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">10" XP4 Rim</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Scissor Stand</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">Included</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Complete with submersible pump, dual water spray jets, water collection pans, and rolling stand.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h Access)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$75.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$112.50</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $112</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$300.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-43%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$850.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-62%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$150.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=dewalt-tile-saw" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Tile Saw
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Bosch GBH SDS-Max Rotary Hammer -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="power">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/18/e4/ca/18e4ca90f593a5267a1862505c6cb42b.jpg" alt="Bosch GBH SDS-Max Rotary Hammer Drill" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Concrete &amp; Masonry
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                13.5A / 8.5 Ft-Lbs
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Bosch Industrial</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Bosch SDS-Max Rotary Hammer</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Impact Energy</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">8.5 ft-lbs</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">BPM Rate</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">2,900 BPM</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Chuck Style</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">SDS-Max</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Includes auxiliary 360° handle, depth rod, bull-point chisel, 1" flat chisel, and case.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h Access)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$42.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$63.00</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $63</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$170.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-42%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$480.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-62%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$120.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=bosch-hammer" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Hammer Drill
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 7: Simpson MegaShot 3200 PSI Pressure Washer -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="painting-washers">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/736x/82/bb/30/82bb30f022deab8d59e8ddfe61d0a4d2.jpg" alt="Simpson MegaShot 3200 PSI Gas Pressure Washer" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Cleaning
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                Gas 3200 PSI
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Honda GC190</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Simpson 3200 PSI Washer</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Water Flow</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">2.5 GPM</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Hose Reach</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">25 ft MorFlex</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Nozzles</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">5 Quick-Tips</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Complete with spray gun, 16" wand, non-marring hose, 5 color-coded nozzles, and soap tube.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h Access)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$65.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$97.50</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $97</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$260.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-43%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$720.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-63%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$100.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=simpson-washer" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Pressure Washer
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 8: Graco Magnum X7 Cart Airless Paint Sprayer -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="painting-washers">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/bc/96/f8/bc96f8d8cf437803cbb9cebfaa6fdd7d.jpg" alt="Graco Magnum X7 Airless Paint Sprayer" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Painting
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                Electric 120V
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Graco Magnum</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Graco Magnum X7 Sprayer</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Max Pressure</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">3,000 PSI</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Direct Pail</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">1 &amp; 5 Gal Hook</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Hose Capacity</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">Up to 100 ft</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Includes SG2 metal spray gun, 515 RAC IV tip, 50-ft hose, pump armor fluid, and flush kit.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h Access)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$58.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$87.00</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $87</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$230.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-43%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$640.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-63%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$150.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=graco-sprayer" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Paint Sprayer
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 9: Honda Mid-Tine Gas Garden Rototiller -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="lawn">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/0e/aa/80/0eaa80aef6e0bfbd5e5b3654fc799290.jpg" alt="Honda Mid-Tine Gas Rototiller" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Gardening
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                Honda GX160 Gas
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Honda Commercial</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Honda Mid-Tine Rototiller</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Tilling Width</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">21 in. Bolo</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Cultivation Depth</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">8 in. Deep</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Drive System</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">All-Gear Drive</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Four heavy bolo tines, adjustable depth drag stake, side shields, and front wheel.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h Access)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$62.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$93.00</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $93</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$245.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-43%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$680.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-63%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$150.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=honda-tiller" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Rototiller
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 10: Stihl MS 250 Gas Chainsaw -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="lawn">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/7a/ef/4e/7aef4e2438063a26643ef6fc491d9172.jpg" alt="Stihl MS 250 18 Inch Gas Chainsaw" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Forestry
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                Gas 45.4cc
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Stihl Pro Series</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Stihl MS 250 Chainsaw</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Bar Length</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">18 in. Bar</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Powerhead</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">10.1 lbs Light</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Safety Brake</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">QuickStop</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Complete with heavy case, spare sharp chain, bar scabbard, scrench, and full 50:1 fuel tank.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h Access)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$55.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$82.50</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $82</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$220.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-43%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$600.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-64%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$150.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=stihl-chainsaw" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Chainsaw
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 11: 6ft Baker Style Rolling Scaffold Tower -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="ladders">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/736x/b1/53/d0/b153d03b9a22ecd0e24097ed380c9bb7.jpg" alt="6ft Baker Style Rolling Scaffold Tower" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1541888946425-d0fbb180c5f7?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Elevated Access
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                1,000 lb Load Rated
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Modular Scaffold</span>
+                                <h3 class="text-base font-extrabold text-white truncate">6ft Baker Rolling Scaffold</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Platform Size</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">73" x 29"</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Working Reach</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">6 ft (Stackable)</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Doorway Fit</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">Passes 30" Door</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Complete with 2 end frames, 2 truss braces, plywood deck, 4 double-locking casters, and pins.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h Access)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$45.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$67.50</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $67</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$180.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-43%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$490.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-64%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$100.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=baker-scaffold" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Scaffold Tower
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 12: Stihl BR 600 Professional Backpack Leaf Blower -->
+                <div class="rate-card bg-white dark:bg-toolhub-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-category="lawn">
+                    <div>
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img src="https://i.pinimg.com/1200x/92/74/97/92749747c10cc8a52e0e6d07fcdeb688.jpg" alt="Stihl BR 600 Professional Backpack Leaf Blower" class="w-full h-full object-cover hover:scale-105 transition duration-500" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=800&q=80';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 font-black text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                Lawn &amp; Debris
+                            </span>
+                            <span class="absolute top-3 right-3 bg-slate-900/90 text-amber-400 font-bold text-[10px] px-2.5 py-0.5 rounded-full border border-slate-700">
+                                Stihl 4-MIX 64.8cc
+                            </span>
+                            <div class="absolute bottom-3 left-3 right-3 text-white">
+                                <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Stihl Heavy Pro</span>
+                                <h3 class="text-base font-extrabold text-white truncate">Stihl BR 600 Backpack Blower</h3>
+                            </div>
+                        </div>
+
+                        <div class="p-5 border-b border-slate-100 dark:border-slate-800">
+                            <div class="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Air Volume</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">677 CFM</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Max Air Velocity</span>
+                                    <strong class="text-slate-900 dark:text-white text-xs block leading-none truncate">238 MPH</strong>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/60 p-2 rounded-xl h-[56px] flex flex-col justify-between">
+                                    <span class="text-slate-400 block text-[9px] uppercase font-bold leading-tight h-[22px] flex items-center justify-center">Blowing Force</span>
+                                    <strong class="text-emerald-500 text-xs block leading-none truncate">32 Newtons</strong>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed h-[36px] flex items-center line-clamp-2">
+                                Complete with flexible tube, jet nozzle, anti-vibe harness, and full tank of premium mixed fuel.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-slate-50/50 dark:bg-slate-950/40 space-y-1.5 text-xs">
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">Daily (24h Access)</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$45.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal w-10 text-right">/day</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80 bg-amber-500/[0.04] dark:bg-amber-500/[0.08] -mx-2 px-2 rounded-lg">
+                                <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-bolt text-[11px] text-amber-500"></i>
+                                    <span>3-Day Weekend</span>
+                                </span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-black text-amber-600 dark:text-amber-400 text-sm tabular-nums">$67.50</span>
+                                    <span class="text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/15 px-1.5 py-0.5 rounded">Save $67</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">7-Day Weekly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$180.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-43%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-1.5 border-b border-slate-100 dark:border-slate-800/80">
+                                <span class="text-slate-600 dark:text-slate-400 font-medium">30-Day Monthly</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-extrabold text-slate-900 dark:text-white text-sm tabular-nums">$490.00</span>
+                                    <span class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">-64%</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between pt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                                <span class="font-medium">Refundable Deposit</span>
+                                <div class="flex items-center gap-1.5 justify-end">
+                                    <span class="font-bold text-slate-800 dark:text-slate-200 text-xs tabular-nums">$100.00</span>
+                                    <span class="text-[10px] text-slate-400 font-normal">(Instant)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 pt-3">
+                        <a href="equipment-details.html?id=stihl-blower" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider transition block text-center shadow-md btn-shine">
+                            Reserve Backpack Blower
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Filter Script -->
+            <script>
+            function filterRates(cat, btn) {
+                // Update active tab buttons
+                document.querySelectorAll('.rate-tab-btn').forEach(b => {
+                    b.className = 'rate-tab-btn shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-amber-500 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition';
+                });
+                btn.className = 'rate-tab-btn active shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-black uppercase tracking-wider bg-amber-500 text-slate-950 shadow-md transition';
+
+                // Filter cards
+                const cards = document.querySelectorAll('.rate-card');
+                cards.forEach(card => {
+                    const cardCat = card.getAttribute('data-category');
+                    if (cat === 'all' || cardCat === cat) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+            </script>
+        </div>
+    </section>
     <section class="py-16 bg-slate-100 dark:bg-toolhub-dark/60 border-t border-slate-200 dark:border-slate-800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
@@ -377,7 +1552,7 @@
                     </div>
 
                     <!-- Output Card -->
-                    <div class="lg:col-span-5 bg-slate-900 text-white rounded-2xl p-6 border border-slate-800 space-y-4">
+                    <div class="lg:col-span-5 bg-slate-900 text-white rounded-2xl p-4 sm:p-6 border border-slate-800 space-y-4">
                         <div class="flex justify-between items-center pb-3 border-b border-slate-800">
                             <span class="text-xs text-slate-400 uppercase font-bold">Calculation Breakdown</span>
                             <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">Escrow Protected</span>
@@ -404,13 +1579,13 @@
                                 <span class="font-black text-white" id="out-escrow">$500.00 (Refundable)</span>
                             </div>
                         </div>
-                        <div class="pt-3 border-t border-slate-800 flex justify-between items-end">
+                        <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4">
                             <div>
                                 <span class="text-[10px] text-slate-400 uppercase tracking-wider block font-bold">Estimated Rental Charge</span>
-                                <span class="text-2xl font-black font-heading text-amber-500" id="out-total">$891.00</span>
+                                <span class="text-2xl sm:text-3xl font-black font-heading text-amber-500" id="out-total">$891.00</span>
                             </div>
-                            <a href="catalog.html" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl text-xs font-black transition">
-                                Rent Unit <i class="fa-solid fa-arrow-right ml-1"></i>
+                            <a href="catalog.html" class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl text-xs font-black shadow-md transition text-center btn-shine">
+                                <span>Rent Unit</span> <i class="fa-solid fa-arrow-right ml-1.5"></i>
                             </a>
                         </div>
                     </div>
@@ -517,11 +1692,11 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
                 <!-- Col 1: Brand & Contact (Desktop 6 cols, Tablet full, Mobile full) -->
                 <div class="sm:col-span-2 lg:col-span-6 space-y-5 sm:space-y-6">
-                    <a href="index.html" class="flex items-center gap-3.5">
-                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl sm:text-2xl shadow-lg shadow-amber-500/20 shrink-0">
-                            <i class="fa-solid fa-truck-monster"></i>
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg shadow-md shadow-amber-500/20 shrink-0 group-hover:scale-105 transition transform">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
                         </div>
-                        <span class="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white">TOOL<span class="text-amber-500">HUB</span></span>
+                        <span class="text-2xl font-black font-heading tracking-tight text-white leading-none">TOOL<span class="text-amber-500">HUB</span></span>
                     </a>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
                         Curating premium heavy equipment, commercial construction machinery, and precision DIY power tools for contractors, craftsmen, and home renovators worldwide.
@@ -666,10 +1841,10 @@
     <div id="mobile-menu-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
     <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-slate-900 z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col p-6">
         <!-- Header: Menu title & Close button -->
-        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-2">
-            <h3 class="text-2xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800 mb-2 shrink-0">
+            <h3 class="text-xl font-bold font-heading text-slate-900 dark:text-white tracking-tight">Menu</h3>
             <button data-close="mobile-menu" class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors" aria-label="Close menu">
-                <i class="fa-solid fa-xmark text-2xl"></i>
+                <i class="fa-solid fa-xmark text-xl"></i>
             </button>
         </div>
 
@@ -711,20 +1886,17 @@
                     <span>RENTER LOGIN</span>
                 </a>
             </div>
-
-            <!-- Divider Line -->
-            <div class="border-t border-slate-200 dark:border-slate-800 my-4"></div>
-
-            <!-- Bottom Toggle Buttons (Below the menu as in Image 2) -->
-            <div class="flex items-center justify-around py-2">
-                <button type="button" data-toggle="theme" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
-                    <i class="fa-solid fa-moon text-2xl"></i>
-                </button>
-                <button type="button" data-toggle="direction" class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
-                    <i class="fa-solid fa-right-left text-xl"></i>
-                </button>
-            </div>
         </nav>
+
+        <!-- Pinned Drawer Footer: Theme & RTL Toggles (Firmly visible on mobile < 640px/768px; hidden on >= 640px/768px tablet where navbar already has them) -->
+        <div class="drawer-toggles-container pt-3 mt-auto border-t border-slate-200 dark:border-slate-800 shrink-0 flex items-center justify-around sm:hidden">
+            <button type="button" data-toggle="theme" class="w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-700/80 shadow-sm" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+                <i class="fa-solid fa-moon text-lg"></i>
+            </button>
+            <button type="button" data-toggle="direction" class="w-11 h-11 rounded-xl flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-700/80 shadow-sm" title="Switch LTR / RTL" aria-label="Switch LTR / RTL">
+                <i class="fa-solid fa-right-left text-base"></i>
+            </button>
+        </div>
     </div>
 
     <!-- Scripts -->

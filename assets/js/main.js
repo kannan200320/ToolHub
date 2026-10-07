@@ -42,8 +42,8 @@
                 const icon = btn.querySelector('i');
                 if (icon) {
                     const isDrawer = btn.closest('#mobile-menu-drawer');
-                    const isSmall = btn.classList.contains('w-6') || btn.classList.contains('w-7') || btn.classList.contains('w-8');
-                    const sizeClass = isDrawer ? 'text-2xl' : (isSmall ? 'text-[10px]' : 'text-xs');
+                    const isSmall = btn.classList.contains('w-6') || btn.classList.contains('w-7') || btn.classList.contains('w-8') || btn.classList.contains('w-9');
+                    const sizeClass = isDrawer ? (isSmall ? 'text-xs' : 'text-lg') : (isSmall ? 'text-[10px]' : 'text-xs');
                     if (theme === 'dark') {
                         icon.className = `fa-solid fa-sun text-amber-400 ${sizeClass}`;
                     } else {
@@ -80,8 +80,10 @@
                 btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to LTR Layout' : 'Switch to RTL Layout');
                 if (dir === 'rtl') {
                     btn.classList.add('text-amber-500', 'bg-amber-500/10', 'border-amber-500/30');
+                    btn.classList.remove('text-slate-700');
                 } else {
                     btn.classList.remove('text-amber-500', 'bg-amber-500/10', 'border-amber-500/30');
+                    btn.classList.add('text-slate-700');
                 }
             });
             window.dispatchEvent(new CustomEvent('toolhub:direction', { detail: { direction: dir } }));
